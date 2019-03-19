@@ -1,0 +1,458 @@
+body{
+	background-color: rgb(124, 182, 141);
+	font-family: 'Lucida Sans';
+}
+@keyframes bloom {
+  0% {
+      filter: grayscale(.8);
+  }
+  40% {
+      filter: grayscale(.5);
+  }
+  100% {
+      filter: grayscale(0);
+  }
+}
+
+.tittle{
+  width: 100%;
+  font-size: -webkit-xxx-large;
+	margin-bottom: 3px;
+  text-align: center;
+  margin-top:15px;
+}
+
+.container{
+  display: flex;
+}
+
+.maxsize{
+  width: 100%;
+}
+
+.top {
+  border: 3px solid	white;
+	padding: 1px;
+}
+.home{
+  border: 1px solid	white;
+  height: 200px;
+  background-image: url("../img/design1_image1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about{
+  border: 1px solid	white;
+  height: 200px;
+	background-image: url(../img/design2_image1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.contact{
+  border: 1px solid	white;
+  height: 200px;
+	background-image: url(../img/campofutbol.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.rules{
+  border: 1px solid	white;
+  height: 200px;
+	background-image: url(../img/reglas.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game{
+  border: 1px solid	white;
+  height: 200px;
+	background-image: url(../img/schedule.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-position: center;
+}
+
+.anime:hover{
+  animation: bloom ease-in-out 1s forwards;
+}
+
+.nav{
+  border: 3px solid	grey;
+  padding: 1px;
+  text-align: center;
+  background-color: black;
+}
+.nav a:hover {
+  background-color: grey;
+}
+
+.hei{
+ text-decoration: none;
+ color: white;
+}
+
+.title2 {
+	text-align: center;
+	padding-top: 10px;
+  font-weight: bold;
+  font-size: x-large;
+	height: 40px;
+	color:white;
+	background-color: black;
+  margin-top: 0px;
+  border: 3px solid grey;
+}
+
+.home1{
+	width: 100%;
+	text-align: center;
+}
+
+.days{
+	font-weight: bold;
+	margin-bottom: 1px;
+}
+
+.days_info{
+	margin-top: 1px;
+}
+
+
+.home2{
+	text-align: center;
+}
+.home2>div>p{
+	padding: 0% 20%;
+    margin: 0;
+}
+
+.myinfo {
+  text-decoration: none;
+  margin-top: 300px;
+  width: 100%;
+  text-align: center;
+}
+.myinfo>p{
+  margin-top: 300px;
+  color:white;
+}
+
+.txtcenter{
+  text-align: center;
+}
+
+.centrado{
+  margin: auto;
+  width: 100%;
+}
+
+.smarginbot{
+  margin-bottom: 2px;
+}
+
+li{
+  margin-top: 15px;
+}
+
+.upmargintop{
+  margin-top: 3px;
+}
+.fontbold{
+  font-weight: bold;
+}
+
+.fontnormal{
+  font-weight: normal;
+}
+.parrafo>p{
+  margin-top:2px;
+  margin-bottom: 2px;
+}
+.parrafo2>li{
+  margin-top:2px;
+  margin-bottom: 2px;
+}
+.letras{
+  list-style-type: lower-alpha;
+}
+
+.rounded{
+  list-style-type: circle;
+}
+.squared{
+  list-style-type: square;
+}
+
+.whiteback{
+  background-color: rgba(245, 239, 233, 0.521);
+  border: 2px solid grey;
+  width: 100%;
+}
+.wd15{
+  width: 15%;
+}
+.wd25{
+  width: 25%;
+}
+
+.wd30{
+  width: 30%;
+}
+
+.wd35{
+  width: 35%;
+}
+
+.wd45{
+  width: 45%;
+}
+
+.wd60{
+  width: 60%;
+}
+.wd70{
+  width: 70%;
+}
+
+.wd50{
+  width: 50%;
+}
+
+.mr10{
+  margin-right: 10px;
+}
+
+.mr20{
+  margin-right: 20px;
+}
+
+.ml10{
+  margin-left: 10px;
+}
+
+.backtotop{
+  display: flex;
+  justify-content: center;
+}
+
+.backtotop>a{
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+.text1{
+  font-size: 20px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.text2{
+  font-style: oblique;
+  text-decoration: underline;
+}
+
+.left{
+  text-align: left;
+}
+
+.column{
+  flex-direction: column;
+  justify-content: center;
+}
+
+.separator{
+  height: 50px;
+}
+
+
+.tables{
+  border: 3px solid grey;
+  border-radius: 20px;
+}
+
+.tables td{
+  height: 40px;
+}
+
+
+
+.tables tr:nth-child(odd){
+  background-color: rgba(245, 239, 233, 0.521);
+}
+
+.tables tr:nth-child(even){
+  background-color: rgba(227, 233, 194, 0.521);
+}
+.tables tr:hover {
+  background-color: #99d4cf;
+}
+
+.tables th{
+  text-decoration: underline;
+  background-color: rgba(245, 239, 233, 0.521);
+  height: 40px;
+}
+
+.tables th:first-child {
+  border-top-left-radius: 20px;
+}
+
+.tables th:last-child {
+  border-top-right-radius: 20px;
+}
+
+.tables tr:last-child>td:last-child{
+  border-bottom-right-radius: 20px;
+}
+
+.tables tr:last-child>td:first-child{
+  border-bottom-left-radius: 20px;
+}
+
+
+td{
+  width: 200px;
+}
+
+.formulario{
+  flex-direction: column;
+  align-items:stretch;
+  justify-content: space-evenly;
+  background-color: rgba(245, 239, 233, 0.521);
+  border: 2px solid grey;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.formulario div:first-child {
+  border-top-left-radius: 20px;
+}
+
+.formulario div:first-child {
+  border-top-right-radius: 20px;
+}
+
+.formulario div:last-child {
+  border-bottom-right-radius: 20px;
+}
+
+.formulario div:last-child {
+  border-bottom-left-radius: 20px;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+form>.row{
+  height: 40px;
+}
+
+form>.container>div>.row{
+  height: 40px;
+}
+
+.formulario input{
+  text-align: center;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.columnschool{
+  flex-direction: column;
+}
+
+.normaltxt{
+  font-weight: normal;
+}
+
+.normalposition p{
+  margin:0px;
+}
+.permission{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.smalltext{
+  font-size: 10px;
+}
+
+.sig{
+  font-size: 13px;
+}
+
+.white{
+  background-color: rgba(245, 239, 233, 0.521);
+}
+.whiteeven{
+  background-color: rgba(227, 233, 194, 0.521);
+}
+
+
+.feedback{
+  border: 3px solid grey;
+  border-radius: 20px;
+}
+
+.feedback td{
+  height: 40px;
+}
+
+
+
+.feedback tr:nth-child(odd){
+  background-color: rgba(245, 239, 233, 0.521);
+}
+
+.feedback tr:nth-child(even){
+  background-color: rgba(227, 233, 194, 0.521);
+}
+.feedback tr:hover {
+  background-color: #99d4cf;
+}
+
+.feedback th{
+  text-decoration: underline;
+  background-color: rgba(245, 239, 233, 0.521);
+  height: 40px;
+}
+
+.feedback th:first-child {
+  border-top-left-radius: 20px;
+}
+
+.feedback th:last-child {
+  border-top-right-radius: 20px;
+}
+
+.feedback tr:last-child>td:last-child{
+  border-bottom-right-radius: 20px;
+}
+
+.feedback tr:last-child>td:first-child{
+  border-bottom-left-radius: 20px;
+}
