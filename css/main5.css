@@ -517,6 +517,14 @@ form>.container>div>.row{
   transition-timing-function: ease-in-out;
 }
 
+.shield__container{
+  transition: all 10s;
+  transition-timing-function: ease-in-out;
+}
+
+.shield__container:hover{
+  transform: scale(10);
+}
 
 .container__star:hover{
   transform: rotate(2160deg);
