@@ -14,6 +14,15 @@ body{
   }
 }
 
+
+
+
+
+
+
+
+
+
 .tittle{
   width: 100%;
   font-size: -webkit-xxx-large;
@@ -292,7 +301,14 @@ li{
   height: 40px;
 }
 
+.tables3{
+  font-size: 13px;
+  text-align: center;
+}
 
+.bigtext{
+  font-size: 16px;
+}
 
 .tables tr:nth-child(odd){
   background-color: rgba(245, 239, 233, 0.521);
@@ -455,4 +471,61 @@ form>.container>div>.row{
 
 .feedback tr:last-child>td:first-child{
   border-bottom-left-radius: 20px;
+}
+
+.register{
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color:rgb(34, 145, 62);
+}
+
+.shield__container{
+  width: 8.5rem;
+  height: 8.5rem;
+}
+
+.container__star,
+.container__star::before,
+.container__star::after{
+    width: 0;
+    border-color: transparent transparent rgb(189, 235, 84) transparent;
+    border-width: 0 4rem 2.5rem 4rem;
+    border-style: solid;
+    position: absolute;
+    transform: rotate(180deg);
+    margin-top: 2.75rem;
+    margin-left: 0.25rem;    
+}
+
+.container__star::before{
+    content: '';
+    margin-top: -0.15rem;
+      margin-left: -4.3rem;
+    transform: rotate(70deg);
+}
+
+.container__star::after{
+    content: '';
+    margin-top: -0.29rem;
+      margin-left: -3.87rem;
+    transform: rotate(-70deg);
+}
+
+.container__star{
+  transition: all 3s;
+  transition-timing-function: ease-in-out;
+}
+
+.shield__container{
+  transition: all 10s;
+  transition-timing-function: ease-in-out;
+}
+
+.shield__container:hover{
+  transform: scale(10);
+}
+
+.container__star:hover{
+  transform: rotate(2160deg);
 }
