@@ -529,3 +529,16 @@ form>.container>div>.row{
 .container__star:hover{
   transform: rotate(2160deg);
 }
+
+
+.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-style: italic;
+  font-size: 11px;
+  height: 20px;
+  width: 40%;
+}
