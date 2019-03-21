@@ -1,6 +1,6 @@
 body{
-	background-color: rgb(124, 182, 141);
-	font-family: 'Lucida Sans';
+  background-color: rgb(124, 182, 141);
+  font-family: 'Lucida Sans';
 }
 @keyframes bloom {
   0% {
@@ -539,6 +539,9 @@ form>.container>div>.row{
   color: red;
   font-style: italic;
   font-size: 11px;
-  height: 20px;
-  width: 40%;
 }
+
+.Red::placeholder
+    {
+        color: red; /* Most modern browsers support this now. */
+    }
