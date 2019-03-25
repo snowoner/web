@@ -268,6 +268,8 @@ document.addEventListener('blur', function (event) {
 
 
 
+
+
 //   // Check all fields on submit
 //   document.addEventListener('submit', function (event) {
 
