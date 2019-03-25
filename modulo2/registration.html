@@ -11,350 +11,342 @@
 </head>
 
 <body>
-
-  <div>
-    <h1 class="tittle" id="up">Northside Youth Soccer League</h1>
-  </div>
-  <div class="container top">
-    <a class="maxsize" href="index2.html">
-      <div class="maxsize home anime"></div>
-    </a>
-    <a class="maxsize" href="about.html">
-      <div class="maxsize about anime"></div>
-    </a>
-    <a class="maxsize" href="rules.html">
-      <div class="maxsize rules anime"></div>
-    </a>
-    <a class="maxsize" href="game.html">
-      <div class="maxsize game anime"></div>
-    </a>
-    <a class="maxsize" href="contact.html">
-      <div class="maxsize contact anime"></div>
-    </a>
-  </div>
-  <div class="container nav">
-    <a class="maxsize hei" href="index2.html">Home</a>
-    <a class="maxsize hei" href="about.html">About NYSL</a>
-    <a class="maxsize hei" href="rules.html">NYSL Rules</a>
-    <a class="maxsize hei" href="game.html">Game Info</a>
-    <a class="maxsize hei" href="contact.html">Contact</a>
-  </div>
-  <div>
-    <p class="title2">Registration</p>
-  </div>
-  <div class="container maxsize">
-    <aside class="wd15"></aside>
-    <div class="container maxsize">
-      <form class="maxsize container formulario validate" action="show_data.html" method="get">
-        <div class="row white">
-          <div class="maxsize container">
-            <label class="ml10 wd30" for="first_name">* First name:</label>
-            <input class="maxsize mr10" type="text" name="first_name" id="first_name" placeholder="First name" required>
-          </div>
-          <div class="ln maxsize container txtcenter">
-            <label class="ml10 wd30" for="last_name">* Last name:</label>
-            <input class="maxsize mr10" type="text" name="last_name" id="last_name" placeholder="Last name" required>
-          </div>
-        </div>
-        <div class="row">
-          <div class="add maxsize container">
-            <label class="ml10 wd25" for="adr">Street Address:</label>
-            <input class="ml10 maxsize mr10" type="text" id="adr" name="address" placeholder="9-11 Joaquim Ruyra Street"
-              >
-          </div>
-        </div>
-        <div class="row white">
-          <div class="city maxsize container">
-            <label class="ml10 wd15" for="adr">City:</label>
-            <input class="maxsize mr10" type="text" id="city" name="city" placeholder="Barcelona" >
-          </div>
-          <div class="zip maxsize container">
-            <label class="ml10 wd30" for="zip">Zip Code:</label>
-            <input class="maxsize mr10" type="text" id="zip" name="zip" placeholder="08012">
-          </div>
-        </div>
-        <div class="row">
-          <div class="birthdate maxsize container">
-            <label class="ml10 wd30" for="birthdate">Birth Date:</label>
-            <input class="maxsize mr10" type="date" id="birthdate" name="birthdate">
-          </div>
-          <div class="gender maxsize container">
-            <p class="ml10 wd30">Gender:</p>
-            <div class="row wd30">
-              <input class="mr10" type="radio" name="gender" value="female" id="female" ><label
-                for="female">Female</label>
-            </div>
-            <div class="row wd30">
-              <input class="mr10" type="radio" name="gender" value="male" id="male" ><label
-                for="male">Male</label>
-            </div>
-          </div>
-        </div>
-        <div class="row white">
-          <div class="grade maxsize container">
-            <p class="ml10">Grade:</p>
-            <div class="row">
-              <input class="ml10 mr10" type="radio" name="grade" value="Pre-School" id="Pre-School" required>
-              <label for="Pre-School">Pre-School</label>
-            </div>
-            <div class="row">
-              <input class="ml10 mr10" type="radio" name="grade" value="1st" id="1st" required>
-              <label for="1st">1st</label>
-            </div>
-            <div class="row">
-              <input class="ml10 mr10" type="radio" name="grade" value="2nd" id="2nd" required>
-              <label for="2nd">2nd</label>
-            </div>
-            <div class="row">
-              <input class="ml10 mr10" type="radio" name="grade" value="3rd" id="3rd" required >
-              <label for="3rd">3rd</label>
-            </div>
-            <div class="row">
-              <input class="ml10 mr10" type="radio" name="grade" value="4th" id="4th" required>
-              <label for="4th">4th</label>
-            </div>
-            <div class="row">
-              <input class="ml10 mr10" type="radio" name="grade" value="5th" id="5th"required >
-              <label for="5th">5th</label>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="parent maxsize container">
-            <label class="ml10 wd15" for="parent">Parent/Guardian:</label>
-            <input class="ml10 maxsize mr10" type="text" name="parent" id="parent" placeholder="First and Last name"
-              >
-          </div>
-        </div>
-        <div class="row white">
-          <div class="phone maxsize container">
-            <label class="ml10 wd50" for="phone">Contact Pnone:</label>
-            <input class="maxsize mr10" type="tel" id="phone" name="phone" placeholder="Phone Number">
-          </div>
-          <div class="mail maxsize container">
-            <label class="ml10 wd50" for="mail">Contact Email:</label>
-            <input class="ml10 maxsize mr10" type="email" name="mail" id="mail" placeholder="Yourmail@example.com">
-          </div>
-        </div>
-        <div class="row" id="near">
-          <p class="ml10 bold">Which elementary schools do you live near?</p>
-        </div>
-        <div class="container">
-          <div class="columnschool maxsize container">
-            <p class="ml10 maxsize">First Closest School:</p>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="first_school" value="AJ_Katzenmaier" id="AJ_Katzenmaier">
-              <label class="wd35" for="AJ_Katzenmaier">AJ Katzenmaier</label>
-              <input class="wd15" type="radio" name="first_school" value="Marjorie_P_Hart" id="Marjorie_P_Hart"
-               >
-              <label class="wd35" for="Marjorie_P_Hart">Marjorie P Hart</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="first_school" value="Greenbay" id="Greenbay" >
-              <label class="wd35" for="Greenbay">Greenbay</label>
-              <input class="wd15" type="radio" name="first_school" value="North_Elementary" id="North_Elementary"
-               >
-              <label class="wd35" for="North_Elementary">North Elementary</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="first_school" value="Howard_A_Yeager" id="Howard_A_Yeager"
-                >
-              <label class="wd35" for="Howard_A_Yeager">Howard A Yeager</label>
-              <input class="wd15" type="radio" name="first_school" value="South_Elementary" id="South_Elementary"
-                >
-              <label class="wd35" for="South_Elementary">South Elementary</label>
-            </div>
-          </div>
-          <div class="columnschool maxsize container">
-            <p class="ml10 maxsize">Second Closest School:</p>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="second_school" value="AJ_Katzenmaier" id="AJ_Katzenmaier2"
-               >
-              <label class="wd35" for="AJ_Katzenmaier2">AJ Katzenmaier</label>
-              <input class="wd15" type="radio" name="second_school" value="Marjorie_P_Hart" id="Marjorie_P_Hart2"
-                >
-              <label class="wd35" for="Marjorie_P_Hart2">Marjorie P Hart</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="second_school" value="Greenbay" id="Greenbay2" >
-              <label class="wd35" for="Greenbay2">Greenbay</label>
-              <input class="wd15" type="radio" name="second_school" value="North_Elementary" id="North_Elementary2"
-                >
-              <label class="wd35" for="North_Elementary2">North Elementary</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="second_school" value="Howard_A_Yeager" id="Howard_A_Yeager2"
-                >
-              <label class="wd35" for="Howard_A_Yeager2">Howard A Yeager</label>
-              <input class="wd15" type="radio" name="second_school" value="South_Elementary" id="South_Elementary2"
-               >
-              <label class="wd35" for="South_Elementary2">South Elementary</label>
-            </div>
-          </div>
-        </div>
-        <div class="row white">
-          <p class="ml10 bold">What position(s) do you normally play? <span class="normaltxt">(check all that
-              apply)</span>
-          </p>
-        </div>
-        <div class="row white">
-          <div class="normalposition maxsize container">
-            <input class="wd15" type="checkbox" name="normalposition" value="forward">
-            <p class="wd15">Forward</p>
-            <input class="wd15" type="checkbox" name="normalposition" value="midfield">
-            <p class="wd15">Midfield</p>
-            <div class="maxsize"></div>
-          </div>
-        </div>
-        <div class="row white">
-          <div class="normalposition maxsize container">
-            <input class="wd15" type="checkbox" name="normalposition" value="defense">
-            <p class="wd15">Defense</p>
-            <input class="wd15" type="checkbox" name="normalposition" value="goalkeeper">
-            <p class="wd15">Goalkeeper</p>
-            <div class="maxsize"></div>
-          </div>
-        </div>
-        <div class="row">
-          <p class="ml10 bold">What position(s) do you want to play?<span class="normaltxt">(check all that
-              apply)</span>
-          </p>
-        </div>
-        <div class="row">
-          <div class="normalposition maxsize container">
-            <input class="wd15" type="checkbox" name="wantposition" value="forward">
-            <p class="wd15">Forward</p>
-            <input class="wd15" type="checkbox" name="wantposition" value="midfield">
-            <p class="wd15">Midfield</p>
-            <div class="maxsize"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="normalposition maxsize container">
-            <input class="wd15" type="checkbox" name="wantposition" value="defense">
-            <p class="wd15">Defense</p>
-            <input class="wd15" type="checkbox" name="wantposition" value="goalkeeper">
-            <p class="wd15">Goalkeeper</p>
-            <div class="maxsize"></div>
-          </div>
-        </div>
-        <div class="row white">
-          <input class="wd15" type="checkbox" name="uniform" id="uniform" value="uniform">
-          <p class="bold wd35">Already Have a Uniform</p>
-          <div class="maxsize"></div>
-        </div>
-        <div class="container">
-          <div class="columnschool maxsize container">
-            <p class="ml10 maxsize bold">Jersey Size</p>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="jerseysize" value="Youth_Small" id="Youth_Small" >
-              <label class="wd35" for="Youth_Small">Youth Small</label>
-              <input class="wd15" type="radio" name="jerseysize" value="Medium" id="Medium" >
-              <label class="wd35" for="Medium">Medium</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="jerseysize" value="Youth_Medium" id="Youth_Medium" >
-              <label class="wd35" for="Youth_Medium">Youth Medium</label>
-              <input class="wd15" type="radio" name="jerseysize" value="Large" id="Large" >
-              <label class="wd35" for="Large">Large</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="jerseysize" value="Youth_Large" id="Youth_Large">
-              <label class="wd35" for="Youth_Large">Youth Large</label>
-              <input class="wd15" type="radio" name="jerseysize" value="Extra_Large" id="Extra_Large">
-              <label class="wd35" for="Extra_Large">Extra-Large</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="jerseysize" value="Small" id="Small" >
-              <label class="wd35" for="Small">Small</label>
-            </div>
-          </div>
-          <div class="columnschool maxsize container">
-            <p class="ml10 maxsize bold">Shorts Size:</p>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="shortssize" value="Youth_Small" id="Youth_Small2" >
-              <label class="wd35" for="Youth_Small2">Youth Small</label>
-              <input class="wd15" type="radio" name="shortssize" value="Medium" id="Medium2">
-              <label class="wd35" for="Medium2">Medium</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="shortssize" value="Youth_Medium" id="Youth_Medium2" >
-              <label class="wd35" for="Youth_Medium2">Youth Medium</label>
-              <input class="wd15" type="radio" name="shortssize" value="Large" id="Large2" >
-              <label class="wd35" for="Large2">Large</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="shortssize" value="Youth_Large" id="Youth_Large2">
-              <label class="wd35" for="Youth_Large2">Youth Large</label>
-              <input class="wd15" type="radio" name="shortssize" value="Extra_Large" id="Extra_Large2" >
-              <label class="wd35" for="Extra_Large2">Extra-Large</label>
-            </div>
-            <div class="row maxsize">
-              <input class="wd15" type="radio" name="shortssize" value="Small" id="Small2" >
-              <label class="wd35" for="Small2">Small</label>
-            </div>
-          </div>
-        </div>
-        <div class="container columnschool white">
-          <p class="ml10 bold permission">Permission to Play</p>
-          <p class="ml10 mr10 smalltext">
-            I, the parent or guardian of the minor registrant, agree that the registrant and I will abide by all the
-            rules of the Northside Youth
-            Soccer League (NYSL). In recognizing the possibility of physical injury associated with soccer and in
-            consideration for the “League”
-            accepting the registrant for its soccer programs and activities, I hereby release, discharge, and/or
-            otherwise indemnify NYSL, their
-            employees and associated personnel and volunteers, including the facilities used for practices and games,
-            against any claim by or
-            on behalf of the registrant as a result of the registrant’s participation in the program and/or being
-            transported to or from NYSL
-            sponsored activities, which transportation.
-          </p>
-          <p class="ml10 mr10 maxsize smalltext">
-            By entering your name below, I hereby agree and authorize the above. In addition, by signing below, I also
-            acknowledge
-            that I have read the
-            cancellation policy and agree to its terms.
-          </p>
-        </div>
-        <div class="row">
-          <div class="sig maxsize container">
-            <label class="ml10 wd30" for="signature">Parent/Guardian Signature:</label>
-            <input class="wd70 mr10" type="text" name="signature" id="signature" >
-          </div>
-          <div class="ln wd45 container txtcenter">
-            <label class="ml10 wd30" for="last_name">Date:</label>
-            <input class="maxsize mr10" type="date" name="date2" id="date2" >
-          </div>
-        </div>
-        <div class="separator"></div>
-        <div class="row maxsize white">
-          <div class="wd15"></div>
-          <button class="wd25" type="reset">
-            <strong>Reset</strong>
-          </button>
-          <div class="wd15"></div>
-          <button class="wd25" type="submit">
-            <strong>Submit</strong>
-          </button>
-          <div class="wd15"></div>
-        </div>
-        <div class="separator white"></div>
-      </form>
-    </div>
-    <aside class="wd15"></aside>
-  </div>
-  <div class="separator"></div>
-  <div class="backtotop">
-    <a href="#up">Back To Top</a>
-  </div>
-  <footer>
+  <div class="auto">
     <div>
-      <a class="myinfo" href="https://www.linkedin.com/in/oscar-urgelles-marsal-58a596141/">
-        <p>This web is created by Oscar Urgelles Marsal</p>
+      <h1 class="tittle" id="up">Northside Youth Soccer League</h1>
+    </div>
+    <div class="container top">
+      <a class="maxsize" href="index2.html">
+        <div class="maxsize home anime"></div>
+      </a>
+      <a class="maxsize" href="about.html">
+        <div class="maxsize about anime"></div>
+      </a>
+      <a class="maxsize" href="rules.html">
+        <div class="maxsize rules anime"></div>
+      </a>
+      <a class="maxsize" href="game.html">
+        <div class="maxsize game anime"></div>
+      </a>
+      <a class="maxsize" href="contact.html">
+        <div class="maxsize contact anime"></div>
       </a>
     </div>
-  </footer>
+    <div class="container nav">
+      <a class="maxsize hei" href="index2.html">Home</a>
+      <a class="maxsize hei" href="about.html">About NYSL</a>
+      <a class="maxsize hei" href="rules.html">NYSL Rules</a>
+      <a class="maxsize hei" href="game.html">Game Info</a>
+      <a class="maxsize hei" href="contact.html">Contact</a>
+    </div>
+    <div>
+      <p class="title2">Registration</p>
+    </div>
+    <div class="container maxsize">
+      <aside class="wd15"></aside>
+      <div class="container maxsize">
+        <form class="maxsize container formulario validate" action="show_data.html" method="get">
+          <div class="row white">
+            <div class="maxsize container">
+              <label class="ml10 wd30" for="first_name">* First name:</label>
+              <input class="maxsize mr10" type="text" name="first_name" id="first_name" placeholder="First name"
+                required>
+            </div>
+            <div class="ln maxsize container txtcenter">
+              <label class="ml10 wd30" for="last_name">* Last name:</label>
+              <input class="maxsize mr10" type="text" name="last_name" id="last_name" placeholder="Last name" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="add maxsize container">
+              <label class="ml10 wd25" for="adr">Street Address:</label>
+              <input class="ml10 maxsize mr10" type="text" id="adr" name="address"
+                placeholder="9-11 Joaquim Ruyra Street">
+            </div>
+          </div>
+          <div class="row white">
+            <div class="city maxsize container">
+              <label class="ml10 wd15" for="adr">City:</label>
+              <input class="maxsize mr10" type="text" id="city" name="city" placeholder="Barcelona">
+            </div>
+            <div class="zip maxsize container">
+              <label class="ml10 wd30" for="zip">Zip Code:</label>
+              <input class="maxsize mr10" type="text" id="zip" name="zip" placeholder="08012">
+            </div>
+          </div>
+          <div class="row">
+            <div class="birthdate maxsize container">
+              <label class="ml10 wd30" for="birthdate">Birth Date:</label>
+              <input class="maxsize mr10" type="date" id="birthdate" name="birthdate">
+            </div>
+            <div class="gender maxsize container">
+              <p class="ml10 wd30">Gender:</p>
+              <div class="row wd30">
+                <input class="mr10" type="radio" name="gender" value="female" id="female"><label
+                  for="female">Female</label>
+              </div>
+              <div class="row wd30">
+                <input class="mr10" type="radio" name="gender" value="male" id="male"><label for="male">Male</label>
+              </div>
+            </div>
+          </div>
+          <div class="row white">
+            <div class="grade maxsize container">
+              <p class="ml10">Grade:</p>
+              <div class="row">
+                <input class="ml10 mr10" type="radio" name="grade" value="Pre-School" id="Pre-School" required>
+                <label for="Pre-School">Pre-School</label>
+              </div>
+              <div class="row">
+                <input class="ml10 mr10" type="radio" name="grade" value="1st" id="1st" required>
+                <label for="1st">1st</label>
+              </div>
+              <div class="row">
+                <input class="ml10 mr10" type="radio" name="grade" value="2nd" id="2nd" required>
+                <label for="2nd">2nd</label>
+              </div>
+              <div class="row">
+                <input class="ml10 mr10" type="radio" name="grade" value="3rd" id="3rd" required>
+                <label for="3rd">3rd</label>
+              </div>
+              <div class="row">
+                <input class="ml10 mr10" type="radio" name="grade" value="4th" id="4th" required>
+                <label for="4th">4th</label>
+              </div>
+              <div class="row">
+                <input class="ml10 mr10" type="radio" name="grade" value="5th" id="5th" required>
+                <label for="5th">5th</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="parent maxsize container">
+              <label class="ml10 wd15" for="parent">Parent/Guardian:</label>
+              <input class="ml10 maxsize mr10" type="text" name="parent" id="parent" placeholder="First and Last name">
+            </div>
+          </div>
+          <div class="row white">
+            <div class="phone maxsize container">
+              <label class="ml10 wd50" for="phone">Contact Pnone:</label>
+              <input class="maxsize mr10" type="tel" id="phone" name="phone" placeholder="Phone Number">
+            </div>
+            <div class="mail maxsize container">
+              <label class="ml10 wd50" for="mail">Contact Email:</label>
+              <input class="ml10 maxsize mr10" type="email" name="mail" id="mail" placeholder="Yourmail@example.com">
+            </div>
+          </div>
+          <div class="row" id="near">
+            <p class="ml10 bold">Which elementary schools do you live near?</p>
+          </div>
+          <div class="container">
+            <div class="columnschool maxsize container">
+              <p class="ml10 maxsize">First Closest School:</p>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="first_school" value="AJ_Katzenmaier" id="AJ_Katzenmaier">
+                <label class="wd35" for="AJ_Katzenmaier">AJ Katzenmaier</label>
+                <input class="wd15" type="radio" name="first_school" value="Marjorie_P_Hart" id="Marjorie_P_Hart">
+                <label class="wd35" for="Marjorie_P_Hart">Marjorie P Hart</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="first_school" value="Greenbay" id="Greenbay">
+                <label class="wd35" for="Greenbay">Greenbay</label>
+                <input class="wd15" type="radio" name="first_school" value="North_Elementary" id="North_Elementary">
+                <label class="wd35" for="North_Elementary">North Elementary</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="first_school" value="Howard_A_Yeager" id="Howard_A_Yeager">
+                <label class="wd35" for="Howard_A_Yeager">Howard A Yeager</label>
+                <input class="wd15" type="radio" name="first_school" value="South_Elementary" id="South_Elementary">
+                <label class="wd35" for="South_Elementary">South Elementary</label>
+              </div>
+            </div>
+            <div class="columnschool maxsize container">
+              <p class="ml10 maxsize">Second Closest School:</p>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="second_school" value="AJ_Katzenmaier" id="AJ_Katzenmaier2">
+                <label class="wd35" for="AJ_Katzenmaier2">AJ Katzenmaier</label>
+                <input class="wd15" type="radio" name="second_school" value="Marjorie_P_Hart" id="Marjorie_P_Hart2">
+                <label class="wd35" for="Marjorie_P_Hart2">Marjorie P Hart</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="second_school" value="Greenbay" id="Greenbay2">
+                <label class="wd35" for="Greenbay2">Greenbay</label>
+                <input class="wd15" type="radio" name="second_school" value="North_Elementary" id="North_Elementary2">
+                <label class="wd35" for="North_Elementary2">North Elementary</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="second_school" value="Howard_A_Yeager" id="Howard_A_Yeager2">
+                <label class="wd35" for="Howard_A_Yeager2">Howard A Yeager</label>
+                <input class="wd15" type="radio" name="second_school" value="South_Elementary" id="South_Elementary2">
+                <label class="wd35" for="South_Elementary2">South Elementary</label>
+              </div>
+            </div>
+          </div>
+          <div class="row white">
+            <p class="ml10 bold">What position(s) do you normally play? <span class="normaltxt">(check all that
+                apply)</span>
+            </p>
+          </div>
+          <div class="row white">
+            <div class="normalposition maxsize container">
+              <input class="wd15" type="checkbox" name="normalposition" value="forward">
+              <p class="wd15">Forward</p>
+              <input class="wd15" type="checkbox" name="normalposition" value="midfield">
+              <p class="wd15">Midfield</p>
+              <div class="maxsize"></div>
+            </div>
+          </div>
+          <div class="row white">
+            <div class="normalposition maxsize container">
+              <input class="wd15" type="checkbox" name="normalposition" value="defense">
+              <p class="wd15">Defense</p>
+              <input class="wd15" type="checkbox" name="normalposition" value="goalkeeper">
+              <p class="wd15">Goalkeeper</p>
+              <div class="maxsize"></div>
+            </div>
+          </div>
+          <div class="row">
+            <p class="ml10 bold">What position(s) do you want to play?<span class="normaltxt">(check all that
+                apply)</span>
+            </p>
+          </div>
+          <div class="row">
+            <div class="normalposition maxsize container">
+              <input class="wd15" type="checkbox" name="wantposition" value="forward">
+              <p class="wd15">Forward</p>
+              <input class="wd15" type="checkbox" name="wantposition" value="midfield">
+              <p class="wd15">Midfield</p>
+              <div class="maxsize"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="normalposition maxsize container">
+              <input class="wd15" type="checkbox" name="wantposition" value="defense">
+              <p class="wd15">Defense</p>
+              <input class="wd15" type="checkbox" name="wantposition" value="goalkeeper">
+              <p class="wd15">Goalkeeper</p>
+              <div class="maxsize"></div>
+            </div>
+          </div>
+          <div class="row white">
+            <input class="wd15" type="checkbox" name="uniform" id="uniform" value="uniform">
+            <p class="bold wd35">Already Have a Uniform</p>
+            <div class="maxsize"></div>
+          </div>
+          <div class="container">
+            <div class="columnschool maxsize container">
+              <p class="ml10 maxsize bold">Jersey Size</p>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="jerseysize" value="Youth_Small" id="Youth_Small">
+                <label class="wd35" for="Youth_Small">Youth Small</label>
+                <input class="wd15" type="radio" name="jerseysize" value="Medium" id="Medium">
+                <label class="wd35" for="Medium">Medium</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="jerseysize" value="Youth_Medium" id="Youth_Medium">
+                <label class="wd35" for="Youth_Medium">Youth Medium</label>
+                <input class="wd15" type="radio" name="jerseysize" value="Large" id="Large">
+                <label class="wd35" for="Large">Large</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="jerseysize" value="Youth_Large" id="Youth_Large">
+                <label class="wd35" for="Youth_Large">Youth Large</label>
+                <input class="wd15" type="radio" name="jerseysize" value="Extra_Large" id="Extra_Large">
+                <label class="wd35" for="Extra_Large">Extra-Large</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="jerseysize" value="Small" id="Small">
+                <label class="wd35" for="Small">Small</label>
+              </div>
+            </div>
+            <div class="columnschool maxsize container">
+              <p class="ml10 maxsize bold">Shorts Size:</p>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="shortssize" value="Youth_Small" id="Youth_Small2">
+                <label class="wd35" for="Youth_Small2">Youth Small</label>
+                <input class="wd15" type="radio" name="shortssize" value="Medium" id="Medium2">
+                <label class="wd35" for="Medium2">Medium</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="shortssize" value="Youth_Medium" id="Youth_Medium2">
+                <label class="wd35" for="Youth_Medium2">Youth Medium</label>
+                <input class="wd15" type="radio" name="shortssize" value="Large" id="Large2">
+                <label class="wd35" for="Large2">Large</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="shortssize" value="Youth_Large" id="Youth_Large2">
+                <label class="wd35" for="Youth_Large2">Youth Large</label>
+                <input class="wd15" type="radio" name="shortssize" value="Extra_Large" id="Extra_Large2">
+                <label class="wd35" for="Extra_Large2">Extra-Large</label>
+              </div>
+              <div class="row maxsize">
+                <input class="wd15" type="radio" name="shortssize" value="Small" id="Small2">
+                <label class="wd35" for="Small2">Small</label>
+              </div>
+            </div>
+          </div>
+          <div class="container columnschool white">
+            <p class="ml10 bold permission">Permission to Play</p>
+            <p class="ml10 mr10 smalltext">
+              I, the parent or guardian of the minor registrant, agree that the registrant and I will abide by all the
+              rules of the Northside Youth
+              Soccer League (NYSL). In recognizing the possibility of physical injury associated with soccer and in
+              consideration for the “League”
+              accepting the registrant for its soccer programs and activities, I hereby release, discharge, and/or
+              otherwise indemnify NYSL, their
+              employees and associated personnel and volunteers, including the facilities used for practices and games,
+              against any claim by or
+              on behalf of the registrant as a result of the registrant’s participation in the program and/or being
+              transported to or from NYSL
+              sponsored activities, which transportation.
+            </p>
+            <p class="ml10 mr10 maxsize smalltext">
+              By entering your name below, I hereby agree and authorize the above. In addition, by signing below, I also
+              acknowledge
+              that I have read the
+              cancellation policy and agree to its terms.
+            </p>
+          </div>
+          <div class="row">
+            <div class="sig maxsize container">
+              <label class="ml10 wd30" for="signature">Parent/Guardian Signature:</label>
+              <input class="wd70 mr10" type="text" name="signature" id="signature">
+            </div>
+            <div class="ln wd45 container txtcenter">
+              <label class="ml10 wd30" for="last_name">Date:</label>
+              <input class="maxsize mr10" type="date" name="date2" id="date2">
+            </div>
+          </div>
+          <div class="separator"></div>
+          <div class="row maxsize white">
+            <div class="wd15"></div>
+            <button class="wd25" type="reset">
+              <strong>Reset</strong>
+            </button>
+            <div class="wd15"></div>
+            <button class="wd25" type="submit">
+              <strong>Submit</strong>
+            </button>
+            <div class="wd15"></div>
+          </div>
+          <div class="separator white"></div>
+        </form>
+      </div>
+      <aside class="wd15"></aside>
+    </div>
+    <div class="separator"></div>
+    <div class="backtotop">
+      <a href="#up">Back To Top</a>
+    </div>
+    <footer>
+      <div>
+        <a class="myinfo" href="https://www.linkedin.com/in/oscar-urgelles-marsal-58a596141/">
+          <p>This web is created by Oscar Urgelles Marsal</p>
+        </a>
+      </div>
+    </footer>
+  </div>
 </body>
 <script type="text/javascript" src="scripts/main.js"></script>
+
 </html>
