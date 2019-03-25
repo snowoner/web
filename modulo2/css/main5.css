@@ -4,23 +4,15 @@ body{
 }
 @keyframes bloom {
   0% {
-      filter: grayscale(.8);
-  }
-  40% {
-      filter: grayscale(.5);
-  }
-  100% {
-      filter: grayscale(0);
-  }
+    filter: grayscale(.8);
 }
-
-
-
-
-
-
-
-
+40% {
+    filter: grayscale(.5);
+}
+100% {
+    filter: grayscale(0);
+}
+}
 
 
 .tittle{
@@ -501,14 +493,14 @@ form>.container>div>.row{
 .container__star::before{
     content: '';
     margin-top: -0.15rem;
-      margin-left: -4.3rem;
+    margin-left: -4.3rem;
     transform: rotate(70deg);
 }
 
 .container__star::after{
     content: '';
     margin-top: -0.29rem;
-      margin-left: -3.87rem;
+    margin-left: -3.87rem;
     transform: rotate(-70deg);
 }
 
@@ -520,10 +512,6 @@ form>.container>div>.row{
 .shield__container{
   transition: all 10s;
   transition-timing-function: ease-in-out;
-}
-
-.shield__container:hover{
-  transform: scale(10);
 }
 
 .container__star:hover{
@@ -541,7 +529,14 @@ form>.container>div>.row{
   font-size: 11px;
 }
 
-.Red::placeholder
-    {
-        color: red; /* Most modern browsers support this now. */
-    }
+.Red::placeholder{
+  color: red; /* Most modern browsers support this now. */
+}
+
+.jumpsize{
+  background-image: url("https://molismedia.com/magazine/wp-content/uploads/2017/06/featured_image_spots_y_canciones_de_Estrella_Damm_para_sentirnos_en_pleno_verano.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+  height: 700px;
+  width: 100%;
+}
