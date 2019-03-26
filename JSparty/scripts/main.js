@@ -80,7 +80,7 @@ function theBiggest(arraylist) {
 
 console.log("The biggest is : " + theBiggest(ages));
 
-var array = [3,6,67,6,23,11,100,8,93,0,17,24,7,1,33,45,28,33,23,12,99,100]; 
+var array = [3, 6, 67, 6, 23, 11, 100, 8, 93, 0, 17, 24, 7, 1, 33, 45, 28, 33, 23, 12, 99, 100];
 var ind = 1;
 
 function positionOfArray(array, index) {
@@ -110,7 +110,7 @@ function repetidos2(array) {
   var repes = [];
   for (let i = 0; i < array.length; i++) {
     valor = array[i];
-    for (let j = i+1; j < array.length; j++) {
+    for (let j = i + 1; j < array.length; j++) {
       if (array[j] == valor) {
         var repe = false;
         for (let k = 0; k < repes.length; k++) {
@@ -129,22 +129,22 @@ function repetidos2(array) {
   return repes;
 }
 
-function repetidos3(array){
-  var repes=[];
+function repetidos3(array) {
+  var repes = [];
   for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length; j++) {
-      if(array[i]==array[j]){
-        if(!repes.includes(array[i])){
+    valor=array[i];
+    for (let j = i+1; j < array.length; j++) {
+      if (valor == array[j]) {
+        if (!repes.includes(array[i])) {
           repes.push(array[i]);
         }
       }
-      
     }
-    
   }
+  return repes;
 }
 
-escribe(repetidos2(array));
+repetidos3(array);
 
 
 // escribe(repetidos(array));
@@ -233,3 +233,58 @@ function theLongest(text) {
 var array = "Web Development Tutorial";
 // escribe(theLongest(array));
 
+
+
+
+// Create a function to fill an array with 100 random numbers. You can't create it manually.
+
+// After this, make another function that separate the numbers of the first array in two new arrays:
+//     var oddNumbers = [];
+//     var evenNumbers = [];
+
+// You have to console.log these two arrays after create them.
+
+
+// function fillandSeparate(length) {
+//   var array = [];
+//   for (let i = 0; i < length; i++) {
+//     array.push(Math.floor(Math.random() * 101));
+//   }
+//    var oddeven = {
+//     odd: [],
+//     even: []
+//   };
+
+//   for (let j = 0; j < array.length; j++) {
+//     if (array[j] % 2 == 0) oddeven.odd.push(array[j]);
+//     else oddeven.even.push(array[j]);
+//   }
+//   return oddeven;
+// }
+
+// var number= prompt("introduce un numero");
+// var oddeven = fillandSeparate(number);
+// // escribe(oddeven);
+// document.querySelector("body").innerText="HOLA";
+
+// console.log(oddeven); 
+
+// i just change the statement and i fill directly the new object whit odd and even arrays.
+
+
+
+var listaaa=["pepito","menganito","patricia"];
+var end = false;
+
+var estatedentro=true;
+
+while(estatedentro){
+  console.log("hola");
+    var numero = Math.floor(Math.random() * 101);
+    console.log(numero);
+  if(numero==2){
+  break;
+  }
+}
+
+console.log("fin");
