@@ -47,13 +47,15 @@
       <div class="container maxsize">
         <form class="maxsize container formulario validate" action="show_data.html" method="get">
           <div class="row white">
-            <div class="maxsize container">
-              <label class="ml10 wd30" for="first_name">* First name:</label>
-              <input class="maxsize mr10" type="text" name="first_name" id="first_name" placeholder="First name"
+            <div class="maxsize container ">
+              <label class="ml10 wd45" for="first_name">* First name:</label>
+              <input class="maxsize mr10 " type="text" name="first_name" id="first_name" placeholder="First name"
                 required>
+                <!-- <span class="errorspan">Please fill this camp</span> -->
             </div>
+           
             <div class="ln maxsize container txtcenter">
-              <label class="ml10 wd30" for="last_name">* Last name:</label>
+              <label class="ml10 wd45" for="last_name">* Last name:</label>
               <input class="maxsize mr10" type="text" name="last_name" id="last_name" placeholder="Last name" required>
             </div>
           </div>
@@ -64,6 +66,7 @@
                 placeholder="9-11 Joaquim Ruyra Street">
             </div>
           </div>
+          <span class="white"></span>
           <div class="row white">
             <div class="city maxsize container">
               <label class="ml10 wd15" for="adr">City:</label>
@@ -230,7 +233,7 @@
           </div>
           <div class="row white">
             <input class="wd15" type="checkbox" name="uniform" id="uniform" value="uniform">
-            <p class="bold wd35">Already Have a Uniform</p>
+            <p class="bold wd60">Already Have a Uniform</p>
             <div class="maxsize"></div>
           </div>
           <div class="container">
@@ -307,7 +310,7 @@
               cancellation policy and agree to its terms.
             </p>
           </div>
-          <div class="row">
+          <div class="row white">
             <div class="sig maxsize container">
               <label class="ml10 wd30" for="signature">Parent/Guardian Signature:</label>
               <input class="wd70 mr10" type="text" name="signature" id="signature">
@@ -317,7 +320,7 @@
               <input class="maxsize mr10" type="date" name="date2" id="date2">
             </div>
           </div>
-          <div class="separator"></div>
+          <div class="separator white"></div>
           <div class="row maxsize white">
             <div class="wd15"></div>
             <button class="wd25" type="reset">

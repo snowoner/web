@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <script LANGUAGE="JavaScript">
+  
+    var suma=0;
+    var cont=0;
+    var valor = parseFloat(prompt("numero coñe"+ parseInt(valor) ,0));
+    console.log("first valor"+ valor);
+    // var num = parseInt(valor);
+    var end = false;
+    while(!end) {
+      if(valor <= 0) {
+        end = true;
+        break;
+      }
+      else if(isNaN(valor) === true) {
+        suma+=valor;
+        cont++;
+        console.log(suma);
+        console.log(cont);
+      }
+      valor = parseFloat(prompt("numero coñe"));
+      console.log("new valor "+ valor);
+    }
+    console
+    document.write("aqui la suma "+ suma + "aqui la media " + suma/cont);
+
+  </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
