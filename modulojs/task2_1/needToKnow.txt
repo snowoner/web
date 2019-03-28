@@ -1,0 +1,94 @@
+
+
+https://codeacademy.ubiqum.com/ebooks/item?id=53
+
+//JSON.stringify();   see var dataFromStr = JSON.parse(str);
+
+
+see next step is more effective>>><
+var cart = {
+  "orderID": 12345,
+  "shopperName": "John Smith",
+  "shopperEmail": "johnsmith@example.com",
+  "contents": [
+    {
+      "productID": 34,
+      "productName": "SuperWidget",
+      "quantity": 1
+    },
+    {
+      "productID": 56,
+      "productName": "WonderWidget",
+      "quantity": 3
+    }
+  ],
+  "orderCompleted": true
+};
+
+///---->> the real use <<<----
+
+var jsonString = '                          
+{                                           
+  "orderID": 12345,                         
+  "shopperName": "John Smith",              
+  "shopperEmail": "johnsmith@example.com",  
+  "contents": [                             
+    {                                       
+      "productID": 34,                      
+      "productName": "SuperWidget",         
+      "quantity": 1                         
+    },                                      
+    {                                       
+      "productID": 56,                      
+      "productName": "WonderWidget",        
+      "quantity": 3                         
+    }                                       
+  ],                                        
+  "orderCompleted": true                    
+}                                           
+';
+
+var cart = JSON.parse ( jsonString );
+
+alert ( cart.shopperEmail );
+alert ( cart.contents[1].productName );
+
+https://jsonlint.com/  << that web should help me!
+
+
+Checkboxes 
+var checkedBoxes = document.querySelectorAll('input[name=mycheckboxes]:checked');
+
+
+INDEXOF
+var beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(beasts.indexOf('bison'));
+// expected output: 1
+
+// start from index 2
+console.log(beasts.indexOf('bison', 2));
+// expected output: 4
+
+console.log(beasts.indexOf('giraffe'));
+// expected output: -1
+
+
+PUSH a element in array
+
+Finding if an element exists in the array or not and updating the arraySection
+function pushInArray (array, newElement) {
+    if (array.indexOf(newElement) === -1) {
+        array.push(newElement);
+        console.log('New array collection is : ' + array);
+    } else if (array.indexOf(newElement) > -1) {
+        console.log(newElement + ' already exists in the array collection.');
+    }
+}
+
+var somearray = ['potato', 'tomato', 'chillies', 'green-pepper'];
+
+pushInArray(somearray, 'spinach'); 
+// New array collection is : potato,tomato,chillies,green-pepper,spinach
+pushInArray(somearray, 'spinach'); 
+// spinach already exists in the array collection
