@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Senate Data</title>
 </head>
@@ -15,45 +16,51 @@
   <div class="container border">
     <nav>
       <div>
-        <div>
-          <a href="home-starter-page.html" >TGIF</a>
+        <div class="d-flex justify-content-between align-items-center">
+          <a class="bandera d-flex" href="home-starter-page.html" id="homeLogo"></a>
+          <a class="text-white" href="mailto:info@tgif.com"> <i
+              class="fa fa-envelope-o myicon"></i>info&#64;tgif.com</a>
         </div>
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs text-dark">
           <li class="nav-item">
-            <a class="nav-link" href="home-starter-page.html">Home</a>
+            <a class="nav-link text-dark text-center" href="home-starter-page.html">Home</a>
           </li>
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button"
-              aria-haspopup="true" aria-expanded="false">Congress 113</a>
-            <div class="dropdown-menu ">
-              <a class="dropdown-item " href="house-starter-page.html">House</a>
-              <a class="dropdown-item " href="#">Senate</a>
+          <li class="nav-item dropdown border rounded active">
+            <a class="nav-link dropdown-toggle text-center text-dark" data-toggle="dropdown" href="#" role="button"
+              aria-haspopup="true" aria-expanded="false">Congress113</a>
+            <div class="dropdown-menu active">
+              <a class="dropdown-item" href="house-starter-page.html">House</a>
+              <a class="dropdown-item disabled" href="#">Senate</a>
             </div>
           </li>
         </ul>
       </div>
     </nav>
-    <header class="container">
-      <div>
-        <h2>Senators</h2>
-        <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S.
+    <header>
+      <div class="container separado">
+        <h2 class="col-9 text-justify">Senators</h2>
+        <p class="col-9 text-justify"><span class="spaced"> </span>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S.
           Constitution. Each state is represented by two senators, regardless of population, who serve staggered
           six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to
           treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet
           secretaries, federal judges, other federal executive officials, military officers, regulatory officials,
           ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the
           House.</p>
-
       </div>
     </header>
     <!--Table container-->
     <div class="container">
-      <table class="table table-condensed border border-primary text-center" id="senate-data"></table>
+      <table class="table text-center" id="senate-data"></table>
     </div>
+    <!-- Footer -->
+    <div class="container">
+    <footer class="page-footer font-middle">
+      <div class="text-center border font-italic">&#169; 2016 TGIF | All Right Reserved </div>
+    </footer>
+  </div>
+    <!-- Footer -->
   </div>
 </body>
-
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

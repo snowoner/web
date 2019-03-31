@@ -20715,3 +20715,85 @@ var data =
      }
   ]
 }
+
+var table=document.getElementById("house-data");
+
+  var nombresTabla = ["Senator","Party Affilication","State","Seniority","Votes with party in %"];
+
+  var cabecera=createTrHead(nombresTabla);
+  table.appendChild(cabecera);
+
+data["results"][0].members.forEach(element => {
+  console.log(element.first_name);
+  var table=document.getElementById("house-data");
+  
+  //info a mostrar en la tabla principal
+  //nombre con link
+  let fullName = [];
+  fullName.push(buildFullName(element.first_name,element.middle_name,element.last_name));
+  fullName.push(element.url);
+ 
+  let infoTabla = [fullName,element.party,element.state,element.seniority,element.votes_with_party_pct+"%"];
+  
+  var datos=createTrBody(infoTabla);
+  table.appendChild(datos);
+});
+
+
+function buildFullName(first,middle,last){
+  var name = []
+  if(first){
+    name.push(first);
+  }
+  if(middle){
+    name.push(middle);
+  }
+  if(last){
+    name.push(last);
+  }
+  return name.join(" ");
+}
+
+function createTh(info){
+  var th=document.createElement("th");
+  th.innerHTML=info;
+  return th;
+}
+
+function crateTd(info){
+  var td=document.createElement("td");
+  td.innerHTML=info;
+  return td;
+}
+
+function createTrBody(info){
+  let tr=document.createElement("tr");
+
+  let urlName=createAnchor(info[0][0],info[0][1]);
+  let firstTd=document.createElement("td");
+  firstTd.appendChild(urlName);
+  tr.appendChild(firstTd);
+  
+  for (let i = 1; i < info.length; i++) {
+    let element = crateTd(info[i]);
+    tr.appendChild(element);
+  }
+  return tr;
+}
+
+function createAnchor(name,url){
+  let anchor=document.createElement("a");
+  anchor.innerHTML=name;
+  anchor.setAttribute('target', '_blank');
+  anchor.setAttribute('href',url)
+  return anchor;
+}
+
+function createTrHead(info){
+  let tr=document.createElement("tr");
+  for (let i = 0; i < info.length; i++) {
+    let element = createTh(info[i]);
+    tr.appendChild(element);
+  }
+  return tr;
+}

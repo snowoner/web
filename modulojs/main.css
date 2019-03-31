@@ -1,7 +1,9 @@
-/* .web{
-	color: #fff;
-	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-} */
+
+
+body{
+  background-color: rgba(192, 194, 184, 0.849);
+  
+}
 
 .bandera {
   display: flex;
@@ -11,14 +13,18 @@
   height: 100px;
   width: 100px;
   animation:  
-    nudge 5s linear infinite;
+    someAnimation 20s linear infinite;
   border-radius: 100%;
 }
 
 @keyframes nudge {
   0%, 100% {
     transform: translate(20px, 0);
-    opacity: 0.3
+    opacity: 0; 
+  }
+  25%{
+    transform: translate(50px,0);
+    opacity: 1;
   }
   
   50% {
@@ -28,7 +34,89 @@
   
   80% {
     transform: translate(150px, 0);
-    opacity: 0.3
+    opacity: 0;
   }
 }
 
+@keyframes someAnimation{
+  0%, 100%{
+    opacity: 0;
+    background-image: url("logo.png");
+  }
+  10%{
+    opacity: 1;
+    transform: translate(20px, 0);
+  }
+  20%{
+    opacity: 1;
+    transform: translate(40px, 0);
+  }
+  30%{
+    opacity: 1;
+    transform: translate(60px, 0);
+  }
+  40%{
+    opacity: 1;
+    transform: translate(80px, 0);
+  }
+  50%{
+    transform: translate(100px, 0);
+    opacity: 1;
+  }
+  60%{
+    transform: translate(120px, 0);
+    opacity: 1;
+  }
+  70%{
+    opacity: 1;
+    transform: translate(140px, 0);
+    background-image: url("senatelogo.png");
+  }
+  80%{
+    opacity: 1;
+    transform: translate(160px, 0);
+  }
+  90%{
+    opacity: 0;
+    transform: translate(180px, 0);
+  }
+}
+
+.myicon{
+  margin-right: 10px;
+}
+
+.space{
+  height: 600px;
+}
+
+#collapseOne  >div> p{
+  text-align: justify;
+  color: black;
+}
+#collapseTwo>div>p{
+  text-align: justify;
+  color: black;
+}
+
+#accordion{
+  opacity:0.8;
+}
+
+.spaced{
+  margin-right: 10px;
+}
+
+.separado{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.page-footer{
+  margin-bottom: 40px;
+  background-color: rgb(148, 160, 156);
+}
+
+nav li{
+  width: 20%;
+}

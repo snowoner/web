@@ -4859,7 +4859,7 @@ var data =
 
 // var getJson = JSON.stringify(data,null,2);
 // var inclu=document.getElementById("senate-data").innerHTML = getJson;
-  
+//...............-.................................................................. 
 var table=document.getElementById("senate-data");
 
   var nombresTabla = ["Senator","Party Affilication","State","Seniority","Votes with party in %"];
@@ -4941,6 +4941,13 @@ function createTrHead(info){
   }
   return tr;
 }
+
+//...........................................................................
+
+
+
+
+
 // function createTr(name,party,state,seniority,votes_with_party_pct){
 //   var tr=document.createElement("tr");
 //   var nameTd=crateTd(name);
