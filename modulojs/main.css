@@ -107,6 +107,10 @@ body{
   margin-right: 10px;
 }
 
+.separated{
+  margin-top:50px;
+}
+
 .separado{
   padding-top: 80px;
   padding-bottom: 80px;
@@ -119,4 +123,16 @@ body{
 
 nav li{
   width: 20%;
+}
+
+[data-toggle="collapse"].collapsed .if-not-collapsed {
+  display: none;
+}
+[data-toggle="collapse"]:not(.collapsed) .if-collapsed {
+  display: none;
+}
+
+#accordion > .collapsing {
+  transition-duration: 1S;
+  transition-timing-function: ease-in-out;
 }
