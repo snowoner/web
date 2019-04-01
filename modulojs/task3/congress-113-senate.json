@@ -1,13 +1,8 @@
-var data =
 {
-  "status": "OK",
-  "copyright": " Copyright (c) 2019 Pro Publica Inc. All Rights Reserved.",
   "results": [
     {
       "congress": "113",
       "chamber": "Senate",
-
-
       "num_results": 105,
       "offset": 0,
       "members": [
@@ -53,8 +48,8 @@ var data =
           "state": "TN",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S289"
-          , "missed_votes_pct": 6.70,
+          "lis_id": "S289",
+          "missed_votes_pct": 6.70,
           "votes_with_party_pct": 85.97
         },
         {
@@ -99,8 +94,8 @@ var data =
           "state": "NH",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S340"
-          , "missed_votes_pct": 1.52,
+          "lis_id": "S340",
+          "missed_votes_pct": 1.52,
           "votes_with_party_pct": 81.45
         },
         {
@@ -145,8 +140,8 @@ var data =
           "state": "WI",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S354"
-          , "missed_votes_pct": 0.46,
+          "lis_id": "S354",
+          "missed_votes_pct": 0.46,
           "votes_with_party_pct": 98.62
         },
         {
@@ -191,8 +186,8 @@ var data =
           "state": "WY",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S317"
-          , "missed_votes_pct": 0.91,
+          "lis_id": "S317",
+          "missed_votes_pct": 0.91,
           "votes_with_party_pct": 91.86
         },
         {
@@ -237,8 +232,8 @@ var data =
           "state": "MT",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S127"
-          , "missed_votes_pct": 0.63,
+          "lis_id": "S127",
+          "missed_votes_pct": 0.63,
           "votes_with_party_pct": 90.13
         },
         {
@@ -283,8 +278,8 @@ var data =
           "state": "AK",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S319"
-          , "missed_votes_pct": 7.46,
+          "lis_id": "S319",
+          "missed_votes_pct": 7.46,
           "votes_with_party_pct": 95.72
         },
         {
@@ -329,8 +324,8 @@ var data =
           "state": "CO",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S330"
-          , "missed_votes_pct": 1.22,
+          "lis_id": "S330",
+          "missed_votes_pct": 1.22,
           "votes_with_party_pct": 97.84
         },
         {
@@ -375,8 +370,8 @@ var data =
           "state": "CT",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S341"
-          , "missed_votes_pct": 0.30,
+          "lis_id": "S341",
+          "missed_votes_pct": 0.30,
           "votes_with_party_pct": 98.63
         },
         {
@@ -421,8 +416,8 @@ var data =
           "state": "MO",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S342"
-          , "missed_votes_pct": 5.94,
+          "lis_id": "S342",
+          "missed_votes_pct": 5.94,
           "votes_with_party_pct": 89.32
         },
         {
@@ -455,7 +450,6 @@ var data =
           "dw_nominate": -0.615,
           "ideal_point": -1.055317422,
           "seniority": "1",
-
           "total_votes": 432,
           "missed_votes": 12,
           "total_present": 0,
@@ -467,8 +461,8 @@ var data =
           "state": "NJ",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S370"
-          , "missed_votes_pct": 2.78,
+          "lis_id": "S370",
+          "missed_votes_pct": 2.78,
           "votes_with_party_pct": 98.81
         },
         {
@@ -513,8 +507,8 @@ var data =
           "state": "AR",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S343"
-          , "missed_votes_pct": 10.35,
+          "lis_id": "S343",
+          "missed_votes_pct": 10.35,
           "votes_with_party_pct": 92.53
         },
         {
@@ -559,8 +553,8 @@ var data =
           "state": "CA",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S223"
-          , "missed_votes_pct": 6.70,
+          "lis_id": "S223",
+          "missed_votes_pct": 6.70,
           "votes_with_party_pct": 98.04
         },
         {
@@ -605,8 +599,8 @@ var data =
           "state": "OH",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S307"
-          , "missed_votes_pct": 1.52,
+          "lis_id": "S307",
+          "missed_votes_pct": 1.52,
           "votes_with_party_pct": 97.84
         },
         {
@@ -651,8 +645,8 @@ var data =
           "state": "NC",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S300"
-          , "missed_votes_pct": 2.89,
+          "lis_id": "S300",
+          "missed_votes_pct": 2.89,
           "votes_with_party_pct": 91.38
         },
         {
@@ -697,8 +691,8 @@ var data =
           "state": "WA",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S275"
-          , "missed_votes_pct": 0.46,
+          "lis_id": "S275",
+          "missed_votes_pct": 0.46,
           "votes_with_party_pct": 99.24
         },
         {
@@ -743,8 +737,8 @@ var data =
           "state": "MD",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S308"
-          , "missed_votes_pct": 0.46,
+          "lis_id": "S308",
+          "missed_votes_pct": 0.46,
           "votes_with_party_pct": 99.24
         },
         {
@@ -789,8 +783,8 @@ var data =
           "state": "DE",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S277"
-          , "missed_votes_pct": 0.30,
+          "lis_id": "S277",
+          "missed_votes_pct": 0.30,
           "votes_with_party_pct": 97.40
         },
         {
@@ -835,8 +829,8 @@ var data =
           "state": "PA",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S309"
-          , "missed_votes_pct": 3.04,
+          "lis_id": "S309",
+          "missed_votes_pct": 3.04,
           "votes_with_party_pct": 97.65
         },
         {
@@ -881,8 +875,8 @@ var data =
           "state": "GA",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S290"
-          , "missed_votes_pct": 11.72,
+          "lis_id": "S290",
+          "missed_votes_pct": 11.72,
           "votes_with_party_pct": 85.34
         },
         {
@@ -915,7 +909,6 @@ var data =
           "dw_nominate": 0.218,
           "ideal_point": 0.811372575,
           "seniority": "1",
-
           "total_votes": 82,
           "missed_votes": 12,
           "total_present": 0,
@@ -927,8 +920,8 @@ var data =
           "state": "NJ",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S368"
-          , "missed_votes_pct": 14.63,
+          "lis_id": "S368",
+          "missed_votes_pct": 14.63,
           "votes_with_party_pct": 82.86
         },
         {
@@ -973,8 +966,8 @@ var data =
           "state": "IN",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S212"
-          , "missed_votes_pct": 2.44,
+          "lis_id": "S212",
+          "missed_votes_pct": 2.44,
           "votes_with_party_pct": 90.33
         },
         {
@@ -1019,8 +1012,8 @@ var data =
           "state": "OK",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S301"
-          , "missed_votes_pct": 19.94,
+          "lis_id": "S301",
+          "missed_votes_pct": 19.94,
           "votes_with_party_pct": 86.12
         },
         {
@@ -1065,8 +1058,8 @@ var data =
           "state": "MS",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S136"
-          , "missed_votes_pct": 17.20,
+          "lis_id": "S136",
+          "missed_votes_pct": 17.20,
           "votes_with_party_pct": 88.97
         },
         {
@@ -1111,8 +1104,8 @@ var data =
           "state": "ME",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S252"
-          , "missed_votes_pct": 0.00,
+          "lis_id": "S252",
+          "missed_votes_pct": 0.00,
           "votes_with_party_pct": 59.67
         },
         {
@@ -1157,8 +1150,8 @@ var data =
           "state": "DE",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S337"
-          , "missed_votes_pct": 1.98,
+          "lis_id": "S337",
+          "missed_votes_pct": 1.98,
           "votes_with_party_pct": 98.29
         },
         {
@@ -1203,8 +1196,8 @@ var data =
           "state": "TN",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S310"
-          , "missed_votes_pct": 2.44,
+          "lis_id": "S310",
+          "missed_votes_pct": 2.44,
           "votes_with_party_pct": 85.80
         },
         {
@@ -1249,8 +1242,8 @@ var data =
           "state": "TX",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S287"
-          , "missed_votes_pct": 3.35,
+          "lis_id": "S287",
+          "missed_votes_pct": 3.35,
           "votes_with_party_pct": 89.92
         },
         {
@@ -1283,7 +1276,6 @@ var data =
           "dw_nominate": -0.462,
           "ideal_point": -0.987585557,
           "seniority": "1",
-
           "total_votes": 160,
           "missed_votes": 6,
           "total_present": 0,
@@ -1295,8 +1287,8 @@ var data =
           "state": "MA",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S367"
-          , "missed_votes_pct": 3.75,
+          "lis_id": "S367",
+          "missed_votes_pct": 3.75,
           "votes_with_party_pct": 96.10
         },
         {
@@ -1341,8 +1333,8 @@ var data =
           "state": "ID",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S266"
-          , "missed_votes_pct": 1.07,
+          "lis_id": "S266",
+          "missed_votes_pct": 1.07,
           "votes_with_party_pct": 89.38
         },
         {
@@ -1387,8 +1379,8 @@ var data =
           "state": "TX",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S355"
-          , "missed_votes_pct": 6.70,
+          "lis_id": "S355",
+          "missed_votes_pct": 6.70,
           "votes_with_party_pct": 87.60
         },
         {
@@ -1433,8 +1425,8 @@ var data =
           "state": "IN",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S356"
-          , "missed_votes_pct": 0.46,
+          "lis_id": "S356",
+          "missed_votes_pct": 0.46,
           "votes_with_party_pct": 94.65
         },
         {
@@ -1479,8 +1471,8 @@ var data =
           "state": "IL",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S253"
-          , "missed_votes_pct": 0.30,
+          "lis_id": "S253",
+          "missed_votes_pct": 0.30,
           "votes_with_party_pct": 98.93
         },
         {
@@ -1525,8 +1517,8 @@ var data =
           "state": "WY",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S254"
-          , "missed_votes_pct": 0.91,
+          "lis_id": "S254",
+          "missed_votes_pct": 0.91,
           "votes_with_party_pct": 91.86
         },
         {
@@ -1571,8 +1563,8 @@ var data =
           "state": "CA",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S221"
-          , "missed_votes_pct": 4.57,
+          "lis_id": "S221",
+          "missed_votes_pct": 4.57,
           "votes_with_party_pct": 98.72
         },
         {
@@ -1617,8 +1609,8 @@ var data =
           "state": "NE",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S357"
-          , "missed_votes_pct": 0.00,
+          "lis_id": "S357",
+          "missed_votes_pct": 0.00,
           "votes_with_party_pct": 94.37
         },
         {
@@ -1663,8 +1655,8 @@ var data =
           "state": "AZ",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S358"
-          , "missed_votes_pct": 3.35,
+          "lis_id": "S358",
+          "missed_votes_pct": 3.35,
           "votes_with_party_pct": 82.68
         },
         {
@@ -1709,8 +1701,8 @@ var data =
           "state": "MN",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S332"
-          , "missed_votes_pct": 0.46,
+          "lis_id": "S332",
+          "missed_votes_pct": 0.46,
           "votes_with_party_pct": 99.24
         },
         {
@@ -1755,8 +1747,8 @@ var data =
           "state": "NY",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S331"
-          , "missed_votes_pct": 1.22,
+          "lis_id": "S331",
+          "missed_votes_pct": 1.22,
           "votes_with_party_pct": 98.00
         },
         {
@@ -1801,8 +1793,8 @@ var data =
           "state": "SC",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S293"
-          , "missed_votes_pct": 7.31,
+          "lis_id": "S293",
+          "missed_votes_pct": 7.31,
           "votes_with_party_pct": 85.55
         },
         {
@@ -1847,8 +1839,8 @@ var data =
           "state": "IA",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S153"
-          , "missed_votes_pct": 0.00,
+          "lis_id": "S153",
+          "missed_votes_pct": 0.00,
           "votes_with_party_pct": 92.85
         },
         {
@@ -1893,8 +1885,8 @@ var data =
           "state": "NC",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S320"
-          , "missed_votes_pct": 2.59,
+          "lis_id": "S320",
+          "missed_votes_pct": 2.59,
           "votes_with_party_pct": 94.84
         },
         {
@@ -1939,8 +1931,8 @@ var data =
           "state": "IA",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S172"
-          , "missed_votes_pct": 4.41,
+          "lis_id": "S172",
+          "missed_votes_pct": 4.41,
           "votes_with_party_pct": 98.73
         },
         {
@@ -1985,8 +1977,8 @@ var data =
           "state": "UT",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S118"
-          , "missed_votes_pct": 2.28,
+          "lis_id": "S118",
+          "missed_votes_pct": 2.28,
           "votes_with_party_pct": 82.87
         },
         {
@@ -2031,8 +2023,8 @@ var data =
           "state": "NM",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S359"
-          , "missed_votes_pct": 0.61,
+          "lis_id": "S359",
+          "missed_votes_pct": 0.61,
           "votes_with_party_pct": 98.01
         },
         {
@@ -2077,8 +2069,8 @@ var data =
           "state": "ND",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S360"
-          , "missed_votes_pct": 2.28,
+          "lis_id": "S360",
+          "missed_votes_pct": 2.28,
           "votes_with_party_pct": 94.70
         },
         {
@@ -2123,8 +2115,8 @@ var data =
           "state": "NV",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S352"
-          , "missed_votes_pct": 2.13,
+          "lis_id": "S352",
+          "missed_votes_pct": 2.13,
           "votes_with_party_pct": 83.98
         },
         {
@@ -2169,8 +2161,8 @@ var data =
           "state": "HI",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S361"
-          , "missed_votes_pct": 0.15,
+          "lis_id": "S361",
+          "missed_votes_pct": 0.15,
           "votes_with_party_pct": 98.32
         },
         {
@@ -2215,8 +2207,8 @@ var data =
           "state": "ND",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S344"
-          , "missed_votes_pct": 0.91,
+          "lis_id": "S344",
+          "missed_votes_pct": 0.91,
           "votes_with_party_pct": 91.71
         },
         {
@@ -2261,8 +2253,8 @@ var data =
           "state": "OK",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S236"
-          , "missed_votes_pct": 11.57,
+          "lis_id": "S236",
+          "missed_votes_pct": 11.57,
           "votes_with_party_pct": 91.39
         },
         {
@@ -2307,8 +2299,8 @@ var data =
           "state": "GA",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S305"
-          , "missed_votes_pct": 3.96,
+          "lis_id": "S305",
+          "missed_votes_pct": 3.96,
           "votes_with_party_pct": 86.37
         },
         {
@@ -2353,8 +2345,8 @@ var data =
           "state": "NE",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S321"
-          , "missed_votes_pct": 5.78,
+          "lis_id": "S321",
+          "missed_votes_pct": 5.78,
           "votes_with_party_pct": 90.95
         },
         {
@@ -2399,8 +2391,8 @@ var data =
           "state": "SD",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S257"
-          , "missed_votes_pct": 0.61,
+          "lis_id": "S257",
+          "missed_votes_pct": 0.61,
           "votes_with_party_pct": 98.47
         },
         {
@@ -2445,8 +2437,8 @@ var data =
           "state": "WI",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S345"
-          , "missed_votes_pct": 2.89,
+          "lis_id": "S345",
+          "missed_votes_pct": 2.89,
           "votes_with_party_pct": 91.54
         },
         {
@@ -2491,8 +2483,8 @@ var data =
           "state": "VA",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S362"
-          , "missed_votes_pct": 1.37,
+          "lis_id": "S362",
+          "missed_votes_pct": 1.37,
           "votes_with_party_pct": 97.84
         },
         {
@@ -2537,8 +2529,8 @@ var data =
           "state": "MA",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S173"
-          , "missed_votes_pct": 54.55,
+          "lis_id": "S173",
+          "missed_votes_pct": 54.55,
           "votes_with_party_pct": 80.00
         },
         {
@@ -2583,8 +2575,8 @@ var data =
           "state": "ME",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S363"
-          , "missed_votes_pct": 0.76,
+          "lis_id": "S363",
+          "missed_votes_pct": 0.76,
           "votes_with_party_pct": 95.40
         },
         {
@@ -2629,8 +2621,8 @@ var data =
           "state": "IL",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S339"
-          , "missed_votes_pct": 7.15,
+          "lis_id": "S339",
+          "missed_votes_pct": 7.15,
           "votes_with_party_pct": 82.62
         },
         {
@@ -2675,8 +2667,8 @@ var data =
           "state": "MN",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S311"
-          , "missed_votes_pct": 0.76,
+          "lis_id": "S311",
+          "missed_votes_pct": 0.76,
           "votes_with_party_pct": 98.62
         },
         {
@@ -2721,8 +2713,8 @@ var data =
           "state": "LA",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S258"
-          , "missed_votes_pct": 10.96,
+          "lis_id": "S258",
+          "missed_votes_pct": 10.96,
           "votes_with_party_pct": 94.19
         },
         {
@@ -2767,8 +2759,8 @@ var data =
           "state": "NJ",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S166"
-          , "missed_votes_pct": 76.26,
+          "lis_id": "S166",
+          "missed_votes_pct": 76.26,
           "votes_with_party_pct": 96.97
         },
         {
@@ -2813,8 +2805,8 @@ var data =
           "state": "VT",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S057"
-          , "missed_votes_pct": 1.07,
+          "lis_id": "S057",
+          "missed_votes_pct": 1.07,
           "votes_with_party_pct": 98.15
         },
         {
@@ -2859,8 +2851,8 @@ var data =
           "state": "UT",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S346"
-          , "missed_votes_pct": 3.50,
+          "lis_id": "S346",
+          "missed_votes_pct": 3.50,
           "votes_with_party_pct": 85.96
         },
         {
@@ -2905,8 +2897,8 @@ var data =
           "state": "MI",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S131"
-          , "missed_votes_pct": 2.13,
+          "lis_id": "S131",
+          "missed_votes_pct": 2.13,
           "votes_with_party_pct": 97.98
         },
         {
@@ -2951,8 +2943,8 @@ var data =
           "state": "WV",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S338"
-          , "missed_votes_pct": 1.98,
+          "lis_id": "S338",
+          "missed_votes_pct": 1.98,
           "votes_with_party_pct": 85.87
         },
         {
@@ -2985,7 +2977,6 @@ var data =
           "dw_nominate": -0.577,
           "ideal_point": -0.991274696,
           "seniority": "1",
-
           "total_votes": 485,
           "missed_votes": 12,
           "total_present": 0,
@@ -2997,8 +2988,8 @@ var data =
           "state": "MA",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S369"
-          , "missed_votes_pct": 2.47,
+          "lis_id": "S369",
+          "missed_votes_pct": 2.47,
           "votes_with_party_pct": 98.52
         },
         {
@@ -3043,8 +3034,8 @@ var data =
           "state": "AZ",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S197"
-          , "missed_votes_pct": 4.72,
+          "lis_id": "S197",
+          "missed_votes_pct": 4.72,
           "votes_with_party_pct": 84.66
         },
         {
@@ -3089,8 +3080,8 @@ var data =
           "state": "MO",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S312"
-          , "missed_votes_pct": 5.63,
+          "lis_id": "S312",
+          "missed_votes_pct": 5.63,
           "votes_with_party_pct": 95.32
         },
         {
@@ -3135,8 +3126,8 @@ var data =
           "state": "KY",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S174"
-          , "missed_votes_pct": 0.46,
+          "lis_id": "S174",
+          "missed_votes_pct": 0.46,
           "votes_with_party_pct": 91.74
         },
         {
@@ -3181,8 +3172,8 @@ var data =
           "state": "NJ",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S306"
-          , "missed_votes_pct": 1.22,
+          "lis_id": "S306",
+          "missed_votes_pct": 1.22,
           "votes_with_party_pct": 98.61
         },
         {
@@ -3227,8 +3218,8 @@ var data =
           "state": "OR",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S322"
-          , "missed_votes_pct": 1.22,
+          "lis_id": "S322",
+          "missed_votes_pct": 1.22,
           "votes_with_party_pct": 96.61
         },
         {
@@ -3273,8 +3264,8 @@ var data =
           "state": "MD",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S182"
-          , "missed_votes_pct": 4.26,
+          "lis_id": "S182",
+          "missed_votes_pct": 4.26,
           "votes_with_party_pct": 99.21
         },
         {
@@ -3319,8 +3310,8 @@ var data =
           "state": "KS",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S347"
-          , "missed_votes_pct": 10.20,
+          "lis_id": "S347",
+          "missed_votes_pct": 10.20,
           "votes_with_party_pct": 90.85
         },
         {
@@ -3365,8 +3356,8 @@ var data =
           "state": "AK",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S288"
-          , "missed_votes_pct": 7.15,
+          "lis_id": "S288",
+          "missed_votes_pct": 7.15,
           "votes_with_party_pct": 61.80
         },
         {
@@ -3411,8 +3402,8 @@ var data =
           "state": "CT",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S364"
-          , "missed_votes_pct": 0.61,
+          "lis_id": "S364",
+          "missed_votes_pct": 0.61,
           "votes_with_party_pct": 98.01
         },
         {
@@ -3457,8 +3448,8 @@ var data =
           "state": "WA",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S229"
-          , "missed_votes_pct": 2.59,
+          "lis_id": "S229",
+          "missed_votes_pct": 2.59,
           "votes_with_party_pct": 99.22
         },
         {
@@ -3503,8 +3494,8 @@ var data =
           "state": "FL",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S282"
-          , "missed_votes_pct": 2.89,
+          "lis_id": "S282",
+          "missed_votes_pct": 2.89,
           "votes_with_party_pct": 98.59
         },
         {
@@ -3549,8 +3540,8 @@ var data =
           "state": "KY",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S348"
-          , "missed_votes_pct": 2.74,
+          "lis_id": "S348",
+          "missed_votes_pct": 2.74,
           "votes_with_party_pct": 85.60
         },
         {
@@ -3595,8 +3586,8 @@ var data =
           "state": "OH",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S349"
-          , "missed_votes_pct": 2.28,
+          "lis_id": "S349",
+          "missed_votes_pct": 2.28,
           "votes_with_party_pct": 88.47
         },
         {
@@ -3641,8 +3632,8 @@ var data =
           "state": "AR",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S295"
-          , "missed_votes_pct": 5.48,
+          "lis_id": "S295",
+          "missed_votes_pct": 5.48,
           "votes_with_party_pct": 92.11
         },
         {
@@ -3687,8 +3678,8 @@ var data =
           "state": "RI",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S259"
-          , "missed_votes_pct": 0.61,
+          "lis_id": "S259",
+          "missed_votes_pct": 0.61,
           "votes_with_party_pct": 97.86
         },
         {
@@ -3733,8 +3724,8 @@ var data =
           "state": "NV",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S198"
-          , "missed_votes_pct": 1.37,
+          "lis_id": "S198",
+          "missed_votes_pct": 1.37,
           "votes_with_party_pct": 95.83
         },
         {
@@ -3779,8 +3770,8 @@ var data =
           "state": "ID",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S323"
-          , "missed_votes_pct": 1.98,
+          "lis_id": "S323",
+          "missed_votes_pct": 1.98,
           "votes_with_party_pct": 88.51
         },
         {
@@ -3825,8 +3816,8 @@ var data =
           "state": "KS",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S260"
-          , "missed_votes_pct": 6.09,
+          "lis_id": "S260",
+          "missed_votes_pct": 6.09,
           "votes_with_party_pct": 89.47
         },
         {
@@ -3871,8 +3862,8 @@ var data =
           "state": "WV",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S176"
-          , "missed_votes_pct": 12.48,
+          "lis_id": "S176",
+          "missed_votes_pct": 12.48,
           "votes_with_party_pct": 98.43
         },
         {
@@ -3917,8 +3908,8 @@ var data =
           "state": "FL",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S350"
-          , "missed_votes_pct": 6.85,
+          "lis_id": "S350",
+          "missed_votes_pct": 6.85,
           "votes_with_party_pct": 85.29
         },
         {
@@ -3963,8 +3954,8 @@ var data =
           "state": "VT",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S313"
-          , "missed_votes_pct": 6.54,
+          "lis_id": "S313",
+          "missed_votes_pct": 6.54,
           "votes_with_party_pct": 94.95
         },
         {
@@ -4009,8 +4000,8 @@ var data =
           "state": "HI",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S353"
-          , "missed_votes_pct": 7.61,
+          "lis_id": "S353",
+          "missed_votes_pct": 7.61,
           "votes_with_party_pct": 99.34
         },
         {
@@ -4055,8 +4046,8 @@ var data =
           "state": "NY",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S270"
-          , "missed_votes_pct": 0.15,
+          "lis_id": "S270",
+          "missed_votes_pct": 0.15,
           "votes_with_party_pct": 98.93
         },
         {
@@ -4101,8 +4092,8 @@ var data =
           "state": "SC",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S365"
-          , "missed_votes_pct": 2.74,
+          "lis_id": "S365",
+          "missed_votes_pct": 2.74,
           "votes_with_party_pct": 90.61
         },
         {
@@ -4147,8 +4138,8 @@ var data =
           "state": "AL",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S261"
-          , "missed_votes_pct": 1.98,
+          "lis_id": "S261",
+          "missed_votes_pct": 1.98,
           "votes_with_party_pct": 88.98
         },
         {
@@ -4193,8 +4184,8 @@ var data =
           "state": "NH",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S324"
-          , "missed_votes_pct": 1.07,
+          "lis_id": "S324",
+          "missed_votes_pct": 1.07,
           "votes_with_party_pct": 97.54
         },
         {
@@ -4239,8 +4230,8 @@ var data =
           "state": "AL",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S184"
-          , "missed_votes_pct": 1.37,
+          "lis_id": "S184",
+          "missed_votes_pct": 1.37,
           "votes_with_party_pct": 87.50
         },
         {
@@ -4285,8 +4276,8 @@ var data =
           "state": "MI",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S284"
-          , "missed_votes_pct": 1.67,
+          "lis_id": "S284",
+          "missed_votes_pct": 1.67,
           "votes_with_party_pct": 99.23
         },
         {
@@ -4331,8 +4322,8 @@ var data =
           "state": "MT",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S314"
-          , "missed_votes_pct": 1.07,
+          "lis_id": "S314",
+          "missed_votes_pct": 1.07,
           "votes_with_party_pct": 94.62
         },
         {
@@ -4377,8 +4368,8 @@ var data =
           "state": "SD",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S303"
-          , "missed_votes_pct": 0.61,
+          "lis_id": "S303",
+          "missed_votes_pct": 0.61,
           "votes_with_party_pct": 94.18
         },
         {
@@ -4423,8 +4414,8 @@ var data =
           "state": "PA",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S351"
-          , "missed_votes_pct": 3.35,
+          "lis_id": "S351",
+          "missed_votes_pct": 3.35,
           "votes_with_party_pct": 90.24
         },
         {
@@ -4469,8 +4460,8 @@ var data =
           "state": "NM",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S326"
-          , "missed_votes_pct": 0.30,
+          "lis_id": "S326",
+          "missed_votes_pct": 0.30,
           "votes_with_party_pct": 98.17
         },
         {
@@ -4515,8 +4506,8 @@ var data =
           "state": "CO",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S325"
-          , "missed_votes_pct": 5.63,
+          "lis_id": "S325",
+          "missed_votes_pct": 5.63,
           "votes_with_party_pct": 98.39
         },
         {
@@ -4561,8 +4552,8 @@ var data =
           "state": "LA",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S299"
-          , "missed_votes_pct": 9.74,
+          "lis_id": "S299",
+          "missed_votes_pct": 9.74,
           "votes_with_party_pct": 87.69
         },
         {
@@ -4595,7 +4586,6 @@ var data =
           "dw_nominate": -0.255,
           "ideal_point": null,
           "seniority": "1",
-
           "total_votes": 340,
           "missed_votes": 1,
           "total_present": 0,
@@ -4607,8 +4597,8 @@ var data =
           "state": "MT",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S371"
-          , "missed_votes_pct": 0.29,
+          "lis_id": "S371",
+          "missed_votes_pct": 0.29,
           "votes_with_party_pct": 97.64
         },
         {
@@ -4653,8 +4643,8 @@ var data =
           "state": "VA",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S327"
-          , "missed_votes_pct": 2.28,
+          "lis_id": "S327",
+          "missed_votes_pct": 2.28,
           "votes_with_party_pct": 96.73
         },
         {
@@ -4699,8 +4689,8 @@ var data =
           "state": "MA",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S366"
-          , "missed_votes_pct": 1.83,
+          "lis_id": "S366",
+          "missed_votes_pct": 1.83,
           "votes_with_party_pct": 97.67
         },
         {
@@ -4745,8 +4735,8 @@ var data =
           "state": "RI",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S316"
-          , "missed_votes_pct": 1.22,
+          "lis_id": "S316",
+          "missed_votes_pct": 1.22,
           "votes_with_party_pct": 98.00
         },
         {
@@ -4791,8 +4781,8 @@ var data =
           "state": "MS",
           "senate_class": "1",
           "state_rank": "",
-          "lis_id": "S318"
-          , "missed_votes_pct": 2.59,
+          "lis_id": "S318",
+          "missed_votes_pct": 2.59,
           "votes_with_party_pct": 90.16
         },
         {
@@ -4837,188 +4827,11 @@ var data =
           "state": "OR",
           "senate_class": "3",
           "state_rank": "",
-          "lis_id": "S247"
-          , "missed_votes_pct": 0.00,
+          "lis_id": "S247",
+          "missed_votes_pct": 0.00,
           "votes_with_party_pct": 96.96
         }
       ]
     }
   ]
-};
-
-
-
-// var getJson = JSON.stringify(data,null,2);
-// var inclu=document.getElementById("senate-data").innerHTML = getJson;
-//...............-.................................................................. 
-
-var filters = ["republican", "democrat", "independent"];
-var state = "All";
-filters["republican"] = false;
-filters["democrat"] = false;
-filters["independent"] = false;
-var superarray=[]
-
-muestraTabla();
-creaDrowpdown();
-
-function muestraTabla() {
-  var table = document.getElementById("senate-data");
-
-  var nombresTabla = ["Senator", "Party Affilication", "State", "Seniority", "Votes with party in %"];
-
-  var cabecera = createTrHead(nombresTabla);
-  table.appendChild(cabecera);
-
-  data["results"][0].members.forEach(element => {
-    var table = document.getElementById("senate-data");
-
-    //info a mostrar en la tabla principal
-    //nombre con link
-    let fullName = [];
-    fullName.push(buildFullName(element.first_name, element.middle_name, element.last_name));
-    fullName.push(element.url);
-
-    let infoTabla = [fullName, element.party, element.state, element.seniority, element.votes_with_party_pct + "%"];
-
-    var datos = createTrBody(infoTabla);
-    table.appendChild(datos);
-  });
-}
-
-function buildFullName(first, middle, last) {
-  var name = []
-  if (first) {
-    name.push(first);
-  }
-  if (middle) {
-    name.push(middle);
-  }
-  if (last) {
-    name.push(last);
-  }
-  return name.join(" ");
-}
-
-function createTh(info) {
-  var th = document.createElement("th");
-  th.innerHTML = info;
-  return th;
-}
-
-function crateTd(info) {
-  var td = document.createElement("td");
-  td.innerHTML = info;
-  return td;
-}
-
-function createTrBody(info) {
-  let tr = document.createElement("tr");
-
-  let urlName = createAnchor(info[0][0], info[0][1]);
-  let firstTd = document.createElement("td");
-  firstTd.appendChild(urlName);
-  tr.appendChild(firstTd);
-
-  for (let i = 1; i < info.length; i++) {
-    let element = crateTd(info[i]);
-    tr.appendChild(element);
-    // tr.insertCell();
-  }
-  return tr;
-}
-
-function createAnchor(name, url) {
-  let anchor = document.createElement("a");
-  anchor.innerHTML = name;
-  anchor.setAttribute('target', '_blank');
-  anchor.setAttribute('href', url)
-  return anchor;
-}
-
-function createTrHead(info) {
-  let tr = document.createElement("tr");
-  for (let i = 0; i < info.length; i++) {
-    let element = createTh(info[i]);
-    tr.appendChild(element);
-  }
-  return tr;
-}
-
-
-
-//...........................................................................
-
-function filterTable() {
-  var value = Array.from(document.querySelectorAll('input[name=tableFilters]:checked')).map(elt => elt.value);
-  filterControl(value);
-  printTable();
-}
-
-function filterTable2(){
-  var value = document.getElementById("inputState").value;
-  filterControl2(value);
-  printTable();
-}
-
-function filterControl(array){
-  filters["republican"] = false;
-  filters["democrat"] = false;
-  filters["independent"] = false;
-  for (let i = 0; i < array.length; i++) {
-    filters[array[i]]=true;
-  }
-}
-function filterControl2(string){
-  state=string;
-}
-
-//prints the table whit filters
-function printTable(){
-
-  var table = document.getElementById("senate-data");
-  table.innerHTML="";
-
-  var nombresTabla = ["Senator", "Party Affilication", "State", "Seniority", "Votes with party in %"];
-  var cabecera = createTrHead(nombresTabla);
-  table.appendChild(cabecera);
-  data["results"][0].members.forEach(element => {
-    var table = document.getElementById("senate-data");
-    //info a mostrar en la tabla principal
-    //nombre con link
-    let fullName = [];
-    fullName.push(buildFullName(element.first_name, element.middle_name, element.last_name));
-    fullName.push(element.url);
-
-    let infoTabla = [fullName, element.party, element.state, element.seniority, element.votes_with_party_pct + "%"];
-    //aplico los filtros
-    if(filtra(element.party) && (state==element.state || state=="All")){
-      var datos = createTrBody(infoTabla);
-      table.appendChild(datos);
-    }
-  });
-}
-
-function filtra(string){
-  let insert = false;
-  if((filters["republican"] && string =="R") || (filters["democrat"] && string =="D") || (filters["independent"] && string == "I")){
-    insert = true;
-  }
-  return insert;
-}
-
-function creaDrowpdown(){
-data["results"][0].members.forEach(element => {
-  if(!superarray.includes(element.state)){
-    superarray.push(element.state);
-  }
-});
-  superarray.sort();
-  var inputState = document.getElementById("inputState");
-  for (let i = 0; i < superarray.length; i++) {
-    let option = document.createElement("option");
-    option.value=superarray[i];
-    option.innerHTML=superarray[i];
-    inputState.appendChild(option);
-  }
 }
