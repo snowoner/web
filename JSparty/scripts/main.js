@@ -129,6 +129,8 @@ function repetidos2(array) {
   return repes;
 }
 
+
+
 function repetidos3(array) {
   var repes = [];
   for (let i = 0; i < array.length; i++) {
@@ -188,9 +190,10 @@ function ordenaletras(texto) {
   ordenado = ordenado.replace(re, '');
   ordenado = ordenado.replace(re2, '');
   escribe(ordenado);
+  return ordenado;
 }
 var texto = "webma23ster23";
-// ordenaletras(texto);
+ordenaletras(texto);
 
 
 // Exercise 3: Write a JavaScript function that converts the first letter of every word to uppercase. 
