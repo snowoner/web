@@ -1,8 +1,5 @@
 
 function getGlanceData(){
-  var numberOfDemocrats=0;
-  var numberOfIndependents=0;
-  var numberOfRepublicans=0;
   var sumVotesDemocrats=0;
   var sumVotesRepublicans=0;
   var sumVotesIndependents=0;
@@ -94,10 +91,10 @@ function theNLowest(somearray,number){
 function theNGreatest(somearray,number){
   let a=somearray.length*number/100; //cuantos quiero
   somearray.sort(function (a , b) {
-    if (a.missed_votes_pct < b.missed_votes_pct) {
+    if (a.missed_votes_pct > b.missed_votes_pct) {
       return 1;
     }
-    if (a.missed_votes_pct > b.missed_votes_pct) {
+    if (a.missed_votes_pct < b.missed_votes_pct) {
       return -1;
     }
     // a must be equal to b
@@ -114,6 +111,70 @@ function theNGreatest(somearray,number){
       return 1;
     }
     if (a.missed_votes_pct < b.missed_votes_pct) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  return aux;
+
+}
+function theNLowestLoyal(somearray,number){
+  let a=somearray.length*number/100; //cuantos quiero
+  somearray.sort(function (a , b) {
+    if (a.votes_with_party_pct < b.votes_with_party_pct) {
+      return 1;
+    }
+    if (a.votes_with_party_pct > b.votes_with_party_pct) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  let aux=somearray.splice(somearray.length-a); //corto
+  let value=aux[0].votes_with_party_pct; //que busco en lo que queda
+  while(somearray.includes(value)){ //busco repes
+    console.log("EEEENTROOOO");
+    aux.push(somearray[somearray.length-1]);
+    somearray.splice(somearray.length-1);
+  }
+  aux.sort(function (a , b) {
+    if (a.votes_with_party_pct < b.votes_with_party_pct) {
+      return 1;
+    }
+    if (a.votes_with_party_pct > b.votes_with_party_pct) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  return aux;
+
+}
+
+function theNGreatestLoyal(somearray,number){
+  let a=somearray.length*number/100; //cuantos quiero
+  somearray.sort(function (a , b) {
+    if (a.votes_with_party_pct > b.votes_with_party_pct) {
+      return 1;
+    }
+    if (a.votes_with_party_pct < b.votes_with_party_pct) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  let aux=somearray.splice(somearray.length-a); //corto
+  let value=aux[0].votes_with_party_pct; //que busco en lo que queda
+  while(somearray.includes(value)){ //busco repes
+    aux.push(somearray[somearray.length-1]);
+    somearray.splice(somearray.length-1);
+  }
+  aux.sort(function (a , b) {
+    if (a.votes_with_party_pct < b.votes_with_party_pct) {
+      return 1;
+    }
+    if (a.votes_with_party_pct > b.votes_with_party_pct) {
       return -1;
     }
     // a must be equal to b

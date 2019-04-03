@@ -52,140 +52,68 @@
         </ul>
       </div>
     </nav>
-
     <header>
       <div>
       </div>
     </header>
     <!--Table container-->
-
     <div>
-      <h2>Party Loyalty</h2>
-      <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively,
-        tend to be the most faithful in voting for their party's nominee for office and legislation that backs their
-        party's agenda. </p>
-
-      <h2>Senate at a glance</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Party</th>
-            <th>Number of Reps</th>
-            <th>% Voted with Prty</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Republican</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>Democrat</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>Independent</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Least Loyal (Bottom 10% of Party)</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Number Party Votes</th>
-            <th>% Party Votes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Most Loyal (Top 10% of Party)</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Number Party Votes</th>
-            <th>% Party Votes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-          </tr>
-        </tbody>
-      </table>
-
+      <div class="separated"></div>
+      <div class="container d-flex">
+        <div class="col-6  text-justify">
+          <h2 class="mb-3">Party Loyalty</h2>
+          <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively,
+            tend to be the most faithful in voting for their party's nominee for office and legislation that backs their
+            party's agenda. </p>
+        </div>
+        <div class="col-6">
+          <h2 class="mb-3 text-right">Senate at a glance</h2>
+          <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th>Party</th>
+                <th>Number of Reps</th>
+                <th>Avg Voted with Prty in %</th>
+              </tr>
+            </thead>
+            <tbody id="senateTbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="container d-flex">
+        <div class="col-6">
+          <h2 class="mb-3 text-right h2size">Least Loyal (Bottom 10% of Party)</h2>
+          <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Total Votes</th>
+                <th>Number Party Votes</th>
+                <th>% Party Votes</th>
+              </tr>
+            </thead>
+            <tbody id="houseLeastLoyal">
+            </tbody>
+          </table>
+        </div>
+        <div class="col-6">
+          <h2 class="mb-3 text-right h2size">Most Loyal (Top 10% of Party)</h2>
+          <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Total Votes</th>
+                <th>Number Party Votes</th>
+                <th>% Party Votes</th>
+              </tr>
+            </thead>
+            <tbody id="houseMostLoyal">
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-
     <!-- Footer -->
     <div class="container">
       <footer class="page-footer font-middle">
@@ -202,8 +130,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="congress-113-senate.js"></script>
-<script type="text/javascript" src="senate-party-loyalty.js"></script>
 <script type="text/javascript" src="senate-house-functions.js"></script>
+<script type="text/javascript" src="senate-party-loyalty.js"></script>
 
 
 </html>
