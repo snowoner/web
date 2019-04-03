@@ -136,3 +136,7 @@ nav li{
   transition-duration: 1S;
   transition-timing-function: ease-in-out;
 }
+
+.h2size{
+  font-size: 26px;
+}

@@ -915,7 +915,6 @@ var data =
           "dw_nominate": 0.218,
           "ideal_point": 0.811372575,
           "seniority": "1",
-
           "total_votes": 82,
           "missed_votes": 12,
           "total_present": 0,
@@ -927,8 +926,8 @@ var data =
           "state": "NJ",
           "senate_class": "2",
           "state_rank": "",
-          "lis_id": "S368"
-          , "missed_votes_pct": 14.63,
+          "lis_id": "S368",
+          "missed_votes_pct": 14.63,
           "votes_with_party_pct": 82.86
         },
         {
@@ -4854,9 +4853,9 @@ var data =
 
 var filters = ["republican", "democrat", "independent"];
 var state = "All";
-filters["republican"] = true;
-filters["democrat"] = true;
-filters["independent"] = true;
+filters["republican"] = false;
+filters["democrat"] = false;
+filters["independent"] = false;
 var superarray=[]
 
 muestraTabla();
@@ -4865,7 +4864,7 @@ creaDrowpdown();
 function muestraTabla() {
   var table = document.getElementById("senate-data");
 
-  var nombresTabla = ["Senator", "Party Affilication", "State", "Seniority", "Votes with party in %"];
+  var nombresTabla = ["Senator", "Party", "State", "Seniority", "Votes with party in %"];
 
   var cabecera = createTrHead(nombresTabla);
   table.appendChild(cabecera);
@@ -4946,27 +4945,29 @@ function createTrHead(info) {
 }
 
 function filterTable() {
-  var value = Array.from(document.querySelectorAll('input[name=tableFilters]:checked')).map(elt => elt.value);
-  filterControl(value);
+  filterControl();
   printTable();
 }
 
-function filterTable2(){
-  var value = document.getElementById("inputState").value;
-  filterControl2(value);
-  printTable();
-}
 
-function filterControl(array){
-  filters["republican"] = false;
-  filters["democrat"] = false;
-  filters["independent"] = false;
-  for (let i = 0; i < array.length; i++) {
-    filters[array[i]]=true;
+function filterControl(){
+  var checkArray = Array.from(document.querySelectorAll('input[name=tableFilters]:checked')).map(elt => elt.value);
+  var dropValue = document.getElementById("inputState").value;
+  if(!checkArray||checkArray.length<1){
+    filters["republican"] = true;
+    filters["democrat"] = true;
+    filters["independent"] = true;
+    state=dropValue;
   }
-}
-function filterControl2(string){
-  state=string;
+  else{
+    filters["republican"] = false;
+    filters["democrat"] = false;
+    filters["independent"] = false;
+    for(let i=0; i<checkArray.length;i++){
+      filters[checkArray[i]]=true;
+    }
+    state=dropValue;
+  }
 }
 
 //prints the table whit filters
@@ -4993,6 +4994,9 @@ function printTable(){
       table.appendChild(datos);
     }
   });
+  if(table.rows.length<2){
+    table.innerHTML=`<tr> <td class="text-danger">NO HAY INFORMACION A MOSTRAR</td></tr>`;
+  }
 }
 
 function filtra(string){

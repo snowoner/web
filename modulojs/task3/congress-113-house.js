@@ -20718,18 +20718,18 @@ var data =
 
 var filters = ["republican", "democrat", "independent"];
 var state = "All";
-filters["republican"] = true;
-filters["democrat"] = true;
-filters["independent"] = true;
+filters["republican"] = false;
+filters["democrat"] = false;
+filters["independent"] = false;
 var superarray=[]
 
 muestraTabla();
 creaDrowpdown();
-
+//funcion for house starter page
 function muestraTabla() {
   var table = document.getElementById("house-data");
 
-  var nombresTabla = ["Senator", "Party Affilication", "State", "Seniority", "Votes with party in %"];
+  var nombresTabla = ["Senator", "Party", "State", "Seniority", "Votes with party in %"];
 
   var cabecera = createTrHead(nombresTabla);
   table.appendChild(cabecera);
@@ -20809,27 +20809,28 @@ function createTrHead(info) {
 }
 
 function filterTable() {
-  var value = Array.from(document.querySelectorAll('input[name=tableFilters]:checked')).map(elt => elt.value);
-  filterControl(value);
+  filterControl();
   printTable();
 }
 
-function filterTable2(){
-  var value = document.getElementById("inputState").value;
-  filterControl2(value);
-  printTable();
-}
-
-function filterControl(array){
-  filters["republican"] = false;
-  filters["democrat"] = false;
-  filters["independent"] = false;
-  for (let i = 0; i < array.length; i++) {
-    filters[array[i]]=true;
+function filterControl(){
+  var checkArray = Array.from(document.querySelectorAll('input[name=tableFilters]:checked')).map(elt => elt.value);
+  var dropValue = document.getElementById("inputState").value;
+  if(!checkArray||checkArray.length<1){
+    filters["republican"] = true;
+    filters["democrat"] = true;
+    filters["independent"] = true;
+    state=dropValue;
   }
-}
-function filterControl2(string){
-  state=string;
+  else{
+    filters["republican"] = false;
+    filters["democrat"] = false;
+    filters["independent"] = false;
+    for(let i=0; i<checkArray.length;i++){
+      filters[checkArray[i]]=true;
+    }
+    state=dropValue;
+  }
 }
 
 //prints the table whit filters
@@ -20856,6 +20857,9 @@ function printTable(){
       table.appendChild(datos);
     }
   });
+  if(table.rows.length<2){
+    table.innerHTML=`<tr> <td class="text-danger">NO HAY INFORMACION A MOSTRAR</td></tr>`;
+  }
 }
 
 function filtra(string){
@@ -20880,4 +20884,4 @@ data["results"][0].members.forEach(element => {
     option.innerHTML=superarray[i];
     inputState.appendChild(option);
   }
-}
+} 
