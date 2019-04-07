@@ -66,7 +66,6 @@ function fillLeastEngaged() {
   }
   table.innerHTML = template;
 }
-
 function fillMostEngaged() {
   let table = document.getElementById("senateMostEngaged");
   let template = "";
