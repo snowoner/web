@@ -74,7 +74,6 @@ const vm1 = new Vue({
       return (sum / this.independents.length).toFixed(2) || 0; //if not independents..
     },
     leastEngaged() {
-      
       let somearray= this.fakemembers;
       let pct = (somearray.length * 10) / 100; //cuantos quiero
       console.log("somearray");
