@@ -100,7 +100,7 @@ function theNLowest(somearray, number) {
   aux = lastPushLow(
     somearray,
     aux,
-    aux[0].missed_votes_pct,
+    aux[0].missed_votes_pct, 
     "missed_votes_pct"
   );
   aux = mySort(aux, "missed_votes_pct").reverse();

@@ -1,42 +1,138 @@
-const vm1 = new Vue({
+// const urls = [
+//   "https://api.propublica.org/congress/v1/113/senate/members.json",
+//   "https://api.propublica.org/congress/v1/113/house/members.json"
+// ];
+const senateUrl ="https://api.propublica.org/congress/v1/113/senate/members.json";
+const houseUrl = "https://api.propublica.org/congress/v1/113/house/members.json";
+
+const senateReg = /senate/;
+const houseReg = /house/;
+
+const myVue = new Vue({
   el: "#app",
   data: {
     members: [],
-    fakemembers: []
+    tableMembers: [],
+    fakemembers: [],
+    checkedNames: [], 
+    selected : 'All',
+    tablaVacia : false
   },
   methods: {
-    fetchData: function() {
-      const myRequest = new Request(
-        "https://api.propublica.org/congress/v1/113/senate/members.json",
-        {
-          method: "GET",
-          headers: {
-            "X-API-Key": "qlZctqHbMq67VLHByeQUNH227bIi791mq4LMHwuH"
+    lastPushLow(array, arrayTarget, value, string) {
+      let finish = false;
+      while (!finish) {
+        //busco repes
+        if (array.length < 1) {
+          finish = true;
+        } else {
+          if (array[array.length - 1][string] == value) {
+            arrayTarget.push(array[array.length - 1]);
           }
+          if (array[array.length - 1][string] < value) {
+            finish = true;
+          }
+          array.splice(array.length - 1);
         }
-      );
-      fetch(myRequest)
-        .then(function(response) {
-          if (response.ok) {
-            // add a new promise to the chain
-            return response.json();
+      }
+      return arrayTarget;
+    },
+    lastPushGre(array, arrayTarget, value, string) {
+      let finish = false;
+      while (!finish) {
+        //busco repes
+        if (array.length < 1) {
+          finish = true;
+        } else {
+          if (array[array.length - 1][string] == value) {
+            arrayTarget.push(array[array.length - 1]);
           }
-          // signal a server error to the chain
-          throw new Error(response.statusText);
-        })
-        .then(jsondata => {
-          this.members = jsondata.results[0].members;
+          if (array[array.length - 1][string] > value) {
+            finish = true;
+          }
+          array.splice(array.length - 1);
+        }
+      }
+      return arrayTarget;
+    },
+    mySort(array, string) {
+      array.sort(function(a, b) {
+        if (a[string] > b[string]) {
+          return 1;
+        }
+        if (a[string] < b[string]) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      });
+      return array;
+    },
+    fetchJsons(urls) {
+      Promise.all(urls.map(url =>
+        fetch(url,  {
+                method: "GET",
+                headers: {
+                  "X-API-Key": "qlZctqHbMq67VLHByeQUNH227bIi791mq4LMHwuH"
+                }
+              })
+          .then(response =>{ 
+            if (response.ok) {
+              return Promise.resolve(response);
+            }else {
+              return Promise.reject(new Error(response.statusText));
+          }
+          })                 
+          .then(response=>{return response.json()})
+          .catch(error => console.log('There was a problem!', error))
+      ))
+      .then(data => {        
+        if(senateReg.exec(document.URL)){
+          alert("We are fetching Senate Data");
+          this.members = data[0].results[0].members;
           this.fakemembers = this.members.slice();
-        })
-        .catch(error => {
-          console.log("Request failed: " + error.message);
-        });
+          this.tableMembers =this.members.slice();
+        }
+        else if(houseReg.exec(document.URL)){
+          alert("We are fetching House Data");
+          this.members = data[1].results[0].members;
+          this.fakemembers = this.members.slice();
+          this.tableMembers =this.members.slice();
+        }
+        else {
+          alert("HOME SWEEt Home");
+        }
+      })
+    },
+    muestraTabla(){
+      this.tablaVacia = false;
+      this.tableMembers =this.members.slice();
+      this.tableMembers = this.tableMembers.filter(element =>{
+          let checkParty=this.checkedNames.includes(element.party) || this.checkedNames.length<1;
+          let checkState=element.state==this.selected || this.selected=="All";
+        return (checkParty && checkState);
+      });
+      if(this.tableMembers.length==0){this.tablaVacia=true;}
     }
   },
   mounted() {
-    this.fetchData();
+    this.fetchJsons([senateUrl,houseUrl]);
   },
   computed: {
+    fillSelect(){
+      let all = [{text: 'All', value:'All'}];
+      for (let i = 0; i < this.fillSelect2.length; i++) {
+        all.push(this.fillSelect2[i]);
+      }
+    return all;
+    },
+    fillSelect2(){ //muy bonito pero...
+      return [...new Set(this.members.map(members => {
+        return members.state
+      }))].sort().map(state => {
+        return {text: state, value:state}
+      })
+    },
     republicans() {
       return this.members.filter(function(element) {
         return element.party == "R";
@@ -71,53 +167,74 @@ const vm1 = new Vue({
       for (let i = 0; i < this.independents.length; i++) {
         sum += this.independents[i].votes_with_party_pct;
       }
-      return (sum / this.independents.length).toFixed(2) || 0; //if not independents..
+        if(this.independents.length>0){
+          return (sum / this.independents.length).toFixed(2)
+        }
+        else{
+          return sum.toFixed(2);
+        }
     },
-    leastEngaged() {
-      let somearray= this.fakemembers;
+      theNGreatest() {
+      let somearray = this.fakemembers.slice();
       let pct = (somearray.length * 10) / 100; //cuantos quiero
-      console.log("somearray");
-      console.log(somearray);
-      //esto se va fuera
-      somearray.sort(function(a, b) {
-        if (a.missed_votes_pct > b.missed_votes_pct) {
-          return 1;
-        }
-        if (a.missed_votes_pct < b.missed_votes_pct) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-      });
+      somearray = this.mySort(somearray, "missed_votes_pct").reverse();
       let aux = somearray.splice(somearray.length - pct); //corto
-      let value = aux[0].missed_votes_pct; //que busco en lo que queda
-      let finish = false;
-      while (!finish) {
-        //busco repes
-        if (somearray.length < 1) {
-          finish = true;
-        } else {
-          if (somearray[somearray.length - 1].missed_votes_pct == value) {
-            aux.push(somearray[somearray.length - 1]);
-          }
-          if (somearray[somearray.length - 1].missed_votes_pct < value) {
-            finish = true;
-          }
-          somearray.splice(somearray.length - 1);
-        }
-      }
-      aux.sort(function(a, b) {
-        if (a.missed_votes_pct < b.missed_votes_pct) {
-          return 1;
-        }
-        if (a.missed_votes_pct > b.missed_votes_pct) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-      });
-      this.fakemembers= this.members.slice();
+      aux = this.lastPushGre(
+        somearray,
+        aux,
+        aux[0].missed_votes_pct,
+        "missed_votes_pct"
+      );
+      aux = this.mySort(aux, "missed_votes_pct");
+      
       return aux;
-    }
+    },
+
+    theNGreatestLoyal() {
+      let somearray = this.fakemembers.slice();
+      let pct = (somearray.length * 10) / 100; //cuantos quiero
+      somearray = this.mySort(somearray, "votes_with_party_pct");
+      let aux = somearray.splice(somearray.length - pct); //corto
+      aux = this.lastPushLow(
+        somearray,
+        aux,
+        aux[0].votes_with_party_pct,
+        "votes_with_party_pct"
+      );
+      aux = this.mySort(aux, "votes_with_party_pct").reverse();
+      
+      return aux;
+    },
+
+    theNLowestLoyal() {
+      let somearray = this.fakemembers.slice();
+      let pct = (somearray.length * 10) / 100; //cuantos quiero
+      somearray = this.mySort(somearray, "votes_with_party_pct").reverse();
+      let aux = somearray.splice(somearray.length - pct); //corto
+      aux = this.lastPushLow(
+        somearray,
+        aux,
+        aux[0].votes_with_party_pct,
+        "votes_with_party_pct"
+      );
+      aux = this.mySort(aux, "votes_with_party_pct");
+      
+      return aux;
+    },
+
+    theNLowest() {
+      let somearray = this.fakemembers.slice();
+      let pct = (somearray.length * 10) / 100; //cuantos quiero
+      somearray = this.mySort(somearray, "missed_votes_pct");
+      let aux = somearray.splice(somearray.length - pct); //corto
+      aux = this.lastPushLow(
+        somearray,
+        aux,
+        aux[0].missed_votes_pct, 
+        "missed_votes_pct"
+      );
+      aux = this.mySort(aux, "missed_votes_pct").reverse();
+      return aux;
+    },    
   }
 });

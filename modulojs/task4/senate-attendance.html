@@ -44,10 +44,10 @@
                 >Congress113</a
               >
               <div class="dropdown-menu col-12">
-                <a class="dropdown-item" href="house-starter-page.html"
+                <a class="dropdown-item" href="house-page.html"
                   >House</a
                 >
-                <a class="dropdown-item " href="senate-starter-page.html"
+                <a class="dropdown-item " href="senate-page.html"
                   >Senate</a
                 >
               </div>
@@ -78,10 +78,10 @@
                 >Party Loyalty</a
               >
               <div class="dropdown-menu col-12">
-                <a class="dropdown-item" href="house-party-loyalty.html"
+                <a class="dropdown-item" href="house-loyalty.html"
                   >House</a
                 >
-                <a class="dropdown-item" href="senate-party-loyalty.html"
+                <a class="dropdown-item" href="senate-loyalty.html"
                   >Senate</a
                 >
               </div>
@@ -126,7 +126,7 @@
                   <th>Avg Voted with Prty in %</th>
                 </tr>
               </thead>
-              <tbody id="senateTbody">
+              <tbody>
                 <tr>
                   <td>Republicans</td>
                   <td>{{ republicans.length }}</td>
@@ -158,9 +158,9 @@
                   <th>% Missed</th>
                 </tr>
               </thead>
-              <tbody id="senateLeastEngaged">
-                <tr v-for="item in leastEngaged" >
-                  <td>{{item.first_name}}</td>
+              <tbody>
+                <tr v-for="item in theNLowest" >
+                  <td> <a :href=item.url>{{item.first_name}} {{item.middle_name || ""}} {{item.last_name}}</a></td>
                   <td>{{item.total_votes}}</td>
                   <td>{{item.missed_votes}}</td>
                   <td>{{item.missed_votes_pct}}</td>
@@ -181,8 +181,14 @@
                   <th>% Missed</th>
                 </tr>
               </thead>
-              <tbody id="senateMostEngaged">
-              </tbody>
+              <tbody>
+                  <tr v-for="item in theNGreatest" >
+                    <td> <a :href=item.url>{{item.first_name}} {{item.middle_name || ""}} {{item.last_name}}</a></td>
+                    <td>{{item.total_votes}}</td>
+                    <td>{{item.missed_votes}}</td>
+                    <td>{{item.missed_votes_pct}}</td>
+                  </tr>
+                </tbody>
             </table>
           </div>
         </div>
