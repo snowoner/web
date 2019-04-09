@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div class="container border">
+  <div class="container border" id="app">
     <nav>
       <div>
         <div class="d-flex justify-content-between align-items-center">
@@ -29,8 +29,8 @@
             <a class="nav-link dropdown-toggle text-center text-dark" data-toggle="dropdown" href="#" role="button"
               aria-haspopup="true" aria-expanded="false">Congress113</a>
             <div class="dropdown-menu col-12">
-              <a class="dropdown-item" href="house-starter-page.html">House</a>
-              <a class="dropdown-item " href="senate-starter-page.html">Senate</a>
+              <a class="dropdown-item" href="house-page.html">House</a>
+              <a class="dropdown-item " href="senate-page.html">Senate</a>
             </div>
           </li>
           <li class="nav-item dropdown border rounded active">
@@ -45,8 +45,8 @@
             <a class="nav-link dropdown-toggle text-center text-dark" data-toggle="dropdown" href="#" role="button"
               aria-haspopup="true" aria-expanded="false">Party Loyalty</a>
             <div class="dropdown-menu col-12">
-              <a class="dropdown-item" href="house-party-loyalty.html">House</a>
-              <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+              <a class="dropdown-item" href="house-loyalty.html">House</a>
+              <a class="dropdown-item" href="senate-loyalty.html">Senate</a>
             </div>
           </li>
         </ul>
@@ -79,17 +79,31 @@
         <div class="col-6">
           <h2 class="mb-3 text-right">House at a glance</h2>
           <table class="table table-bordered text-center">
-            <thead>
-              <tr>
-                <th>Party</th>
-                <th>Number of Reps</th>
-                <th>Avg Voted with Prty in %</th>
-              </tr>
-            </thead>
-            <tbody id="senateTbody">
-
-            </tbody>
-          </table>
+              <thead>
+                <tr>
+                  <th>Party</th>
+                  <th>Number of Reps</th>
+                  <th>Avg Voted with Prty in %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Republicans</td>
+                  <td>{{ republicans.length }}</td>
+                  <td>{{ avgRepublicans }}</td>
+                </tr>
+                <tr>
+                  <td>Democrats</td>
+                  <td>{{ democrats.length }}</td>
+                  <td>{{ avgDemocrats }}</td>
+                </tr>
+                <tr>
+                  <td>Independents</td>
+                  <td>{{ independents.length }}</td>
+                  <td>{{ avgIndependents }}</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
       </div>
       <div class="container d-flex">
@@ -104,8 +118,14 @@
                 <th>% Missed</th>
               </tr>
             </thead>
-            <tbody id="houseLeastEngaged">
-            </tbody>
+            <tbody>
+                <tr v-for="item in theNLowest">
+                  <td>{{item.first_name}}</td>
+                  <td>{{item.total_votes}}</td>
+                  <td>{{item.missed_votes}}</td>
+                  <td>{{item.missed_votes_pct}}</td>
+                </tr>
+              </tbody>
           </table>
         </div>
         <div class="col-6">
@@ -119,8 +139,14 @@
                 <th>% Missed</th>
               </tr>
             </thead>
-            <tbody id="houseMostEngaged">
-            </tbody>
+            <tbody>
+                <tr v-for="item in theNGreatest" v-if="item.total_votes!=0" >
+                  <td>{{item.first_name}}</td>
+                  <td>{{item.total_votes}}</td>
+                  <td>{{item.missed_votes}}</td>
+                  <td>{{item.missed_votes_pct}}</td>
+                </tr>
+              </tbody>
           </table>
         </div>
       </div>
@@ -133,6 +159,7 @@
     </div>
     <!-- Footer -->
   </div>
+  <!--Body Scripts-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
