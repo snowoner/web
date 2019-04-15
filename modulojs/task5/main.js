@@ -2,49 +2,66 @@
 //   "https://api.propublica.org/congress/v1/113/senate/members.json",
 //   "https://api.propublica.org/congress/v1/113/house/members.json"
 // ];
-const senateUrl ="https://api.propublica.org/congress/v1/113/senate/members.json";
-const houseUrl = "https://api.propublica.org/congress/v1/113/house/members.json";
+const senateUrl =
+  "https://api.propublica.org/congress/v1/113/senate/members.json";
+const houseUrl =
+  "https://api.propublica.org/congress/v1/113/house/members.json";
 
 // const openStatesUrl ="https://openstates.org/graphql";
-const openSenateUrl ="https://api.myjson.com/bins/13v5c0";
-const openHouseUrl ="https://api.myjson.com/bins/d9ab4";
+const openSenateUrl = "https://api.myjson.com/bins/13v5c0";
+const openHouseUrl = "https://api.myjson.com/bins/d9ab4";
 
 const senateReg = /senate/;
 const houseReg = /house/;
-const homeReg =/home/;
+const homeReg = /home/;
 
-const apiKeys=["qlZctqHbMq67VLHByeQUNH227bIi791mq4LMHwuH","qlZctqHbMq67VLHByeQUNH227bIi791mq4LMHwuH","","","f33ada56-d77d-43bb-b314-f2abac4c492a"];
+const apiKeys = [
+  "qlZctqHbMq67VLHByeQUNH227bIi791mq4LMHwuH",
+  "qlZctqHbMq67VLHByeQUNH227bIi791mq4LMHwuH",
+  "",
+  "",
+  "f33ada56-d77d-43bb-b314-f2abac4c492a"
+];
 
 const myVue = new Vue({
   el: "#app",
   data: {
     members: [],
     tableMembers: [],
-    tableLegMembers: [],
+    tableLegMembers: [
+      {
+        first_name: "Loading",
+        last_name: "Loading",
+        middle_name: "Loading",
+        party: "Loading",
+        state: "Loading",
+        govtrack_id: "Loading"
+      }
+    ],
     fakemembers: [],
-    checkedNames: [], 
-    selected : 'All',
-    tablaVacia : false,
-    metadata:[],
-    stateMetadata:[],
-    stateLegislatorData:[],
-    apiSelected: 'All',
-    selectApi: [{text:"All",value:"All"},{text:"ProPublica",value:"api1"},{text:"OpenStates",value:"api2"}],
-    tableAMostrar:{text:"Tabla de los senadores de ProPublica y Opnestates",tabla:[{first_name:"Loading",last_name:"Loading",middle_name:"Loading",party:"Loading",state:"Loading",govtrack_id:"Loading"}]},
+    checkedNames: [],
+    selected: "All",
+    tablaVacia: false,
+    metadata: [],
+    apiSelected: "All",
+    selectApi: [
+      { text: "All", value: "All" },
+      { text: "ProPublica", value: "api1" },
+      { text: "OpenStates", value: "api2" }
+    ],
+
   },
   methods: {
-
-    getText(){
-      if(this.apiSelected=="All"){
-        this.tableAMostrar.text="Tabla de los senadores de ProPublica y Opnestates";
-      }
-      else if(this.apiSelected=="api1"){
-        this.tableAMostrar.text="Tabla de los senadores de ProPublica";
-      }
-      else {
-        this.tableAMostrar.text="Tabla de los senadores de OpenStates";
-      }
-    },
+    // getText() {
+    //   if (this.apiSelected == "All") {
+    //     this.tableAMostrar.text =
+    //       "Tabla de los senadores de ProPublica y Opnestates";
+    //   } else if (this.apiSelected == "api1") {
+    //     this.tableAMostrar.text = "Tabla de los senadores de ProPublica";
+    //   } else {
+    //     this.tableAMostrar.text = "Tabla de los senadores de OpenStates";
+    //   }
+    // },
     lastPushLow(array, arrayTarget, value, string) {
       let finish = false;
       while (!finish) {
@@ -94,146 +111,178 @@ const myVue = new Vue({
       });
       return array;
     },
-    // fetchJsons(urls,init) {
-    //   Promise.all(urls.map(url => 
-    //     fetch(url,{
-    //       method: "GET",
-    //       headers: {
-    //         "X-API-Key": init
-    //       }
-    //     })
-    //       .then(response =>{
-    //         if (response.ok) {
-    //           return Promise.resolve(response);
-    //         }else {
-    //           return Promise.reject(new Error(response.statusText));
-    //       }
-    //       })                 
-    //       .then(response=>{return response.json()})
-    //       .catch(error => console.log('There was a problem!', error))
-    //   ))
-    //   .then(data => {        
-    //     if(senateReg.exec(document.URL)){
-    //       this.members = data[0].results[0].members;
-    //       this.fakemembers = this.members.slice();
-    //       this.tableMembers =this.members.slice();
-    //     }
-    //     else if(houseReg.exec(document.URL)){
-    //       this.members = data[1].results[0].members;
-    //       this.fakemembers = this.members.slice();
-    //       this.tableMembers =this.members.slice();
-    //     }
-    //     else if(homeReg.exec(document.URL)){
-    //     }
-    //     else{
-    //       this.members = data[0].results[0].members;
-    //       this.fakemembers = this.members.slice();
-    //       this.tableMembers =this.members.slice();
-    //       // this.metadata=data[1];
-    //     }
-    //   })
-    // },
 
-    async fetchJson(url, init) {
-      // console.log("Oh mama");
-      // console.log(init);
-      // console.log("yes mama");
-      // console.log(url);
-      if(apiKeys[init]==""){
-        const response = await fetch(url);
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(response.statusText);
-      }
-      else{
-        const response_1 = await fetch(url, {
+    fetchJson(url, init) {
+      if (apiKeys[init] == "") {
+        return fetch(url).then(function(response) {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error(response.statusText);
+        });
+      } else {
+        return fetch(url, {
           method: "GET",
           headers: {
             "X-API-Key": apiKeys[init]
           }
+        }).then(function(response) {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error(response.statusText);
         });
-        if (response_1.ok) {
-          return response_1.json();
-        }
-        throw new Error(response_1.statusText);
       }
-      
     },
-    
     fetchJsonList(urls, init) {
-      return Promise.all(urls.map((url,init) => this.fetchJson(url, init)));
+      return Promise.all(urls.map((url, init) => this.fetchJson(url, init)));
     },
-
-    hazMagia(urls,init){
-      this.fetchJsonList(urls,init).then(function([senateData, houseData, openSenateData, openHouseData]) {
-        console.log(senateData.results[0].members);
-        console.log(houseData.results[0].members);
-        console.log(openSenateData.results);
-        console.log(openHouseData.results);
-      })
-    },
-
-    muestraTabla(){
-      this.tablaVacia = false;
-      this.tableMembers =this.members.slice();
-      this.tableMembers = this.tableMembers.filter(element =>{
-          let checkParty=this.checkedNames.includes(element.party) || this.checkedNames.length<1;
-          let checkState=element.state==this.selected || this.selected=="All";
-        return (checkParty && checkState);
+    hazMagia(urls, init) {
+      this.fetchJsonList(urls, init).then(function([
+        senateData,
+        houseData,
+        openSenateData,
+        openHouseData
+      ]) {
+        if (senateReg.exec(document.URL)) {
+          myVue.members = senateData.results[0].members;
+          myVue.fakemembers = myVue.members.slice();
+          myVue.tableMembers = myVue.members.slice();
+        } else if (houseReg.exec(document.URL)) {
+          myVue.members = houseData.results[0].members;
+          myVue.fakemembers = myVue.members.slice();
+          myVue.tableMembers = myVue.members.slice();
+        } else if (homeReg.exec(document.URL)) {
+        } else {
+          myVue.members = senateData.results[0].members;
+          myVue.fakemembers = myVue.members.slice();
+          myVue.tableMembers = myVue.members.slice();
+          myVue.metadata = openSenateData.results;
+          myVue.muestrLegTabla();
+        }
       });
-      if(this.tableMembers.length==0){this.tablaVacia=true;}
     },
-  //   muestrLegTabla(){
-      
-  //     this.tablaVacia=false;
-  //     this.tableLegMembers=this.metadata.slice();
-      
-  //     this.tableLegMembers = this.tableLegMembers.filter(element =>{
-  //       let checkParty=this.checkedNames.includes(element.party) || this.checkedNames.length<1;
-  //       let checkState=element.state==this.selected || this.selected=="All";
-  //     return (checkParty && checkState);
-  //   });
-  //   if(this.tableLegMembers.length==0){this.tablaVacia=true;}
-  // },
 
+    muestraTabla() {
+      this.tablaVacia = false;
+      this.tableMembers = this.members.slice();
+      this.tableMembers = this.tableMembers.filter(element => {
+        let checkParty =
+          this.checkedNames.includes(element.party) ||
+          this.checkedNames.length < 1;
+        let checkState =
+          element.state == this.selected || this.selected == "All";
+        return checkParty && checkState;
+      });
+      if (this.tableMembers.length == 0) {
+        this.tablaVacia = true;
+      }
+    },
+    muestrLegTabla() {
+      this.tablaVacia = false;
+      if (this.apiSelected == "api1") {
+        this.tableLegMembers = this.mySort(this.members.slice(), "govtrack_id");
+        this.tableLegMembers = this.tableLegMembers.filter(element => {
+          let checkParty =
+            this.checkedNames.includes(element.party) ||
+            this.checkedNames.length < 1;
+          let checkState =
+            element.state == this.selected || this.selected == "All";
+          return checkParty && checkState;
+        });
+      } else if (this.apiSelected == "api2") {
+        this.tableLegMembers = this.mySort(
+          this.metadata.slice(),
+          "govtrack_id"
+        );
+        this.tableLegMembers = this.tableLegMembers.filter(element => {
+          let checkParty =
+            this.checkedNames.includes(element.party) ||
+            this.checkedNames.length < 1;
+          let checkState =
+            element.state == this.selected || this.selected == "All";
+          return checkParty && checkState;
+        });
+      } else if (this.apiSelected == "All") {
+        this.tableLegMembers = [];
+        this.members.forEach(eleApi1 => {
+          if(!this.tableLegMembers.some(ele=>{
+            return eleApi1.govtrack_id==ele.govtrack_id;
+          })){
+            //incluyo miembros de api1
+            this.tableLegMembers.push(eleApi1); //info de api1
+          }
+        });
+         this.metadata.forEach(eleApi2 => { //VOY a incluir miembros de api2
+           if(!this.tableLegMembers.some(ele2=>{ //si no existe lo añado
+             return eleApi2.govtrack_id==ele2.govtrack_id;
+           })){
+            this.tableLegMembers.push(eleApi2);// info de api2
+           } 
+           else{ // existe por lo que tengo que añadir info extra
+              let elemArellenar = this.tableLegMembers.findIndex(elmnt=>{return elmnt.govtrack_id==eleApi2.govtrack_id;});
+              for (const key in eleApi2) {
+                if(!this.tableLegMembers[elemArellenar].hasOwnProperty(key)){
+                  this.tableLegMembers[elemArellenar].key=eleApi2.key;
+                }
+              }
+           } 
+         });
+         this.tableLegMembers = this.tableLegMembers.filter(element => {
+          let checkParty =
+            this.checkedNames.includes(element.party) ||
+            this.checkedNames.length < 1;
+          let checkState =
+            element.state == this.selected || this.selected == "All";
+          return checkParty && checkState;
+        });
+         this.tableLegMembers = this.mySort(this.tableLegMembers,"govtrack_id");
+      }
+      if (this.tableLegMembers.length == 0) {
+        this.tablaVacia = true;
+      }
+    }
+    
   },
   mounted() {
-    // if(senateReg.exec(document.URL)){
-    //   alert("We are fetching Senate Data");
-    //   this.fetchJsons([senateUrl],apiKeys[0]);
-    // }
-    // else if(houseReg.exec(document.URL)){
-    //   alert("We are fetching House Data");
-    //   this.fetchJsons([houseUrl],apiKeys[0]);
-    // }
-    // else if(homeReg.exec(document.URL)){
-    //   alert("HOME SWEEt Home");
-    // }
-    // else {
-      alert("This will fetch legislators one day");
-      // this.fetchJsons2([openSenateUrl,openHouseUrl]);
-      // this.fetchJsons([senateUrl],apiKeys[0]);
-    
-      // this.fetchJsons([openSenateUrl,openSenateUrl],["",""]);
-      this.hazMagia([senateUrl,houseUrl,openSenateUrl,openHouseUrl],[apiKeys[0]]);
-    // }
+   
+    this.hazMagia(
+      [senateUrl, houseUrl, openSenateUrl, openHouseUrl],
+      [apiKeys[0]]
+    );
+
   },
   computed: {
-
-    
-
-    fillSelect(){
-        let arrayStates = [];
-      this.members.forEach(element => {
-        if(!arrayStates.some(item => item.text==element.state)){
-          let state={text:element.state, value:element.state};
-          arrayStates.push(state);
-        }
-      });
-      arrayStates = this.mySort(arrayStates,"text");
-      let state={text:"All",value:"All"};
-      arrayStates=[state,...arrayStates];
+    fillSelect() {
+      let arrayStates = [];
+      if (this.apiSelected == "api1") {
+        this.members.forEach(element => {
+          if (!arrayStates.some(item => item.text == element.state)) {
+            let state = { text: element.state, value: element.state };
+            arrayStates.push(state);
+          }
+        });
+        arrayStates = this.mySort(arrayStates, "text");
+      } else if (this.apiSelected == "api2") {
+        this.metadata.forEach(element => {
+          if (!arrayStates.some(item => item.text == element.state)) {
+            let state = { text: element.state, value: element.state };
+            arrayStates.push(state);
+          }
+        });
+        arrayStates = this.mySort(arrayStates, "text");
+      } else {
+        let arrayJoin = [...this.members ,...this.metadata];
+        arrayJoin.forEach(element => {
+          if (!arrayStates.some(item => item.text == element.state)) {
+            let state = { text: element.state, value: element.state };
+            arrayStates.push(state);
+          }
+        });
+        arrayStates = this.mySort(arrayStates, "text");
+      }
+      let state = { text: "All", value: "All" };
+      arrayStates = [state, ...arrayStates];
       return arrayStates;
     },
     // fillSelect2(){ //muy bonito pero...
@@ -277,12 +326,11 @@ const myVue = new Vue({
       for (let i = 0; i < this.independents.length; i++) {
         sum += this.independents[i].votes_with_party_pct;
       }
-        if(this.independents.length>0){
-          return (sum / this.independents.length).toFixed(2)
-        }
-        else{
-          return sum.toFixed(2);
-        }
+      if (this.independents.length > 0) {
+        return (sum / this.independents.length).toFixed(2);
+      } else {
+        return sum.toFixed(2);
+      }
     },
 
     theNGreatest() {
@@ -297,7 +345,7 @@ const myVue = new Vue({
         "missed_votes_pct"
       );
       aux = this.mySort(aux, "missed_votes_pct");
-      
+
       return aux;
     },
 
@@ -313,7 +361,7 @@ const myVue = new Vue({
         "votes_with_party_pct"
       );
       aux = this.mySort(aux, "votes_with_party_pct").reverse();
-      
+
       return aux;
     },
 
@@ -329,7 +377,7 @@ const myVue = new Vue({
         "votes_with_party_pct"
       );
       aux = this.mySort(aux, "votes_with_party_pct");
-      
+
       return aux;
     },
 
@@ -341,24 +389,24 @@ const myVue = new Vue({
       aux = this.lastPushLow(
         somearray,
         aux,
-        aux[0].missed_votes_pct, 
+        aux[0].missed_votes_pct,
         "missed_votes_pct"
       );
       aux = this.mySort(aux, "missed_votes_pct").reverse();
       return aux;
-    },
-    legislatorsStates(){
-      let arrayStates = [];
-    this.metadata.forEach(element => {
-      if(!arrayStates.some(item => item.text==element.state)){
-        let state={text:element.state, value:element.state};
-        arrayStates.push(state);
-      }
-    });
-    arrayStates = this.mySort(arrayStates,"text");
-    let state={text:"All",value:"All"};
-    arrayStates=[state,...arrayStates];
-    return arrayStates;
-    },
+    }
+    // legislatorsStates(){
+    //   let arrayStates = [];
+    // this.metadata.forEach(element => {
+    //   if(!arrayStates.some(item => item.text==element.state)){
+    //     let state={text:element.state, value:element.state};
+    //     arrayStates.push(state);
+    //   }
+    // });
+    // arrayStates = this.mySort(arrayStates,"text");
+    // let state={text:"All",value:"All"};
+    // arrayStates=[state,...arrayStates];
+    // return arrayStates;
+    // },
   }
 });
