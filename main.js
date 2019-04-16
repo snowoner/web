@@ -514,7 +514,6 @@ function cambia() {
   let result =  map.getSelectedPoints()[0].get("id");
   result = result.replace(re, "");
   myVue.selected = result;
-  map.getSelectedPoints()=[];
   myVue.muestraTabla();
 }
 
