@@ -209,6 +209,27 @@ const myVue = new Vue({
       arrayStates = this.mySort(arrayStates, "id");
       return arrayStates;
     },
+
+    getStatesInfo(state){
+            //   "US.AK"
+        // {id: "US.AK", value: 2, state: "Alaska"};
+
+        // [{'id': 'US.AK.1', 'senator': name, 'party': party},
+        //  {'id': 'US.AK.2', 'senator': name, 'party': party}
+        // ]
+        let someReturn =[];
+        for (let i = 0; i < this.members.length; i++) {
+          const element = this.members[i];
+          if("US."+element.state==state){
+            let aux2 ={};
+            aux2.id = `${state}.00${(element.district||Math.floor(Math.random()*9))}`;
+            aux2.senator = `${element.first_name}, ${element.middle_name || ""} ${element.last_name} `;
+            aux2.party=element.party;
+            someReturn.push(aux2);
+          }
+        }
+       return someReturn;
+    },
     muestrLegTabla() {
       this.tablaVacia = false;
       if (this.apiSelected == "api1") {
@@ -448,13 +469,110 @@ const myVue = new Vue({
   }
 });
 
+// async function creamap() {
+//   // create map
+//   map = anychart.map();
+//   // create data set
+//   var dataSet = anychart.data.set(myArray);
+//   // create choropleth series
+//   series = map.choropleth(dataSet);
+
+//   // set geoIdField to 'id', this field contains in geo data meta properties
+//   series.geoIdField("id");
+//   map.background().fill("#c0c2b8d8");
+
+//   // set map color settings
+//   series.hovered().fill("#addd8e");
+
+//   //if selected
+//   series.selected().fill("gold");
+
+//   // set geo data, you can find this map in our geo maps collection
+//   // https://cdn.anychart.com/#maps-collection
+//   map.geoData(anychart.maps["united_states_of_america"]);
+
+//   // enable labels
+
+//   labels = series.labels();
+//   labels.enabled(true);
+
+//   // format labels text
+//   labels.format(function() {
+//     // Gets point source region properties.
+//     var properties = this.regionProperties;
+//     return properties["postal"];
+//   });
+
+//   // labels setting
+//   labels.fontColor("black");
+//   labels.fontSize("10px");
+
+//   series.tooltip().format(function(e) {
+//     return (
+//       "State: " +
+//       e.getData("state") +
+//       "\n" +
+//       "Nº Senators: " +
+//       e.getData("value")
+//     );
+//   });
+
+//   map.listen("pointClick", cambia);
+
+//   //set map container id (div)
+//   map.container("maps");
+
+//   //initiate map drawing
+//   map.draw();
+// }
+
+
 async function creamap() {
   // create map
-  map = anychart.map();
-  // create data set
-  var dataSet = anychart.data.set(myArray);
+
+  map = anychart.map(); //ok
+  map.geoData(anychart.maps.united_states_of_america); //ok
+
+  let allStates =[];
+  myArray.forEach((element,i) => {
+
+    allStates[i] = anychart.map();
+    allStates[i].geoData(anychart.maps[(element.state).toLowerCase().replace(" ","_")]);
+  });
+ 
+    // create data set
+  var dataSet = myArray;
+   let dataSeries = []
+  for (let i = 0; i < myArray.length; i++) {
+    dataSeries[i] = myVue.getStatesInfo(myArray[i].id);
+  }
+  console.log(dataSeries);
   // create choropleth series
   series = map.choropleth(dataSet);
+  let arraySeries=[];
+  for (let i = 0; i < myArray.length; i++) {
+    arraySeries[i] = allStates[i].choropleth(dataSeries[i]);
+  }
+  console.log(arraySeries);
+  let statesObject ={};
+  for (let i = 0; i < myArray.length; i++) {
+    statesObject[myArray[i].id] = allStates[i];
+  }
+
+map.listen("pointMouseOver", function(evt) {
+      series.unselect();
+      cambia(evt.point.get('id'));
+ 
+});
+
+map.listen("pointMouseDown", function(evt) {
+          
+    map.drillDownMap(statesObject);
+    map.interactivity({selectionMode: "drill-down"});
+  }
+
+);
+
 
   // set geoIdField to 'id', this field contains in geo data meta properties
   series.geoIdField("id");
@@ -463,13 +581,9 @@ async function creamap() {
   // set map color settings
   series.hovered().fill("#addd8e");
 
-  //if selected
-  series.selected().fill("gold");
-
-  // set geo data, you can find this map in our geo maps collection
-  // https://cdn.anychart.com/#maps-collection
-  map.geoData(anychart.maps["united_states_of_america"]);
-
+  // //if selected
+  series.selected().fill("gold");  //<<<<<<< THE SELECTED 
+  
   // enable labels
 
   labels = series.labels();
@@ -496,25 +610,27 @@ async function creamap() {
     );
   });
 
-  map.listen("pointClick", cambia);
+  
 
   //set map container id (div)
   map.container("maps");
 
   //initiate map drawing
   map.draw();
+
 }
+
 
 // function getPoints() {
 //   return map.getSelectedPoints()[0].get("id");
 // }
 
-function cambia() {
+function cambia(evt) {
   let re = /US./;
-  let result =  map.getSelectedPoints()[0].get("id");
+  let result =  evt;
   result = result.replace(re, "");
   myVue.selected = result;
-  map.getSelectedPoints()=[];
+
   myVue.muestraTabla();
 }
 
