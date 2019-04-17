@@ -4791,7 +4791,7 @@ var data =
           "senate_class": "1",
           "state_rank": "",
           "lis_id": "S318"
-          , "missed_votes_pct": 2.59,
+          ,"missed_votes_pct": 2.59,
           "votes_with_party_pct": 90.16
         },
         {
