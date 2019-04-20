@@ -22,22 +22,65 @@
   <body>
     <!--BodyContainer-->
     <div class="container border" id="app">
-      <!--Nav-->
       
-        <div class="row justify-content-between align-items-center mb-3 ">
-            <a class="bandera" href="home-page.html" id="homeLogo"></a>
-            <a class="col-md-9 text-white text-right" href="mailto:info@tgif.com">
-              <i class="fa fa-envelope-o myicon"></i>info&#64;tgif.com</a
-            >
+      <div class="row justify-content-between align-items-center mb-3 ">
+        <a class="bandera" href="home-page.html" id="homeLogo"></a>
+        <a class="col-md-9 text-white text-right" href="mailto:info@tgif.com">
+          <i class="fa fa-envelope-o myicon"></i>info&#64;tgif.com</a
+          >
         </div>
+        <!--NewNav-->
+        <nav class="navbar navbar-expand-md navbar-light rounded bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav justify-content-around">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+                </li>
+                
+                <li class="nav-item dropdown">  
+                    <a class="nav-link dropdown-toggle " href="#" id="congress" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Congress 113
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="congress">
+                      <a class="dropdown-item" href="#">House</a>
+                      <a class="dropdown-item" href="#">Senate</a>
+                    </div>
+                  </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="attendance" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Attendance
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="attendance">
+                    <a class="dropdown-item" href="#">House</a>
+                    <a class="dropdown-item" href="#">Senate</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="loyalty" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Party Loyalty
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="loyalty">
+                    <a class="dropdown-item" href="#">House</a>
+                    <a class="dropdown-item" href="#">Senate</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+  
+  
+        <!--Nav-->
         <nav class="row">
           <ul class="col nav nav-tabs text-dark">
             <li class="col p-0 nav-item border rounded active">
               <a class="nav-link text-dark text-center" href="#">Home</a>
             </li>
-            <li class=" col p-0 nav-item dropdown">
+            <li class="col p-0 nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle text-center text-dark"
+                class=" col nav-link dropdown-toggle text-center text-dark"
                 data-toggle="dropdown"
                 href="#"
                 role="button"
@@ -45,7 +88,7 @@
                 aria-expanded="false"
                 >Congress113</a
               >
-              <div class="dropdown-menu">
+              <div class="col-12 dropdown-menu">
                 <a class="dropdown-item" href="house-page.html">House</a>
                 <a class="dropdown-item" href="senate-page.html">Senate</a>
               </div>
