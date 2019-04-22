@@ -177,16 +177,21 @@ const myVue = new Vue({
           myVue.members = senateData.results[0].members;
           myVue.fakemembers = myVue.members.slice();
           myVue.tableMembers = myVue.members.slice();
-          myVue.metadata = openSenateData.results;
-          myArray = await myVue.getStates();
-          creamap();
+          if(document.URL.includes("senate-page")){
+            myVue.metadata = openSenateData.results;
+            myArray = await myVue.getStates();
+            creamap();
+          }
+          
         } else if (houseReg.exec(document.URL)) {
           myVue.members = houseData.results[0].members;
           myVue.fakemembers = myVue.members.slice();
           myVue.tableMembers = myVue.members.slice();
-          myVue.metadata = openSenateData.results;
-          myArray = await myVue.getStates();
-          creamap();
+          if(document.URL.includes("house-page")){
+            myVue.metadata = openSenateData.results;
+            myArray = await myVue.getStates();
+            creamap();
+          }
         } else if (homeReg.exec(document.URL)) {
         } else {
           myVue.members = senateData.results[0].members;
@@ -621,6 +626,8 @@ function changeMap() {
   series.select(index);
 }
 
-var ho = document
+if(document.URL.includes("senate-page"||"house-page")){
+  var ho = document
   .getElementById("stateSelector")
   .addEventListener("click", changeMap);
+}
