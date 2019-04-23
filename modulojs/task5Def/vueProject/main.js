@@ -24,6 +24,17 @@ const apiKeys = [
 var map;
 let myArray = [];
 
+Vue.component("membered",{
+  props:['member'],
+  template:`
+  <tr>
+    <td> <a :href=member.url>{{member.first_name}} {{member.middle_name || ""}} {{member.last_name}}</a></td>
+    <td>{{member.party}}</td>
+    <td>{{member.state}}</td>
+    <td>{{member.seniority}}</td>
+    <td>{{member.votes_with_party_pct}}</td>
+  </tr>`
+});
 
 //Vue
 const myVue = new Vue({
@@ -183,7 +194,8 @@ const myVue = new Vue({
             creamap();
           }
           
-        } else if (houseReg.exec(document.URL)) {
+        } 
+        else if (houseReg.exec(document.URL)) {
           myVue.members = houseData.results[0].members;
           myVue.fakemembers = myVue.members.slice();
           myVue.tableMembers = myVue.members.slice();
@@ -192,7 +204,8 @@ const myVue = new Vue({
             myArray = await myVue.getStates();
             creamap();
           }
-        } else if (homeReg.exec(document.URL)) {
+        } 
+        else if (homeReg.exec(document.URL)) {
         } else {
           myVue.members = senateData.results[0].members;
           myVue.fakemembers = myVue.members.slice();
@@ -249,12 +262,7 @@ const myVue = new Vue({
     },
 
     getStatesInfo(state){
-            //   "US.AK"
-        // {id: "US.AK", value: 2, state: "Alaska"};
-
-        // [{'id': 'US.AK.1', 'senator': name, 'party': party},
-        //  {'id': 'US.AK.2', 'senator': name, 'party': party}
-        // ]
+  
         let someReturn =[];
         for (let i = 0; i < this.members.length; i++) {
           const element = this.members[i];
@@ -444,7 +452,7 @@ const myVue = new Vue({
 
       return aux;
     },
-
+    
     theNGreatestLoyal() {
       let somearray = this.fakemembers.slice();
       let pct = (somearray.length * 10) / 100; //cuantos quiero
@@ -493,6 +501,8 @@ const myVue = new Vue({
     }
   }
 });
+
+//fin de Vue
 
 
 

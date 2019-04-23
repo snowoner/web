@@ -11,14 +11,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="main2.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="icon" href="houseSenateIcon.png" />
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
@@ -27,210 +24,222 @@
     <script src="https://cdn.anychart.com/releases/v8/geodata/countries/united_states_of_america/united_states_of_america.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/texas/texas.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/virginia/virginia.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/west_virginia/west_virginia.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/alabama/alabama.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/alaska/alaska.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/arizona/arizona.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/arkansas/arkansas.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/california/california.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/colorado/colorado.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/connecticut/connecticut.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/delaware/delaware.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/florida/florida.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/georgia/georgia.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/hawaii/hawaii.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/idaho/idaho.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/illinois/illinois.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/indiana/indiana.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/iowa/iowa.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/kansas/kansas.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/kentucky/kentucky.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/louisiana/louisiana.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/missouri/missouri.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/maine/maine.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/maryland/maryland.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/massachusetts/massachusetts.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/michigan/michigan.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/minnesota/minnesota.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/mississippi/mississippi.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/montana/montana.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/nebraska/nebraska.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/nevada/nevada.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/new_hampshire/new_hampshire.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/new_jersey/new_jersey.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/new_mexico/new_mexico.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/new_york/new_york.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/north_carolina/north_carolina.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/north_dakota/north_dakota.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/ohio/ohio.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/oklahoma/oklahoma.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/oregon/oregon.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/pennsylvania/pennsylvania.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/rhode_island/rhode_island.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/south_carolina/south_carolina.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/south_dakota/south_dakota.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/tennessee/tennessee.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/utah/utah.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/vermont/vermont.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/washington/washington.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/wisconsin/wisconsin.js"></script>
-<script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/wyoming/wyoming.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/west_virginia/west_virginia.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/alabama/alabama.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/alaska/alaska.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/arizona/arizona.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/arkansas/arkansas.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/california/california.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/colorado/colorado.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/connecticut/connecticut.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/delaware/delaware.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/florida/florida.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/georgia/georgia.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/hawaii/hawaii.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/idaho/idaho.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/illinois/illinois.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/indiana/indiana.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/iowa/iowa.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/kansas/kansas.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/kentucky/kentucky.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/louisiana/louisiana.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/missouri/missouri.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/maine/maine.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/maryland/maryland.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/massachusetts/massachusetts.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/michigan/michigan.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/minnesota/minnesota.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/mississippi/mississippi.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/montana/montana.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/nebraska/nebraska.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/nevada/nevada.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/new_hampshire/new_hampshire.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/new_jersey/new_jersey.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/new_mexico/new_mexico.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/new_york/new_york.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/north_carolina/north_carolina.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/north_dakota/north_dakota.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/ohio/ohio.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/oklahoma/oklahoma.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/oregon/oregon.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/pennsylvania/pennsylvania.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/rhode_island/rhode_island.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/south_carolina/south_carolina.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/south_dakota/south_dakota.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/tennessee/tennessee.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/utah/utah.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/vermont/vermont.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/washington/washington.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/wisconsin/wisconsin.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/geodata/usa_states/wyoming/wyoming.js"></script>
     <title>Senate Page</title>
   </head>
   <body>
     <div class="container border" id="app">
-      <nav>
-        <div>
-          <div class="d-flex justify-content-between align-items-center">
-            <a class="bandera d-flex" href="home-page.html" id="homeLogo"></a>
-            <a class="text-white" href="mailto:info@tgif.com">
-              <i class="fa fa-envelope-o myicon"></i>info&#64;tgif.com</a
-            >
-          </div>
-          <ul class="nav nav-tabs text-dark">
-            <li class="nav-item">
-              <a class="nav-link text-dark text-center" href="home-page.html"
-                >Home</a
-              >
+      <!--Top Logo + Mail-->
+      <div class="row justify-content-between align-items-center mb-3">
+        <a class="bandera" href="home-page.html" id="homeLogo"></a>
+        <a class="text-white text-right mr-3" href="mailto:info@tgif.com">
+          <i class="fa fa-envelope-o myicon"></i>info&#64;tgif.com</a
+        >
+      </div>
+      <!--Nav-->
+      <nav class="navbar navbar-expand-md navbar-light rounded bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav justify-content-around">
+            <li class="col nav-item active">
+              <a class="nav-link" href="#"
+                >Home <span class="sr-only"></span
+              ></a>
             </li>
-            <li class="nav-item dropdown border rounded active">
+
+            <li class=" col nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle text-center text-dark"
-                data-toggle="dropdown"
+                class="nav-link dropdown-toggle "
                 href="#"
-                role="button"
+                id="congress"
+                data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >Congress113</a
               >
-              <div class="dropdown-menu active col-12">
-                <a class="dropdown-item" href="house-page.html">House</a>
-                <a class="dropdown-item disabled" href="#">Senate</a>
+                Congress 113
+              </a>
+              <div class="dropdown-menu" aria-labelledby="congress">
+                <a class="dropdown-item" href="#">House</a>
+                <a class="dropdown-item" href="#">Senate</a>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class=" col nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle text-center text-dark"
-                data-toggle="dropdown"
+                class="nav-link dropdown-toggle"
                 href="#"
-                role="button"
+                id="attendance"
+                data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >Attendance</a
               >
-              <div class="dropdown-menu col-12">
-                <a class="dropdown-item" href="house-attendance.html">House</a>
-                <a class="dropdown-item" href="senate-attendance.html"
-                  >Senate</a
-                >
+                Attendance
+              </a>
+              <div class="dropdown-menu" aria-labelledby="attendance">
+                <a class="dropdown-item" href="#">House</a>
+                <a class="dropdown-item" href="#">Senate</a>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class=" col nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle text-center text-dark"
-                data-toggle="dropdown"
+                class="nav-link dropdown-toggle"
                 href="#"
-                role="button"
+                id="loyalty"
+                data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >Party Loyalty</a
               >
-              <div class="dropdown-menu col-12">
-                <a class="dropdown-item" href="house-loyalty.html">House</a>
-                <a class="dropdown-item" href="senate-loyalty.html">Senate</a>
+                Party Loyalty
+              </a>
+              <div class="dropdown-menu" aria-labelledby="loyalty">
+                <a class="dropdown-item" href="#">House</a>
+                <a class="dropdown-item" href="#">Senate</a>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark text-center" href="legislators.html"
-                >Legislators</a
-              >
+            <li class=" col nav-item">
+              <a class="nav-link" href="#">Lesgislators</a>
             </li>
           </ul>
         </div>
       </nav>
-      <header>
-        <div class="container separado">
-          <h2 class="col-9 text-justify">Senators</h2>
-          <p class="col-9 text-justify">
-            <span class="spaced"> </span>First convened in 1789, the composition
-            and powers of the Senate are established in Article One of the U.S.
-            Constitution. Each state is represented by two senators, regardless
-            of population, who serve staggered six-year terms. The Senate has
-            several exclusive powers not granted to the House, including
-            consenting to treaties as a precondition to their ratification and
-            consenting to or confirming appointments of Cabinet secretaries,
-            federal judges, other federal executive officials, military
-            officers, regulatory officials, ambassadors, and other federal
-            uniformed officers, as well as trial of federal officials impeached
-            by the House.
-          </p>
-        </div>
-      </header>
-
-      <div class="container" id="maps">
+      <div class="separated"></div>
+      <!--InfoPage container-->
+      <div class="col separado text-justify">
+        <h2>Senators</h2>
+        <p>
+          <span class="spaced"> </span>First convened in 1789, the composition
+          and powers of the Senate are established in Article One of the U.S.
+          Constitution. Each state is represented by two senators, regardless of
+          population, who serve staggered six-year terms. The Senate has several
+          exclusive powers not granted to the House, including consenting to
+          treaties as a precondition to their ratification and consenting to or
+          confirming appointments of Cabinet secretaries, federal judges, other
+          federal executive officials, military officers, regulatory officials,
+          ambassadors, and other federal uniformed officers, as well as trial of
+          federal officials impeached by the House.
+        </p>
       </div>
-      <!--Table container-->
-      <div
-        class="container mb-3 d-flex justify-content-between align-items-center"
-      >
-        <div class="col-8">
-          <div class="form-check form-check-inline">
-            <span class="mr-3">Filter by Party: </span>
-            <label class="form-check-label mr-3" for="republican"
-              >Republican</label
-            >
-            <input
-              class="form-check-input "
-              id="republican"
-              type="checkbox"
-              value="R"
-              v-model="checkedNames"
-              v-on:change="muestraTabla"
-            />
-          </div>
-          <div class="form-check form-check-inline ml-3">
-            <label class="form-check-label mr-3" for="democrat">Democrat</label>
-            <input
-              id="democrat"
-              class="form-check-input"
-              v-model="checkedNames"
-              v-on:change="muestraTabla"
-              type="checkbox"
+      <!--Map-->
+      <div class="row" id="maps"></div>
+      <!--Filters-->
+      <div class="row mb-3 mt-3 align-items-center justify-content-around">
+        <span class="col-md-2">Filter by Party: </span>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-4 form-check btn btn-secondary">
+              <label class=" col-10 form-check-label" for="republican"
+                >Republicans</label
+              >
+              <input
+                class="col-2 form-check-input "
+                value="R"
+                id="republican" 
+                type="checkbox"
+                v-model="checkedNames"
+                v-on:change="muestraTabla"
+              />
+            </div>
+            <div class="col-md-4 form-check btn btn-secondary">
+              <label class="col-10 form-check-label" for="democrat"
+                >Democrats</label
+              >
+              <input
+              class="col-2 form-check-input"
               value="D"
-            />
-          </div>
-          <div class="form-check form-check-inline ml-3">
-            <label class="form-check-label mr-3" for="independent"
-              >Independent</label
-            >
-            <input
-              class="form-check-input"
-              value="I"
+              id="democrat"
               type="checkbox"
-              id="independent"
               v-model="checkedNames"
               v-on:change="muestraTabla"
-              value="independent"
-            />
+              />
+            </div>
+            <div class="col-md-4 form-check btn btn-secondary">
+              <label class="col-10 form-check-label" for="independent"
+                >Independents</label
+              >
+              <input
+                class="col-2 form-check-input"
+                value="I"
+                id="independent"
+                type="checkbox"
+                v-model="checkedNames"
+                v-on:change="muestraTabla"
+              />
+            </div>
           </div>
         </div>
-        <div class="d-flex col-4 align-items-center">
-          <span class="col-6">Filter by State :</span>
+        <span class="col-md-2">Filter by State :</span>
+        <div class="col-md-2">
           <select
-            class="form-control col-3"
+            class="form-control col-5 col-md-5"
             v-model="selected"
             v-on:change="muestraTabla"
             id="stateSelector"
           >
-            <option v-for="option in fillSelect" :value="option.value">
+            <option v-for="option in fillSelect" :value="option.value" class="col">
               {{ option.text }}
             </option>
           </select>
         </div>
       </div>
-      <div class="container">
-        <table class="table text-center" id="house-data">
-          <thead>
+      <!--Table-->
+        <table class="col table text-center justify-content-center" id="house-data">
+          <thead >
             <tr>
               <td>Name</td>
               <td>Party</td>
@@ -239,36 +248,22 @@
               <td>Votes with party in %</td>
             </tr>
           </thead>
-          <tbody>
-            <tr v-for="(item, index) in tableMembers" :key="index">
-              <td>
-                <a :href="item.url"
-                  >{{ item.first_name }} {{ item.middle_name || "" }}
-                  {{ item.last_name }}</a
-                >
-              </td>
-              <td>{{ item.party }}</td>
-              <td>{{ item.state }}</td>
-              <td>{{ item.seniority }}</td>
-              <td>{{ item.votes_with_party_pct }}</td>
-            </tr>
+          <tbody class="">
+              <tr is="membered" v-for="member in members" :member="member"></tr>
           </tbody>
         </table>
-        <div v-if="tablaVacia" class="text-danger text-center mb-3">
+        <div v-if="tablaVacia" class="row text-danger text-center mb-3">
           NO HAY INFORMACION A MOSTRAR
         </div>
-      </div>
-      <!-- Footer -->
-      <div class="container">
-        <footer class="page-footer font-middle">
-          <div class="text-center border font-italic">
+      <!--Footer-->
+      <div class="row mt-1">
+        <footer class="col font-middle">
+          <div class=" col page-footer text-center border font-italic rounded">
             &#169; 2019 TGIF | All Right Reserved
           </div>
         </footer>
       </div>
-      <!-- Footer -->
     </div>
-
     <!--body scriptss -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -287,6 +282,5 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
-
   </body>
 </html>

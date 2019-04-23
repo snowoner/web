@@ -1,5 +1,10 @@
-#maps{
-  width: 550px;
-  height: 550px;
-  background-color: "#dee2e6";
+
+.timer {
+  height: 100px;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.color {
+  background-color: green;
 }
