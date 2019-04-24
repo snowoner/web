@@ -14,8 +14,16 @@ html{
   height: 100px;
   width: 100px;
   animation:  
-    someAnimation 20s linear infinite;
+    someAnimation 8s linear infinite;
   border-radius: 100%;
+}
+
+#maps{
+  width: 500px;
+  height: 500px;
+  max-height: 550px;
+  max-width: 550px;
+  background-color: "#dee2e6";
 }
 
 @keyframes nudge {
@@ -109,8 +117,25 @@ html{
 }
 
 .separated{
-  margin-top:50px;
+  margin-top:30px;
 }
+
+#house-data td, #house-data th {
+vertical-align: inherit;
+}
+
+#senate-data td, #senate-data th {
+  vertical-align: inherit;
+}
+
+#lEngaged td, #lEngaged th {
+  vertical-align: inherit;
+}
+
+#mEngaged td, #mEngaged th {
+  vertical-align: inherit;
+}
+
 .pb-20{
   padding-bottom: 20px;
 }
@@ -119,8 +144,8 @@ html{
   margin: auto 40px;
 }
 .separado{
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .page-footer{

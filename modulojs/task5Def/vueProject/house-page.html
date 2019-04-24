@@ -7,13 +7,8 @@
     <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <link rel="stylesheet" href="main.css"/>
-    <link rel="stylesheet" href="main2.css"/>
     <link
       rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-
-
-
       <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
@@ -74,187 +69,219 @@
     <title>House Page</title>
   </head>
   <body>
+    <!--BodyContainer-->
     <div class="container border" id="app">
-      <nav>
-        <div>
-          <div class="d-flex justify-content-between align-items-center">
-            <a class="bandera d-flex" href="home-page.html" id="homeLogo"></a>
-            <a class="text-white" href="mailto:info@tgif.com">
-              <i class="fa fa-envelope-o myicon"></i>info&#64;tgif.com</a
-            >
-          </div>
-          <ul class="nav nav-tabs text-dark">
-            <li class="nav-item">
-              <a class="nav-link text-dark text-center" href="home-page.html"
-                >Home</a
-              >
+      <!--Top Logo + Mail-->
+      <div class="row justify-content-between align-items-center mb-3">
+          <a class="bandera" href="home-page.html" id="homeLogo"></a>
+          <a class="mr-3 text-white text-right" href="mailto:info@tgif.com">
+            <i class="fa fa-envelope-o myicon"></i>info&#64;tgif.com</a
+          >
+      </div>
+      <!--Nav-->
+      <nav class="navbar navbar-expand-md navbar-light rounded bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav justify-content-around">
+            <li class="col nav-item">
+              <a class="nav-link" href="home-page.html"
+                >Home <span class="sr-only"></span
+              ></a>
             </li>
-            <li class="nav-item dropdown border rounded active">
+
+            <li class=" col nav-item dropdown active">
               <a
-                class="nav-link dropdown-toggle text-center text-dark"
-                data-toggle="dropdown"
+                class="nav-link dropdown-toggle "
                 href="#"
-                role="button"
+                id="congress"
+                data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >Congress113</a
               >
-              <div class="dropdown-menu active col-12">
+                Congress 113
+              </a>
+              <div class="dropdown-menu" aria-labelledby="congress">
                 <a class="dropdown-item disabled" href="#">House</a>
                 <a class="dropdown-item" href="senate-page.html">Senate</a>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class=" col nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle text-center text-dark"
-                data-toggle="dropdown"
+                class="nav-link dropdown-toggle"
                 href="#"
-                role="button"
+                id="attendance"
+                data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >Attendance</a
               >
-              <div class="dropdown-menu col-12">
+                Attendance
+              </a>
+              <div class="dropdown-menu" aria-labelledby="attendance">
                 <a class="dropdown-item" href="house-attendance.html">House</a>
-                <a class="dropdown-item" href="senate-attendance.html"
-                  >Senate</a
-                >
+                <a class="dropdown-item" href="senate-attendance.html">Senate</a>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class=" col nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle text-center text-dark"
-                data-toggle="dropdown"
+                class="nav-link dropdown-toggle"
                 href="#"
-                role="button"
+                id="loyalty"
+                data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >Party Loyalty</a
               >
-              <div class="dropdown-menu col-12">
+                Party Loyalty
+              </a>
+              <div class="dropdown-menu" aria-labelledby="loyalty">
                 <a class="dropdown-item" href="house-loyalty.html">House</a>
                 <a class="dropdown-item" href="senate-loyalty.html">Senate</a>
               </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark text-center" href="legislators.html">Legislators</a>
-              </li>
+            <li class=" col nav-item">
+              <a class="nav-link" href="legislators.html">Lesgislators</a>
+            </li>
           </ul>
         </div>
       </nav>
-      <!--Table container-->
-      <header>
-        <div class="container separado">
-          <h2 class="col-9 text-justify">Congressmen</h2>
-          <p class="col-9 text-justify">
-            <span class="spaced"> </span>The major power of the House is to pass
-            federal legislation that affects the entire country, although its
-            bills must also be passed by the Senate and further agreed to by the
-            U.S. President before becoming law (unless both the House and Senate
-            re-pass the legislation with a two-thirds majority in each chamber).
-            The House has some exclusive powers: the power to initiate revenue
-            bills, to impeach officials (impeached officials are subsequently
-            tried in the Senate), and to elect the U.S. President in case there
-            is no majority in the Electoral College.
-          </p>
-          <p class="col-9 text-justify">
-            Each U.S. state is represented in the House in proportion to its
-            population as measured in the census, but every state is entitled to
-            at least one representative.
-          </p>
+      <div class="separated"></div>
+       <!--Loading-->
+      <div v-if="!loaded" class="row">
+        <div class="spinner-grow col" role="status">
+          <span class="sr-only">Loading...</span>
         </div>
-      </header>
-
-      <div class="container" id="maps">
+        <div class="spinner-grow col" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow col" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
       </div>
-
-      <div class="container mb-3 d-flex justify-content-between align-items-center">
-        <div class="col-8">
-          <div class="form-check form-check-inline">
-            <span class="mr-3">Filter by Party: </span>
-            <label class="form-check-label mr-3" for="republican"
-              >Republican</label
-            >
-            <input
-              class="form-check-input "
-              id="republican"
-              type="checkbox"
-              value="R"
-              v-model="checkedNames"
-              v-on:change="muestraTabla"
-              
-            />
-          </div>
-          <div class="form-check form-check-inline ml-3">
-            <label class="form-check-label mr-3" for="democrat"
-              >Democrat</label>
-            <input
-               id="democrat"
-              class="form-check-input"
-              v-model="checkedNames"
-              v-on:change="muestraTabla"
-              type="checkbox"
-              value="D"
-            />
-          </div>
-          <div class="form-check form-check-inline ml-3">
-            <label class="form-check-label mr-3" for="independent"
-              >Independent</label
-            >
-            <input
-              class="form-check-input"
-              value="I" 
-              type="checkbox"
-              id="independent"
-              v-model="checkedNames"
-              v-on:change="muestraTabla"
-              value="independent"
-            />
-          </div>
+      <div v-if="!loaded" class="row text-center aling-items-center justify-content-center">
+        <h1>We are building the page!!</h1>
+      </div>
+      <!--InfoPage container-->
+      <div class="col separado text-justify">
+        <h2 >Congressmen</h2>
+        <p>
+          <span class="spaced"> </span>The major power of the House is to pass
+          federal legislation that affects the entire country, although its
+          bills must also be passed by the Senate and further agreed to by the
+          U.S. President before becoming law (unless both the House and Senate
+          re-pass the legislation with a two-thirds majority in each chamber).
+          The House has some exclusive powers: the power to initiate revenue
+          bills, to impeach officials (impeached officials are subsequently
+          tried in the Senate), and to elect the U.S. President in case there
+          is no majority in the Electoral College.
+        </p>
+        <p>
+          Each U.S. state is represented in the House in proportion to its
+          population as measured in the census, but every state is entitled to
+          at least one representative.
+        </p>
+      </div>
+      <!--Map-->
+      <div class="row align-items-center justify-content-center">
+        <div id="maps">
         </div>
-        <div class="d-flex col-4 align-items-center">
-          <span class="col-6">Filter by State :</span>
-          <select class="form-control col-3" v-model="selected" v-on:change="muestraTabla" id="stateSelector">
+      </div>
+      <!--Filters-->
+      <div class="row mb-3 mt-3 align-items-center justify-content-around">
+          <span class="col-md-2">Filter by Party: </span>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-4 form-check btn btn-secondary">
+                <label class=" col-10 form-check-label" for="republican"
+                  >Republicans</label
+                >
+                <input
+                  class="col-2 form-check-input "
+                  value="R"
+                  id="republican" 
+                  type="checkbox"
+                  v-model="checkedNames"
+                  v-on:change="muestraTabla"
+                />
+              </div>
+              <div class="col-md-4 form-check btn btn-secondary">
+                <label class="col-10 form-check-label" for="democrat"
+                  >Democrats</label
+                >
+                <input
+                class="col-2 form-check-input"
+                value="D"
+                id="democrat"
+                type="checkbox"
+                v-model="checkedNames"
+                v-on:change="muestraTabla"
+                />
+              </div>
+              <div class="col-md-4 form-check btn btn-secondary">
+                <label class="col-10 form-check-label" for="independent"
+                  >Independents</label
+                >
+                <input
+                  class="col-2 form-check-input"
+                  value="I"
+                  id="independent"
+                  type="checkbox"
+                  v-model="checkedNames"
+                  v-on:change="muestraTabla"
+                />
+              </div>
+            </div>
+          </div>
+          <span class="col-md-2">Filter by State :</span>
+          <div class="col-md-2">
+            <select
+            class="form-control col-5 col-md-5"
+            v-model="selected"
+            v-on:change="muestraTabla"
+            id="stateSelector"
+            >
               <option v-for="option in fillSelect" :value="option.value">
                 {{ option.text }}
               </option>
             </select>
-        </div>
-      </div>
-      <div class="container">
-        <table class="table text-center" id="house-data">
-          <thead>
-            <tr>
-              <td>Name</td>
-              <td>Party</td>
-              <td>State</td>
-              <td>Seniority</td>
-              <td>Votes with party in %</td>
-            </tr>
-          </thead>
-          <tbody>
-          <tr v-for="(item, index) in tableMembers" :key="index">
-            <td> <a :href=item.url>{{item.first_name}} {{item.middle_name || ""}} {{item.last_name}}</a></td>
-            <td>{{item.party}}</td>
-            <td>{{item.state}}</td>
-            <td>{{item.seniority}}</td>
-            <td>{{item.votes_with_party_pct}}</td>
-          </tr>
-          </tbody>
-        </table>
-        <div v-if="tablaVacia" class="text-danger text-center mb-3">
-            NO HAY INFORMACION A MOSTRAR
-         </div>
-      </div>
-      <div class="container">
-        <footer class="page-footer font-middle">
-          <div class="text-center border font-italic">
-            &#169; 2019 TGIF | All Right Reserved
           </div>
-        </footer>
+        </div>
+      <!--Table   To do: Pagination--> 
+      <table class="col table text-center" id="house-data">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Party</td>
+            <td>State</td>
+            <td>Seniority</td>
+            <td>Votes with party in %</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr is="membered" v-for="member in tableMembers" :member="member"></tr>
+        </tr>
+        </tbody>
+      </table>
+      <div v-if="tablaVacia" class="text-danger text-center mb-3">
+          NO HAY INFORMACION A MOSTRAR
+      </div>
+      <!--Footer-->
+      <div class="row mt-1">
+          <footer class="col font-middle">
+            <div class=" col page-footer text-center border font-italic rounded">
+              &#169; 2019 TGIF | All Right Reserved
+            </div>
+          </footer>
       </div>
     </div>
-
     <!--body scriptss -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
