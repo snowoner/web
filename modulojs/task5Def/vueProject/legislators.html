@@ -211,9 +211,9 @@
           <th>Party</th>
           <th>State</th>
           <th>Identificador</th>
-          <th v-if="apiSelected=='api1'">Total Votes</th>
-          <th v-if="apiSelected=='api2'">Phone Number</th>
-          <th v-if="apiSelected=='All'">Birthday</th>
+          <th v-if="apiSelected=='api1'" class="notshow">Total Votes</th>
+          <th v-if="apiSelected=='api2'" class="notshow">Phone Number</th>
+          <th v-if="apiSelected=='All'" class="notshow">Birthday</th>
         </thead>
         <tbody>
           <tr v-for="item in tableLegMembers">
@@ -226,9 +226,9 @@
             <td>{{ item.party }}</td>
             <td>{{ item.state }}</td>
             <td>{{ item.govtrack_id || "--" }}</td>
-            <td v-if="apiSelected=='api1'">{{item.total_votes|| "--"}}</td>
-            <td v-if="apiSelected=='api2'">{{item.phone || "--"}}</td>
-            <th v-if="apiSelected=='All'">{{item.birthday || "--"}}</th>
+            <td v-if="apiSelected=='api1'" class="notshow">{{item.total_votes|| "--"}}</td>
+            <td v-if="apiSelected=='api2'" class="notshow">{{item.phone || "--"}}</td>
+            <th v-if="apiSelected=='All'" class="notshow">{{item.birthday || "--"}}</th>
           </tr>
         </tbody>
       </table>

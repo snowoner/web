@@ -32,7 +32,7 @@ Vue.component("membered", {
     <td> <a :href=member.url>{{member.first_name}} {{member.middle_name || ""}} {{member.last_name}}</a></td>
     <td>{{member.party}}</td>
     <td>{{member.state}}</td>
-    <td>{{member.seniority}}</td>
+    <td class="notshow">{{member.seniority}}</td>
     <td>{{member.votes_with_party_pct}}</td>
   </tr>`
 });
@@ -64,9 +64,19 @@ const myVue = new Vue({
       { text: "All", value: "All" },
       { text: "ProPublica", value: "api1" },
       { text: "OpenStates", value: "api2" }
-    ]
+    ],
+    pagina:0,
+    paginaRate:5,
   },
   methods: {
+    next(){
+      this.pagina>=Math.floor(this.members.length/this.paginaRate)-1?Math.floor(this.members.length/this.paginaRate):this.pagina+=1;
+    },
+    previous(){
+      this.pagina<=0?0:this.pagina-=1;
+    },
+    
+
     /**
      * Incluye los elementos de un array en un arrayTarget segun la
      * propiedad string y el valor que le passas
@@ -377,6 +387,12 @@ const myVue = new Vue({
     );
   },
   computed: {
+
+
+    showPagina(){
+      this.fakemembers=this.members.slice();
+      return this.fakemembers.splice(this.pagina*this.paginaRate,this.paginaRate);
+    },
     //fill the select filter
     fillSelect() {
       let arrayStates = [];
