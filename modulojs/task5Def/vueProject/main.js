@@ -11,7 +11,7 @@ const senateReg = /senate/;
 const houseReg = /house/;
 const homeReg = /home/;
 
-//APIkeys to Fetch 
+//APIkeys to Fetch
 const apiKeys = [
   "qlZctqHbMq67VLHByeQUNH227bIi791mq4LMHwuH",
   "qlZctqHbMq67VLHByeQUNH227bIi791mq4LMHwuH",
@@ -24,9 +24,10 @@ const apiKeys = [
 var map;
 let myArray = [];
 
-Vue.component("membered",{
-  props:['member'],
-  template:`
+//component for table in house And senate
+Vue.component("membered", {
+  props: ["member"],
+  template: `
   <tr>
     <td> <a :href=member.url>{{member.first_name}} {{member.middle_name || ""}} {{member.last_name}}</a></td>
     <td>{{member.party}}</td>
@@ -52,6 +53,7 @@ const myVue = new Vue({
         govtrack_id: "Loading"
       }
     ],
+    loaded:false,
     fakemembers: [],
     checkedNames: [],
     selected: "All",
@@ -66,9 +68,9 @@ const myVue = new Vue({
   },
   methods: {
     /**
-     * Incluye los elementos de un array en un arrayTarget segun la 
+     * Incluye los elementos de un array en un arrayTarget segun la
      * propiedad string y el valor que le passas
-     * 
+     *
      * @param {*} array Origen
      * @param {*} arrayTarget Destino
      * @param {*} value Valor limite
@@ -93,14 +95,15 @@ const myVue = new Vue({
       return arrayTarget;
     },
 
-     /**
-     * Incluye los elementos de un array en un arrayTarget segun la 
+    /**
+     * Incluye los elementos de un array en un arrayTarget segun la
      * propiedad string y el valor que le passas
-     * 
+     *
      * @param {*} array Origen
      * @param {*} arrayTarget Destino
      * @param {*} value Valor limite
      * @param {*} string  propiedad del objeto
+     * @return
      */
     lastPushGre(array, arrayTarget, value, string) {
       let finish = false;
@@ -140,33 +143,38 @@ const myVue = new Vue({
       return array;
     },
     /**
-     * Hace un Fetch de los datos de una URL y los transforma JSON 
+     * Hace un Fetch de los datos de una URL y los transforma JSON
      * @param {*} url Url
      * @param {*} init indice para apikeys
      */
     async fetchJson(url, init) {
-      if (apiKeys[init] == "") {
-        const response = await fetch(url);
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(response.statusText);
-      } else {
-        const response_1 = await fetch(url, {
-          method: "GET",
-          headers: {
-            "X-API-Key": apiKeys[init]
+      let datos = "datos" + init;
+      if (!localStorage[datos]) {
+        if (apiKeys[init] == "") {
+          const response = await fetch(url);
+          if (response.ok) {
+            return response.json();
           }
-        });
-        if (response_1.ok) {
-          return response_1.json();
+          throw new Error(response.statusText);
+        } else {
+          const response_1 = await fetch(url, {
+            method: "GET",
+            headers: {
+              "X-API-Key": apiKeys[init]
+            }
+          });
+          if (response_1.ok) {
+            return response_1.json();
+          }
+          throw new Error(response_1.statusText);
         }
-        throw new Error(response_1.statusText);
+      } else {
+        return JSON.parse(localStorage[datos]);
       }
     },
     /**
      * Hace un promise all de las URLS
-     * @param {*} urls 
+     * @param {*} urls
      * @param {*} init indice para apikeys
      */
     fetchJsonList(urls, init) {
@@ -174,8 +182,8 @@ const myVue = new Vue({
     },
     /**
      * Carga de datos en mis variables
-     * @param {*} urls 
-     * @param {*} init 
+     * @param {*} urls
+     * @param {*} init
      */
     hazMagia(urls, init) {
       this.fetchJsonList(urls, init).then(async function([
@@ -184,28 +192,31 @@ const myVue = new Vue({
         openSenateData,
         openHouseData
       ]) {
+        if (!localStorage.datos0) {
+          localStorage.setItem("datos0", JSON.stringify(senateData));
+          localStorage.setItem("datos1", JSON.stringify(houseData));
+          localStorage.setItem("datos2", JSON.stringify(openSenateData));
+          localStorage.setItem("datos3", JSON.stringify(openHouseData));
+        }
         if (senateReg.exec(document.URL)) {
           myVue.members = senateData.results[0].members;
           myVue.fakemembers = myVue.members.slice();
           myVue.tableMembers = myVue.members.slice();
-          if(document.URL.includes("senate-page")){
+          if (document.URL.includes("senate-page")) {
             myVue.metadata = openSenateData.results;
             myArray = await myVue.getStates();
             creamap();
           }
-          
-        } 
-        else if (houseReg.exec(document.URL)) {
+        } else if (houseReg.exec(document.URL)) {
           myVue.members = houseData.results[0].members;
           myVue.fakemembers = myVue.members.slice();
           myVue.tableMembers = myVue.members.slice();
-          if(document.URL.includes("house-page")){
+          if (document.URL.includes("house-page")) {
             myVue.metadata = openSenateData.results;
             myArray = await myVue.getStates();
             creamap();
           }
-        } 
-        else if (homeReg.exec(document.URL)) {
+        } else if (homeReg.exec(document.URL)) {
         } else {
           myVue.members = senateData.results[0].members;
           myVue.fakemembers = myVue.members.slice();
@@ -213,6 +224,7 @@ const myVue = new Vue({
           myVue.metadata = openSenateData.results;
           myVue.muestrLegTabla();
         }
+        myVue.loaded=true;
       });
     },
     /**
@@ -235,6 +247,7 @@ const myVue = new Vue({
       }
     },
 
+    //devuelve los senadores de Members
     getSenators(state) {
       let number = 0;
       this.members.forEach(element => {
@@ -245,6 +258,7 @@ const myVue = new Vue({
       return number;
     },
 
+    //this returns an array of the states from openstatesapi()
     getStates() {
       let arrayStates = [];
       this.metadata.forEach(element => {
@@ -261,21 +275,27 @@ const myVue = new Vue({
       return arrayStates;
     },
 
-    getStatesInfo(state){
-  
-        let someReturn =[];
-        for (let i = 0; i < this.members.length; i++) {
-          const element = this.members[i];
-          if("US."+element.state==state){
-            let aux2 ={};
-            aux2.id = `${state}.${element.district>9?"0":"00"}${(element.district||Math.floor(Math.random() * 9) + 1)}`;
-            aux2.senator = `${element.first_name}, ${element.middle_name || ""}${element.last_name}`;
-            aux2.party=element.party;
-            someReturn.push(aux2);
-          }
+    //devuelve la informacion de los estados para el mapa
+    getStatesInfo(state) {
+      let someReturn = [];
+      for (let i = 0; i < this.members.length; i++) {
+        const element = this.members[i];
+        if ("US." + element.state == state) {
+          let aux2 = {};
+          aux2.id = `${state}.${
+            element.district > 9 ? "0" : "00"
+          }${element.district || Math.floor(Math.random() * 9) + 1}`;
+          aux2.senator = `${element.first_name}, ${element.middle_name || ""}${
+            element.last_name
+          }`;
+          aux2.party = element.party;
+          someReturn.push(aux2);
         }
-       return someReturn;
+      }
+      return someReturn;
     },
+
+    //muestra tabla para legislators
     muestrLegTabla() {
       this.tablaVacia = false;
       if (this.apiSelected == "api1") {
@@ -349,6 +369,7 @@ const myVue = new Vue({
       }
     }
   },
+
   mounted() {
     this.hazMagia(
       [senateUrl, houseUrl, openSenateUrl, openHouseUrl],
@@ -356,6 +377,7 @@ const myVue = new Vue({
     );
   },
   computed: {
+    //fill the select filter
     fillSelect() {
       let arrayStates = [];
       if (this.apiSelected == "api1") {
@@ -396,11 +418,13 @@ const myVue = new Vue({
     //   })
     // },
 
+    //this is republicans array members
     republicans() {
       return this.members.filter(function(element) {
         return element.party == "R";
       });
     },
+    //this is average votes of republicans
     avgRepublicans() {
       let sum = 0;
       for (let i = 0; i < this.republicans.length; i++) {
@@ -408,11 +432,13 @@ const myVue = new Vue({
       }
       return (sum / this.republicans.length).toFixed(2);
     },
+    //this is democrats array members
     democrats() {
       return this.members.filter(function(element) {
         return element.party == "D";
       });
     },
+    //this is average votes of democrats
     avgDemocrats() {
       let sum = 0;
       for (let i = 0; i < this.democrats.length; i++) {
@@ -420,11 +446,13 @@ const myVue = new Vue({
       }
       return (sum / this.democrats.length).toFixed(2);
     },
+    //this is independents array members
     independents() {
       return this.members.filter(function(element) {
         return element.party == "I";
       });
     },
+    //this is average votes of independents
     avgIndependents() {
       let sum = 0;
       for (let i = 0; i < this.independents.length; i++) {
@@ -436,7 +464,7 @@ const myVue = new Vue({
         return sum.toFixed(2);
       }
     },
-
+    //this function returns the 10% greatest engaged members
     theNGreatest() {
       let somearray = this.fakemembers.slice();
       let pct = (somearray.length * 10) / 100; //cuantos quiero
@@ -452,7 +480,7 @@ const myVue = new Vue({
 
       return aux;
     },
-    
+    //this functions returns the 10% greatest loyalty members
     theNGreatestLoyal() {
       let somearray = this.fakemembers.slice();
       let pct = (somearray.length * 10) / 100; //cuantos quiero
@@ -468,7 +496,7 @@ const myVue = new Vue({
 
       return aux;
     },
-
+    //this function returns the 10% least loyalty members
     theNLowestLoyal() {
       let somearray = this.fakemembers.slice();
       let pct = (somearray.length * 10) / 100; //cuantos quiero
@@ -484,7 +512,7 @@ const myVue = new Vue({
 
       return aux;
     },
-
+    //this function returns the 10% least engaged members
     theNLowest() {
       let somearray = this.fakemembers.slice();
       let pct = (somearray.length * 10) / 100; //cuantos quiero
@@ -504,48 +532,49 @@ const myVue = new Vue({
 
 //fin de Vue
 
-
-
+//this is the map
 async function creamap() {
   // create map
 
   map = anychart.map(); //ok
   map.geoData(anychart.maps.united_states_of_america); //ok
 
-  let allStates =[];
-  myArray.forEach((element,i) => {
-
+  //get the map of every state
+  let allStates = [];
+  myArray.forEach((element, i) => {
     allStates[i] = anychart.map();
-    allStates[i].geoData(anychart.maps[(element.state).toLowerCase().replace(" ","_")]);
+    allStates[i].geoData(
+      anychart.maps[element.state.toLowerCase().replace(" ", "_")]
+    );
   });
- 
-    // create data set
+
+  // create data set
   var dataSet = myArray;
-   let dataSeries = []
+  let dataSeries = [];
   for (let i = 0; i < myArray.length; i++) {
     dataSeries[i] = myVue.getStatesInfo(myArray[i].id);
   }
- 
+
   // create choropleth series
   series = map.choropleth(dataSet);
-  let arraySeries=[];
+  let arraySeries = [];
   for (let i = 0; i < myArray.length; i++) {
     arraySeries[i] = allStates[i].choropleth(dataSeries[i]);
   }
 
-  let statesObject ={};
+  //create a object whit all states info
+  let statesObject = {};
   for (let i = 0; i < myArray.length; i++) {
     statesObject[myArray[i].id] = allStates[i];
   }
 
-map.listen("pointMouseOver", function(evt) {
-      series.unselect();
-      cambia(evt.point.get('id'));
-});
+  map.listen("pointMouseOver", function(evt) {
+    series.unselect();
+    cambia(evt.point.get("id"));
+  });
 
-map.drillDownMap(statesObject);
-map.interactivity({selectionMode: "drill-down"});
-
+  map.drillDownMap(statesObject);
+  map.interactivity({ selectionMode: "drill-down" });
 
   // set geoIdField to 'id', this field contains in geo data meta properties
   series.geoIdField("id");
@@ -553,10 +582,8 @@ map.interactivity({selectionMode: "drill-down"});
 
   // set map color settings
   series.hovered().fill("#addd8e");
+  series.selected().fill("gold");
 
-  // //if selected
-  series.selected().fill("gold");  //<<<<<<< THE SELECTED 
-  
   // enable labels
   labels = series.labels();
   labels.enabled(true);
@@ -564,7 +591,7 @@ map.interactivity({selectionMode: "drill-down"});
   // format labels text
   labels.format(function() {
     // Gets point source region properties.
-    var properties = this.regionProperties;
+    var properties = this.regionProperties; //anychart funciona asi
     return properties["postal"];
   });
 
@@ -572,7 +599,7 @@ map.interactivity({selectionMode: "drill-down"});
   labels.fontColor("black");
   labels.fontSize("10px");
 
-
+  //info and colors when drillIn
   for (let i = 0; i < myArray.length; i++) {
     allStates[i].background().fill("#c0c2b8d8");
     allStates[i].title("ESC to Back to Map");
@@ -588,6 +615,7 @@ map.interactivity({selectionMode: "drill-down"});
     });
   }
 
+  //info for the map
   series.tooltip().format(function(e) {
     return (
       "State: " +
@@ -598,46 +626,50 @@ map.interactivity({selectionMode: "drill-down"});
     );
   });
 
-
-  map.title("Map Selector of United States (Click on State to see the countries, ESC to Back)");
+  map.title(
+    "Map Selector of United States (Click on State to see the countries, ESC to Back)"
+  );
 
   //set map container id (div)
   map.container("maps");
-
   //initiate map drawing
   map.draw();
-
 }
 
-
-// function getPoints() {
-//   return map.getSelectedPoints()[0].get("id");
-// }
-
+//this function change the Selected using map selector
 function cambia(evt) {
   let re = /US./;
-  let result =  evt;
+  let result = evt;
   result = result.replace(re, "");
   myVue.selected = result;
   myVue.muestraTabla();
 }
 
+//this function fill with color the selected state from filter to map
 function changeMap() {
   series.unselect();
   let flipada = myVue.getStates();
-
+  //get the selected
   let sel = myVue.selected;
+  //get an array of ids from map
   let auxiliar = flipada.map(ele => {
     return ele.id;
   });
-
+  //get the index of the selected
   let index = auxiliar.indexOf("US." + sel);
-
+  //set the selected
   series.select(index);
 }
 
-if(document.URL.includes("senate-page"||"house-page")){
+//this conditional is used for add eventlistener to the map
+if (document.URL.includes("senate-page")) {
   var ho = document
-  .getElementById("stateSelector")
-  .addEventListener("click", changeMap);
+    .getElementById("stateSelector")
+    .addEventListener("click", changeMap);
+}
+
+if (document.URL.includes("house-page")) {
+  var ho = document
+    .getElementById("stateSelector")
+    .addEventListener("click", changeMap);
 }

@@ -62,8 +62,8 @@
                 Congress 113
               </a>
               <div class="dropdown-menu" aria-labelledby="congress">
-                <a class="dropdown-item" href="#">House</a>
-                <a class="dropdown-item" href="#">Senate</a>
+                <a class="dropdown-item" href="house-page.html">House</a>
+                <a class="dropdown-item" href="senate-page.html">Senate</a>
               </div>
             </li>
             <li class=" col nav-item dropdown">
@@ -78,8 +78,8 @@
                 Attendance
               </a>
               <div class="dropdown-menu" aria-labelledby="attendance">
-                <a class="dropdown-item" href="#">House</a>
-                <a class="dropdown-item" href="#">Senate</a>
+                <a class="dropdown-item" href="house-attendance.html">House</a>
+                <a class="dropdown-item" href="senate-attendance.html">Senate</a>
               </div>
             </li>
             <li class=" col nav-item dropdown">
@@ -94,17 +94,32 @@
                 Party Loyalty
               </a>
               <div class="dropdown-menu" aria-labelledby="loyalty">
-                <a class="dropdown-item" href="#">House</a>
-                <a class="dropdown-item" href="#">Senate</a>
+                <a class="dropdown-item" href="house-loyalty.html">House</a>
+                <a class="dropdown-item" href="senate-loyalty.html">Senate</a>
               </div>
             </li>
             <li class=" col nav-item">
-              <a class="nav-link" href="#">Lesgislators</a>
+              <a class="nav-link" href="legislators.html">Lesgislators</a>
             </li>
           </ul>
         </div>
       </nav>
       <div class="separated"></div>
+       <!--Loading-->
+       <div v-if="!loaded" class="row">
+          <div class="spinner-grow col" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow col" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow col" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        <div v-if="!loaded" class="row text-center aling-items-center justify-content-center">
+          <h1>We are building the page!!</h1>
+        </div>
       <!--AboutUs-->
       <div class="row m-auto align-items-center rounded pb-20 pt-3 mb-5 bg-light">
         <!--Acordeon-->

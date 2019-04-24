@@ -93,13 +93,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav justify-content-around">
-            <li class="col nav-item active">
-              <a class="nav-link" href="#"
+            <li class="col nav-item">
+              <a class="nav-link" href="home-page.html"
                 >Home <span class="sr-only"></span
               ></a>
             </li>
 
-            <li class=" col nav-item dropdown">
+            <li class=" col nav-item dropdown active">
               <a
                 class="nav-link dropdown-toggle "
                 href="#"
@@ -111,8 +111,8 @@
                 Congress 113
               </a>
               <div class="dropdown-menu" aria-labelledby="congress">
-                <a class="dropdown-item" href="#">House</a>
-                <a class="dropdown-item" href="#">Senate</a>
+                <a class="dropdown-item disabled" href="#">House</a>
+                <a class="dropdown-item" href="senate-page.html">Senate</a>
               </div>
             </li>
             <li class=" col nav-item dropdown">
@@ -127,8 +127,8 @@
                 Attendance
               </a>
               <div class="dropdown-menu" aria-labelledby="attendance">
-                <a class="dropdown-item" href="#">House</a>
-                <a class="dropdown-item" href="#">Senate</a>
+                <a class="dropdown-item" href="house-attendance.html">House</a>
+                <a class="dropdown-item" href="senate-attendance.html">Senate</a>
               </div>
             </li>
             <li class=" col nav-item dropdown">
@@ -143,17 +143,32 @@
                 Party Loyalty
               </a>
               <div class="dropdown-menu" aria-labelledby="loyalty">
-                <a class="dropdown-item" href="#">House</a>
-                <a class="dropdown-item" href="#">Senate</a>
+                <a class="dropdown-item" href="house-loyalty.html">House</a>
+                <a class="dropdown-item" href="senate-loyalty.html">Senate</a>
               </div>
             </li>
             <li class=" col nav-item">
-              <a class="nav-link" href="#">Lesgislators</a>
+              <a class="nav-link" href="legislators.html">Lesgislators</a>
             </li>
           </ul>
         </div>
       </nav>
       <div class="separated"></div>
+       <!--Loading-->
+      <div v-if="!loaded" class="row">
+        <div class="spinner-grow col" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow col" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow col" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <div v-if="!loaded" class="row text-center aling-items-center justify-content-center">
+        <h1>We are building the page!!</h1>
+      </div>
       <!--InfoPage container-->
       <div class="col separado text-justify">
         <h2 >Congressmen</h2>
@@ -228,10 +243,10 @@
           <span class="col-md-2">Filter by State :</span>
           <div class="col-md-2">
             <select
-              class="form-control col-5 col-md-5"
-              v-model="selected"
-              v-on:change="muestraTabla"
-              id="stateSelector"
+            class="form-control col-5 col-md-5"
+            v-model="selected"
+            v-on:change="muestraTabla"
+            id="stateSelector"
             >
               <option v-for="option in fillSelect" :value="option.value">
                 {{ option.text }}
@@ -251,7 +266,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr is="membered" v-for="member in members" :member="member"></tr>
+          <tr is="membered" v-for="member in tableMembers" :member="member"></tr>
         </tr>
         </tbody>
       </table>

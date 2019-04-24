@@ -43,8 +43,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav justify-content-around">
-              <li class="col nav-item active">
-                <a class="nav-link" href="#"
+              <li class="col nav-item">
+                <a class="nav-link" href="home-page.html"
                   >Home <span class="sr-only"></span
                 ></a>
               </li>
@@ -61,11 +61,11 @@
                   Congress 113
                 </a>
                 <div class="dropdown-menu" aria-labelledby="congress">
-                  <a class="dropdown-item" href="#">House</a>
-                  <a class="dropdown-item" href="#">Senate</a>
+                  <a class="dropdown-item" href="house-page.html">House</a>
+                  <a class="dropdown-item" href="senate-page.html">Senate</a>
                 </div>
               </li>
-              <li class=" col nav-item dropdown">
+              <li class=" col nav-item dropdown active">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -77,8 +77,8 @@
                   Attendance
                 </a>
                 <div class="dropdown-menu" aria-labelledby="attendance">
-                  <a class="dropdown-item" href="#">House</a>
-                  <a class="dropdown-item" href="#">Senate</a>
+                  <a class="dropdown-item" href="house-attendance.html">House</a>
+                  <a class="dropdown-item disabled" href="#">Senate</a>
                 </div>
               </li>
               <li class=" col nav-item dropdown">
@@ -93,19 +93,34 @@
                   Party Loyalty
                 </a>
                 <div class="dropdown-menu" aria-labelledby="loyalty">
-                  <a class="dropdown-item" href="#">House</a>
-                  <a class="dropdown-item" href="#">Senate</a>
+                  <a class="dropdown-item" href="house-loyalty.html">House</a>
+                  <a class="dropdown-item" href="senate-loyalty.html">Senate</a>
                 </div>
               </li>
               <li class=" col nav-item">
-                <a class="nav-link" href="#">Lesgislators</a>
+                <a class="nav-link" href="legislators.html">Lesgislators</a>
               </li>
             </ul>
           </div>
       </nav>
       <div class="separated"></div>
+       <!--Loading-->
+      <div v-if="!loaded" class="row">
+        <div class="spinner-grow col" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow col" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow col" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <div v-if="!loaded" class="row text-center aling-items-center justify-content-center">
+        <h1>We are building the page!!</h1>
+      </div>
       <!--Info + Table Glance-->
-      <div class="row">
+      <div class="row align-items-start justify-content-around">
         <div class="col-12 col-md-6 text-justify">
           <h2 class="mb-3">Attendance</h2>
           <p>
@@ -158,10 +173,10 @@
         </div>
       </div>
       <!--Table Least and Most Engaged-->
-      <div class="row">
+      <div class="row align-items-start justify-content-around">
         <div class="col-12 col-md-6">
           <h2 class="mb-3 h2size">Least Engaged (Bottom 10% Attendance)</h2>
-          <table class="table table-bordered text-center">
+          <table class="table table-bordered text-center" id="lEngaged">
             <thead>
               <tr>
                 <th>Name</th>
@@ -189,7 +204,7 @@
           <h2 class="mb-3 text-right h2size">
             Most Engaged (Top 10% Attendance)
           </h2>
-          <table class="table table-bordered text-center">
+          <table class="table table-bordered text-center" id="mEngaged">
             <thead>
               <tr>
                 <th>Name</th>

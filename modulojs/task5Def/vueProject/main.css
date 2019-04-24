@@ -126,7 +126,15 @@ vertical-align: inherit;
 
 #senate-data td, #senate-data th {
   vertical-align: inherit;
-  }
+}
+
+#lEngaged td, #lEngaged th {
+  vertical-align: inherit;
+}
+
+#mEngaged td, #mEngaged th {
+  vertical-align: inherit;
+}
 
 .pb-20{
   padding-bottom: 20px;
