@@ -32,7 +32,7 @@ Vue.component("membered", {
     <td> <a :href=member.url>{{member.first_name}} {{member.middle_name || ""}} {{member.last_name}}</a></td>
     <td>{{member.party}}</td>
     <td>{{member.state}}</td>
-    <td>{{member.seniority}}</td>
+    <td class="notshow">{{member.seniority}}</td>
     <td>{{member.votes_with_party_pct}}</td>
   </tr>`
 });
@@ -64,9 +64,33 @@ const myVue = new Vue({
       { text: "All", value: "All" },
       { text: "ProPublica", value: "api1" },
       { text: "OpenStates", value: "api2" }
-    ]
+    ],
+    pagina:0,
+    paginaRate:5,
   },
   methods: {
+   
+    resetPagination(){
+      this.pagina = 0;
+    },
+
+    next(){
+      this.pagina>=Math.floor(this.members.length/this.paginaRate)?Math.floor(this.members.length/this.paginaRate):this.pagina+=1;
+    },
+
+    previous(){
+      this.pagina<=0?0:this.pagina-=1;
+    },
+
+    first(){
+      this.pagina=0;
+    },
+
+    last(){
+      this.pagina = this.pageOf;
+    },
+    
+
     /**
      * Incluye los elementos de un array en un arrayTarget segun la
      * propiedad string y el valor que le passas
@@ -215,7 +239,7 @@ const myVue = new Vue({
             myVue.metadata = openSenateData.results;
             myArray = await myVue.getStates();
             creamap();
-          }
+          }        
         } else if (homeReg.exec(document.URL)) {
         } else {
           myVue.members = senateData.results[0].members;
@@ -377,6 +401,15 @@ const myVue = new Vue({
     );
   },
   computed: {
+    pageOf(){
+      return this.members.length%this.paginaRate==0?Math.floor(this.members.length/this.paginaRate)-1:Math.floor(this.members.length/this.paginaRate);
+    },
+
+    showPagina(){
+      this.fakemembers=this.members.slice();
+      return this.fakemembers.splice(this.pagina*this.paginaRate,this.paginaRate);
+    },
+
     //fill the select filter
     fillSelect() {
       let arrayStates = [];
@@ -410,8 +443,9 @@ const myVue = new Vue({
       arrayStates = [state, ...arrayStates];
       return arrayStates;
     },
+    
     // fillSelect2(){ //muy bonito pero...
-    //   return [...new Set(this.members.map(members => {
+    //   return [...new Set(this.members.map(members => { 
     //     return members.state
     //   }))].sort().map(state => {
     //     return {text: state, value:state}

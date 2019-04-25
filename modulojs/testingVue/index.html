@@ -8,6 +8,30 @@
 </head>
 <body>
   
-  <script src="codewars.js"></script>
+    <div id="pagination">
+        <button class="btn btn-primary" @click="refresh()">Refresh</button>
+        <button class="btn btn-default" @click="prev()">Prev</button>
+        <button class="btn btn-default" @click="next()">Next</button>
+        <button class="btn btn-default" @click="prevChunk()">Prev Chunk</button>
+        <button class="btn btn-default" @click="nextChunk()">Next Chunk</button>
+        <div >
+        Records:
+        <input type="text" @keyup="refresh()" v-model="records">
+        Per Page:
+        <input type="text" @keyup="refresh()" v-model="perpage">
+        </div>
+        
+        <h3>Displaying page {{table1Page}} out of {{totalPages}} <small>({{PerPage}} records per page)</small></h3>
+        
+          <pagination v-ref:table for="table" :per-page="PerPage" :records="Records"></pagination>
+          <p v-if="!Records">No records</p>
+        
+      </div>
+
+
 </body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main4.js"></script>
 </html>
