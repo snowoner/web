@@ -2,6 +2,7 @@
 
 body{
   background-color: rgba(192, 194, 184, 0.849); 
+ 
 }
 html{
   margin:0% auto;
@@ -176,7 +177,9 @@ nav li{
 label{
   margin:0px;
 }
-
+/* 
+and (orientation: portrait) {
+} */
 @media screen  and (max-width: 550px) { 
 
   .notshow{

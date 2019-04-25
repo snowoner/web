@@ -79,7 +79,7 @@
           >
       </div>
       <!--Nav-->
-      <nav class="navbar navbar-expand-md navbar-light rounded bg-light">
+      <nav class="navbar navbar-expand-md navbar-light rounded bg-light" id="myNavbar">
         <button
           class="navbar-toggler"
           type="button"
@@ -169,45 +169,48 @@
       <div v-if="!loaded" class="row text-center aling-items-center justify-content-center">
         <h1>We are building the page!!</h1>
       </div>
-
-
-      <div class="row text-center aling-items-center justify-content-center">
-          <table class="col-12 table text-center" id="housePagination">
-              <thead>
-                  <tr>
-                      <th>Name</th>
-                      <th>Party</th>
-                      <th>State</th>
-                      <th class="notshow">Seniority</th>
-                      <th>Votes with party in %</th>
-                    </tr>
-              </thead>
-              <tbody>
-                  <tr v-for="member in showPagina">
-                      <td> <a :href=member.url>{{member.first_name}} {{member.middle_name || ""}} {{member.last_name}}</a></td>
-                      <td>{{member.party}}</td>
-                      <td>{{member.state}}</td>
-                      <td class="notshow">{{member.seniority}}</td>
-                      <td>{{member.votes_with_party_pct}}</td>
-                    </tr>
-              </tbody>
-            </table>
-            <div class="col-12">We are showing {{paginaRate}} Senators of {{this.members.length}}</div>
-            <button @click="previous"class="col-3">Previous</button>
-    
-            <span class="col-3"> Pagina : {{ pagina }}</span>
-         
-            <button @click="next"class="col-3">Next</button>
-            <div class="col-4">
-              <span>How many members per page ?</span>
-              <select class="" v-model="paginaRate" v-on:change="showPagina">
-              <option value="1">1</option>
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
-            </select>
-            </div>
+      <!--Table Paginated-->
+      <div v-if="loaded" class="row text-center aling-items-center justify-content-center">
+        <table class="col-11 table table-bordered text-center" id="housePagination">
+          <thead>
+            <tr class="bg-light">
+              <th>Name</th>
+              <th>Party</th>
+              <th>State</th>
+              <th class="notshow">Seniority</th>
+              <th>Votes with party in %</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="member in showPagina">
+              <td> <a :href=member.url>{{member.first_name}} {{member.middle_name || ""}} {{member.last_name}}</a></td>
+              <td>{{member.party}}</td>
+              <td>{{member.state}}</td>
+              <td class="notshow">{{member.seniority}}</td>
+              <td>{{member.votes_with_party_pct}}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div v-if="loaded" class="row text-center aling-items-center justify-content-center">
+        <div class="col-12 mb-3">We are showing {{showPagina.length}} senators of {{this.members.length}}</div>
+        <button v-if="pagina==0" class="col-1 btn btn-secondary btn-sm disabled mb-3 mr-1">First</button>
+        <button v-else @click="first"class="col-1 btn btn-secondary btn-sm mb-3 mr-1">First</button>
+        <button v-if="pagina>0" @click="previous" class="col-1 btn btn-secondary btn-sm mb-3 mr-1">{{pagina-1}}</button>
+        <span class="col-3"> Pagina : {{ pagina }} of {{pageOf}}</span>
+        <button v-if="pagina!=pageOf" @click="next" class="col-1 btn btn-secondary btn-sm mb-3 ml-1">{{pagina+1}}</button>
+        <button v-if="pagina!=pageOf" @click="last"class="col-1 btn btn-secondary btn-sm mb-3 ml-1">Last</button>
+        <button v-else class="col-1 btn btn-secondary btn-sm disabled mb-3 ml-1">Last</button>
+        <div class="col-12 col-md-12">
+          <span>How many members per page ?</span>
+          <select class="" v-model="paginaRate" v-on:change="resetPagination">
+          <option value="1">1</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+        </div>
       </div>
 
       <!--InfoPage container-->
